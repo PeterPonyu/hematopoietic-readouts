@@ -33,10 +33,10 @@
   },
   {
     "portable_file": "figure_calculations.py",
-    "portable_sha256": "4e2d6734e1c9dc2ad75901a001414a71793e8f721b3e1194f4c10f6c892f03bf",
+    "portable_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
     "historical_source": "paper/scientific-reports-hematopoietic-readouts/scripts/build_figures.py",
-    "historical_sha256": "be3038b860b5aa9454a1d1be747bc17aa7102b3f2f64a7ecf02f1d943748fc66",
-    "changes": "separate portable display adaptation: root initialization no longer assumes repository depth; wrapper reads only regenerated tables and calls six figure functions, not archival main/caption writer",
-    "article_portable_sha256": "79c9ba41afc9ae40692accecf0d2759d36d430e9134ca037dcef0b9970749909"
+    "historical_sha256": "b14c58994c383044f6cecf75eff602f3085ccfde38aaaeb3a6f321b878771592",
+    "changes": "Display adaptation of the current figure renderer: explicit roots, regular black text and centered titles, black bold panel letters, compact layouts and editable SVG; numerical ledger operations retained unchanged.",
+    "article_portable_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f"
   }
 ]

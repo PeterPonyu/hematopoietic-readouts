@@ -1,6 +1,8 @@
-# Hematopoietic readouts: scientific code
+# Hematopoietic readouts: scientific code (v1.0.1)
 
 Code and aggregate source tables for **Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets**, by Zeyu Fu ([ORCID 0009-0001-8329-0108](https://orcid.org/0009-0001-8329-0108)). Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.
+
+Software edition **1.0.1** updates figure presentation and adds editable SVG export alongside PDF and 600 dpi PNG for all eight figures. Text is black and regular, panel letters are bold at 13 pt, subpanel titles are centered and regular, and the minimum native text size is 10 pt. Scientific inputs, aggregate numerical results and the original 378-value, supplementary 376-value and five-value Figure 3 context ledgers are unchanged. See [CHANGELOG.md](CHANGELOG.md). This edition is prepared for release; no archive DOI has been assigned to v1.0.1.
 
 The study compares captured composition, fixed transcriptional programs and conditional model readouts in TPO culture, Dapp1 and sleep cohorts. Normal marrow is a separate technical control. Program-based cell labels are provisional; computational seeds are not biological replicates.
 
@@ -36,4 +38,4 @@ python tools/refresh_from_article.py --source /path/to/scientific-reports-hemato
 python run.py verify
 ```
 
-The refresh records source and released checksums, updates the associated manuscript title, and removes superseded generated copies. It does not copy the manuscript, author forms, review records or general project history. `CITATION.cff` and `.zenodo.json` describe this manuscript-specific software release. The version 1.0.0 software archive is registered at [Zenodo DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592). The tagged release remains frozen; current citation metadata records its DOI. This software deposit does not assert journal publication. After externally verifying the dedicated repository, maintainers may add its citation URL with `--repository-url` on the refresh command.
+The refresh records source and released checksums, updates the associated manuscript title, and removes superseded generated copies. It does not copy the manuscript, author forms, review records or general project history. `CITATION.cff` and `.zenodo.json` describe software edition 1.0.1 without assigning it a DOI. The **previous version 1.0.0** is frozen at [Zenodo DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592); that identifier belongs to v1.0.0. Software archiving does not assert journal publication. The dedicated source repository is [PeterPonyu/hematopoietic-readouts](https://github.com/PeterPonyu/hematopoietic-readouts).

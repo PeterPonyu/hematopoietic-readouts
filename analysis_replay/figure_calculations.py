@@ -19,7 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.lines import Line2D
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import FancyBboxPatch, Circle, Rectangle
 import numpy as np
 import pandas as pd
 
@@ -37,10 +37,10 @@ COHORT_LABELS = {"ucb": "TPO culture", "dapp1": "Dapp1", "sleep": "Sleep"}
 ARMS = ["PCA", "LiVAE"]
 ARM_COLORS = {"PCA": "#17689A", "LiVAE": "#8856A7"}
 BLUE, ORANGE, GREEN = "#17689A", "#C6602A", "#168775"
-INK, GRAY, LIGHT = "#203440", "#657480", "#D2DAE0"
-PALE = "#F3F6F8"
+INK, GRAY, LIGHT = "#000000", "#666666", "#CCCCCC"
+PALE = "#F5F5F5"
 WIDTH = 6.35
-MIN_FONT = 9.5
+MIN_FONT = 10
 LEDGER, SOURCES, QA = [], {}, []
 CACHE = {}
 
@@ -104,7 +104,7 @@ def setup():
     # Installed Arial is used explicitly; no silent publication-font substitution.
     arial = font_manager.findfont("Arial", fallback_to_default=False)
     plt.rcParams.update({"font.family": "Arial", "font.size": MIN_FONT,
-                         "axes.titlesize": 10.5, "axes.titleweight": "bold",
+                         "axes.titlesize": 10.5, "axes.titleweight": "normal",
                          "axes.labelsize": MIN_FONT, "xtick.labelsize": MIN_FONT,
                          "ytick.labelsize": MIN_FONT, "legend.fontsize": MIN_FONT,
                          "axes.spines.top": False, "axes.spines.right": False,
@@ -113,20 +113,24 @@ def setup():
                          "lines.markersize": 4.6, "text.color": INK,
                          "axes.labelcolor": INK, "xtick.color": INK,
                          "ytick.color": INK, "pdf.fonttype": 42,
-                         "ps.fonttype": 42, "savefig.facecolor": "white"})
+                         "ps.fonttype": 42, "svg.fonttype": "none",
+                         "svg.hashsalt": "hematopoietic-readouts",
+                         "savefig.facecolor": "white"})
     return arial
 
 
 def title(ax, label, text):
-    ax.set_title(text, loc="left", pad=14)
-    # A physical offset keeps letters aligned regardless of panel width.
-    ax.annotate(label.lower(), xy=(0, 1), xycoords="axes fraction",
-                xytext=(-16, 14), textcoords="offset points", fontsize=12.5,
-                fontweight="bold", ha="right", va="bottom", annotation_clip=False)
+    ax.set_title(text, loc="center", pad=13, fontweight="normal", color="black")
+    # One physical offset aligns letters independently of the centered title.
+    letter = ax.annotate(label.lower(), xy=(0, 1), xycoords="axes fraction",
+                xytext=(-22, 13), textcoords="offset points", fontsize=13,
+                fontweight="bold", color="black", ha="left", va="bottom",
+                annotation_clip=False)
+    letter._panel_letter = True
 
 
 def clean(ax, axis="y"):
-    ax.grid(axis=axis, color="#E6EBEF", linewidth=0.6)
+    ax.grid(axis=axis, color="#E5E5E5", linewidth=0.6)
     ax.set_axisbelow(True)
     ax.tick_params(length=3)
 
@@ -147,6 +151,8 @@ def save(fig, name):
                     if obj.get_visible() and obj.get_text()]
     for obj in text_objects:
         obj.set_fontsize(max(MIN_FONT, obj.get_fontsize()))
+        obj.set_color("black")
+        obj.set_fontweight("bold" if getattr(obj, "_panel_letter", False) else "normal")
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     # Check all visible text against the physical canvas (not a cropped export).
@@ -163,49 +169,82 @@ def save(fig, name):
                "width_inches": fig.get_figwidth(), "height_inches": fig.get_figheight(),
                "min_text_pt": min(obj.get_fontsize() for obj in text_objects),
                "font_sizes_pt": sorted(set(obj.get_fontsize() for obj in text_objects)),
-               "out_of_canvas_text": violations})
+               "out_of_canvas_text": violations,
+               "text_color": "black", "bold_text": "panel letters only",
+               "subpanel_titles": "centered, regular weight"})
     assert not violations, (name, violations)
     fig.savefig(OUT / f"{name}.pdf", metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(OUT / f"{name}.png", dpi=600)
+    fig.savefig(OUT / f"{name}.svg", metadata={"Date": None})
     plt.close(fig)
 
 
 def fig1():
-    fig = plt.figure(figsize=(WIDTH, 4.65))
-    ax = fig.add_axes([.06, .39, .92, .53]); ax.axis("off")
-    title(ax, "a", "Three views of the same captured cells")
-    def box(x, heading, body, color, face):
-        y, w, h = .25, .30, .43
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.008,rounding_size=0.012",
-                     linewidth=.75, edgecolor=LIGHT, facecolor=face))
-        ax.plot([x+.02,x+w-.02],[y+h-.018]*2,color=color,lw=2,solid_capstyle="round")
-        ax.text(x+w/2,y+h-.075,heading,ha="center",va="center",fontsize=10.0,fontweight="bold",color=color)
-        ax.text(x+w/2,y+.16,body,ha="center",va="center",fontsize=MIN_FONT,linespacing=1.45)
-        ax.annotate("",xy=(x+.15,.69),xytext=(.5,.78),arrowprops={"arrowstyle":"-|>","color":GRAY,"linewidth":.9,"shrinkA":3,"shrinkB":3})
-    ax.add_patch(FancyBboxPatch((.10,.79),.80,.18,boxstyle="round,pad=0.008,rounding_size=0.012",facecolor="#EAF2F7",edgecolor=LIGHT,lw=.75))
-    ax.text(.5,.91,"79,262 retained cells · three public cohorts",ha="center",va="center",fontsize=11,fontweight="bold")
-    ax.text(.5,.835,"9 sampled times / conditions · 4 lineage tasks",ha="center",va="center",fontsize=MIN_FONT,color=GRAY)
-    for args in [(.01,"Observed readouts","Captured composition\nFixed programs\nCommon-group contrasts\nActual culture days",GREEN,"#F0F7F4"),
-                 (.35,"Frozen application","PCA30 states\nFrozen UMAP actions\nReward interventions\nGeometry references",BLUE,"#F0F5F9"),
-                 (.69,"Paired interfaces","PCA30 / LiVAE10\nEach to UMAP2\n2D states and actions\n90 downstream runs",ARM_COLORS["LiVAE"],"#F5F1F8")]:
-        box(*args)
-    ax.text(.5,.14,"Composition, molecular state and conditional model readouts",ha="center",va="center",fontsize=MIN_FONT)
-    ax.text(.5,.035,"Separate technical reference: normal marrow · 6,011 cells",ha="center",va="center",fontsize=MIN_FONT,color=GRAY)
-    ax.set_xlim(-.005,1.005);ax.set_ylim(0,1)
-    a = fig.add_axes([.19, .115, .76, .20])
-    title(a, "b", "Retained cohort coverage")
+    fig = plt.figure(figsize=(WIDTH, 4.55))
+    ax = fig.add_axes([.075, .39, .90, .52]); ax.axis("off")
+    title(ax, "a", "Analysis workflow")
+
+    # Original line icons remain vector paths in PDF and editable SVG output.
+    # They identify operations; they are not third-party method logos.
+    def icon(kind, cx, cy):
+        if kind == "observations":
+            for dx, dy, radius in [(-.042, .012, .022), (.011, .037, .020), (.043, -.012, .024)]:
+                ax.add_patch(Circle((cx+dx, cy+dy), radius, transform=ax.transAxes,
+                                   facecolor="white", edgecolor="black", lw=.85))
+            ax.plot([cx-.055, cx+.055], [cy-.055]*2, color="black", lw=.8)
+            for dx, height in [(-.035,.026), (0,.045), (.035,.065)]:
+                ax.add_patch(Rectangle((cx+dx-.009,cy-.055),.018,height,
+                                      facecolor="#D9D9D9",edgecolor="black",lw=.55))
+        elif kind == "frozen":
+            for d in [-.045, -.015, .015, .045]:
+                ax.plot([cx-.045,cx+.045],[cy+d]*2,color="#777777",lw=.65)
+                ax.plot([cx+d]*2,[cy-.045,cy+.045],color="#777777",lw=.65)
+            ax.plot([cx-.03,cx,cx+.03],[cy-.03,cy,cy+.03],color="black",lw=1.4,
+                    marker="o",markersize=2.2)
+        else:
+            ax.plot([cx-.052,cx-.027,cx+.003],[cy-.035,cy+.03,cy-.005],
+                    color="black",lw=.9,marker="o",markersize=2.2)
+            ax.plot([cx+.018,cx+.043,cx+.065],[cy-.02,cy+.035,cy-.025],
+                    color="black",lw=.9,marker="s",markersize=2.2)
+            ax.annotate("",xy=(cx+.022,cy+.005),xytext=(cx-.005,cy+.005),
+                        arrowprops={"arrowstyle":"->","color":"black","lw":.8})
+
+    ax.add_patch(FancyBboxPatch((.13,.805),.74,.15,
+                 boxstyle="round,pad=0.006,rounding_size=0.009",
+                 facecolor="white",edgecolor="black",lw=.8))
+    ax.text(.5,.906,"79,262 retained cells · three public cohorts",ha="center",va="center",fontsize=10.5)
+    ax.text(.5,.846,"9 sampled times / conditions · 4 lineage tasks",ha="center",va="center")
+    boxes=[(.005,"Observed readouts","Captured composition\nFixed programs\nCommon-group contrasts\nActual culture days","observations"),
+           (.35,"Frozen application","PCA30 states\nFrozen UMAP actions\nReward interventions\nGeometry references","frozen"),
+           (.695,"Paired interfaces","PCA30 / LiVAE10\nEach to UMAP2\n2D states and actions\n90 downstream runs","paired")]
+    for x, heading, body, kind in boxes:
+        ax.add_patch(FancyBboxPatch((x,.08),.30,.595,
+                     boxstyle="round,pad=0.005,rounding_size=0.009",
+                     facecolor="white",edgecolor="#777777",lw=.7))
+        ax.annotate("",xy=(x+.15,.68),xytext=(.5,.80),
+                    arrowprops={"arrowstyle":"-|>","color":"black","linewidth":.8,
+                                "shrinkA":2,"shrinkB":2})
+        icon(kind,x+.15,.58)
+        ax.text(x+.15,.47,heading,ha="center",va="center",fontsize=10.5)
+        ax.text(x+.15,.385,body,ha="center",va="top",fontsize=MIN_FONT,linespacing=1.32)
+    ax.text(.5,.018,"Separate technical reference: normal marrow · 6,011 cells",ha="center",va="center")
+    ax.set_xlim(-.01,1.01);ax.set_ylim(-.015,1.0)
+
+    a = fig.add_axes([.235, .10, .70, .20])
+    title(a, "b", "Retained application cohorts")
+    for item in a.texts:
+        if getattr(item,"_panel_letter",False): item.set_position((-95,13))
     counts = []
     p = FROZEN / "geometry_reference/summary.csv"
     for c in COHORTS:
         lineage = next(l for cohort, l in TASKS if cohort == c)
         counts.append(one(1, "b", c, p, "n_cells", cohort=c, lineage=lineage, population="all"))
-    a.barh([2,1,0],counts,height=.55,color=[BLUE,ORANGE,GREEN],zorder=3)
-    a.set_yticks([2,1,0],["TPO culture","Dapp1","Sleep"])
-    a.set_xlim(0,49000);a.set_xticks([0,20000,40000],["0","20,000","40,000"])
-    a.set_xlabel("Retained cells")
-    for y,count,conditions in zip([2,1,0],counts,["5 times","WT / KO","CT / SD"]):
-        a.text(count+650,y,f"{int(count):,}",va="center",fontsize=10,fontweight="bold")
-        a.text(800,y,conditions,va="center",color="white",fontsize=MIN_FONT)
+    a.barh([2,1,0],counts,height=.60,color=[BLUE,ORANGE,GREEN],zorder=3)
+    a.set_yticks([2,1,0],["TPO: 5 times","Dapp1: WT / KO","Sleep: CT / SD"])
+    a.set_xlim(0,47000);a.set_xticks([0,20000,40000],["0","20,000","40,000"])
+    a.set_xlabel("Retained cells",labelpad=3)
+    for y,count in zip([2,1,0],counts):
+        a.text(count+650,y,f"{int(count):,}",va="center",fontsize=10)
     clean(a,"x")
     selected=rows(p,population="all")
     selected=selected.loc[[rows(p,cohort=c,lineage=next(l for cc,l in TASKS if cc==c),population="all").index[0] for c in COHORTS]]
@@ -229,8 +268,8 @@ def fig1():
 
 
 def fig2():
-    fig,axes=plt.subplots(2,2,figsize=(WIDTH,5.8))
-    fig.subplots_adjust(left=.17,right=.98,bottom=.24,top=.90,hspace=.92,wspace=.64)
+    fig,axes=plt.subplots(2,2,figsize=(WIDTH,5.2))
+    fig.subplots_adjust(left=.17,right=.98,bottom=.19,top=.90,hspace=.62,wspace=.32)
     specs=[("dapp1",["wt","ko"],["WT","KO"],"cluster 6 (granulocytic)","Granulocytic cluster 6"),
            ("sleep",["CT","SD"],["CT","SD"],"Neu-like","Granulocytic-like groups")]
     for j,(c,cond,labels,column,desc) in enumerate(specs):
@@ -238,12 +277,12 @@ def fig2():
         values=[one(2,chr(97+j),f"{c}:{x}",p,column,scale=100,**{"Unnamed: 0":x}) for x in cond]
         ax.bar([0,1],values,color=["#A8B5BE",[ORANGE,GREEN][j]],width=.54,zorder=3)
         ax.set_xticks([0,1],labels);ax.set_ylim(0,15 if j==0 else 55)
-        ax.set_ylabel("Captured fraction (%)")
+        if j == 0: ax.set_ylabel("Captured fraction (%)")
         for x,v in enumerate(values):ax.text(x,v+(.5 if j==0 else 1.3),f"{v:.2f}%",ha="center",fontsize=10,fontweight="bold")
         # Reuses the three cohort denominators already traced in Figure 1b.
         n=next(r['value'] for r in LEDGER if r['figure']==1 and r['panel']=='b' and r['mark']==c)
         title(ax,chr(97+j),f"{COHORT_LABELS[c]}: n = {int(n):,}");clean(ax)
-        ax.text(0,1.018,desc,transform=ax.transAxes,ha="left",fontsize=MIN_FONT,color=GRAY)
+
     programs=["neutrophil","cycling","interferon","inflammatory"]
     labels=["Granulocytic","Cell cycle","Interferon","Inflammatory"]
     for j,c in enumerate(["dapp1","sleep"]):
@@ -258,21 +297,21 @@ def fig2():
                 for v,dy,col in zip(vals,[-13,10],[GRAY,BLUE]):
                     ax.annotate(f"{v:+.3f}",(v,y),xytext=(0,dy),textcoords="offset points",ha="center",fontsize=MIN_FONT,color=col)
         ax.axvline(0,color="#9299A1",lw=.7,ls="--");ax.set_xlim(-.49,.23)
-        ax.set_ylim(3.5,-1.1);ax.set_yticks(range(4),labels);ax.set_xticks([-.4,-.2,0,.2])
+        ax.set_ylim(3.5,-1.1);ax.set_yticks(range(4),labels if j == 0 else [""]*4);ax.set_xticks([-.4,-.2,0,.2])
         row_bands(ax,4);ax.set_xlabel("Program difference")
         title(ax,chr(99+j),"KO − WT" if c=="dapp1" else "SD − CT");clean(ax,"x")
         ng=one(2,chr(99+j),"common groups",p,"matched_groups",program="program_neutrophil")
         cv=one(2,chr(99+j),"coverage",p,"fraction_cells_covered",program="program_neutrophil",scale=100)
-        ax.text(0,1.018,f"{int(ng)} groups · {cv:.0f}% coverage",transform=ax.transAxes,ha="left",fontsize=MIN_FONT,color=GRAY)
+        ax.set_title(ax.get_title()+f" ({int(ng)} groups)",loc="center",pad=13)
     fig.legend([Line2D([],[],marker="o",markerfacecolor="white",color=GRAY,ls=""),Line2D([],[],marker="o",color=BLUE,ls="")],
-               ["Unadjusted","Fixed composition"],loc="lower center",ncol=2,frameon=False,bbox_to_anchor=(.55,.07))
-    fig.text(.55,.038,"Scores use each cohort's scale.",ha="center",fontsize=MIN_FONT,color=GRAY)
-    fig.text(.55,.012,"Lines pair saved summaries; they do not show uncertainty.",ha="center",fontsize=MIN_FONT,color=GRAY)
+               ["Unadjusted","Fixed composition"],loc="lower center",ncol=2,frameon=False,bbox_to_anchor=(.55,.018))
+
+
     save(fig,"figure2_composition")
 
 
 def fig3():
-    fig,axes=plt.subplots(2,2,figsize=(WIDTH,6.3));fig.subplots_adjust(left=.13,right=.97,bottom=.26,top=.92,wspace=.56,hspace=.80)
+    fig,axes=plt.subplots(2,2,figsize=(WIDTH,5.95));fig.subplots_adjust(left=.13,right=.98,bottom=.23,top=.92,wspace=.48,hspace=.88)
     days=[0,4,7,11,14];conditions=[f"D{x}" for x in days]
     p=FROZEN/"ucb/thesis_composition.csv";ax=axes[0,0]
     fractions=[]
@@ -314,7 +353,7 @@ def fig3():
     ax.set_ylabel("Captured fraction (%)");ax.set_ylim(-2,103);ax.set_yticks([0,25,50,75,100])
     title(ax,"a","Provisional label fractions")
     handles,labels=ax.get_legend_handles_labels()
-    fig.legend(handles,labels,loc="center",ncol=4,frameon=False,bbox_to_anchor=(.55,.588),
+    fig.legend(handles,labels,loc="center",ncol=4,frameon=False,bbox_to_anchor=(.55,.555),
                handlelength=1.6,columnspacing=.85,handletextpad=.45,fontsize=MIN_FONT)
     ax=axes[0,1]
     for file,label,color,marker in [("condition_program_means.csv","All cells",BLUE,"o"),("starting_population_programs.csv","Start-label subset",ORANGE,"s")]:
@@ -343,17 +382,16 @@ def fig3():
     for condition in conditions:
         denominators.append(one(3,"d",f"{condition} starting denominator",p,"n_cells",seed=0,reward="neutral",population="starting_population",condition=condition))
     ax.set_ylabel("Median value percentile");ax.set_ylim(0,1);ax.legend(frameon=False,loc="upper left",fontsize=MIN_FONT)
-    ax.axvspan(-.4,.4,facecolor="#FAEDE5",edgecolor="none",zorder=0)
+
     ax.annotate("D0: 17 cells",xy=(0,.14),xytext=(3.3,.30),fontsize=MIN_FONT,color=ORANGE,
                 arrowprops={"arrowstyle":"-","color":ORANGE,"lw":.75},va="center")
     title(ax,"d","No-time scRL value")
     for ax in axes.flat:
         ax.set_xticks(days);ax.set_xlim(-.5,14.5);ax.set_xlabel("Culture day");clean(ax)
-    fig.text(.13,.165,"Cluster 5: pooled primitive-max; D0 granulocytic-max; D14 dendritic-max.",fontsize=MIN_FONT,color=GRAY)
-    fig.text(.13,.117,"Selected cluster 5: retained cells by culture day",fontsize=10,fontweight="bold")
-    for x,day,n in zip(np.linspace(.19,.92,5),days,denominators):
-        fig.text(x,.079,f"D{day}",ha="center",fontsize=MIN_FONT,color=GRAY)
-        fig.text(x,.035,f"{int(n):,}",ha="center",fontsize=10,fontweight="bold",color=ORANGE if day==0 else INK)
+
+    fig.text(.55,.12,"Selected cluster 5: retained cells",ha="center",fontsize=MIN_FONT)
+    for x,day,n in zip(np.linspace(.16,.94,5),days,denominators):
+        fig.text(x,.067,f"D{day}: {int(n):,}",ha="center",fontsize=MIN_FONT)
     save(fig,"figure3_tpo")
 
 
@@ -394,7 +432,7 @@ def correlation_panel(ax, fig_no, panel, population, matched=False, show_y=True,
 
 
 def fig4():
-    fig=plt.figure(figsize=(WIDTH,6.15));gs=fig.add_gridspec(2,6,left=.15,right=.98,bottom=.18,top=.84,hspace=1.0,wspace=.53,height_ratios=[.85,1.15])
+    fig=plt.figure(figsize=(WIDTH,5.25));gs=fig.add_gridspec(2,6,left=.15,right=.98,bottom=.15,top=.86,hspace=.62,wspace=.64,height_ratios=[.85,1.15])
     p=FROZEN/"marrow/reward_timing.csv"
     for j,lineage in enumerate(["erythroid","myeloid"]):
         ax=fig.add_subplot(gs[0,j*3:(j+1)*3])
@@ -413,34 +451,35 @@ def fig4():
     handles=[Line2D([],[],color=BLUE,marker="o",label="scRL value"),
              Line2D([],[],ls="",marker="s",color=ORANGE,label="UMAP proximity"),
              Line2D([],[],ls="",marker="^",color=GREEN,label="PCA30 proximity")]
-    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.064),columnspacing=1.0,handlelength=1.4,fontsize=MIN_FONT)
-    fig.text(.15,.985,"Reward intervention: normal-marrow reference",fontsize=MIN_FONT,color=GRAY,va="top")
+    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.025),columnspacing=1.0,handlelength=1.4,fontsize=MIN_FONT)
+
     fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Seed {i}") for i,m in enumerate(["o","s","^"])],
-               loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.60,.962),fontsize=MIN_FONT,columnspacing=1.4,handletextpad=.4)
-    fig.text(.15,.555,"Frozen applications: endpoint proximity",fontsize=10,fontweight="bold",color=GRAY)
-    fig.text(.15,.52,"All-cell medians stay below the better geometry reference.",fontsize=MIN_FONT,color=GRAY)
-    fig.text(.55,.018,"Ranges span three downstream seeds; they are not biological intervals.",ha="center",fontsize=MIN_FONT,color=GRAY)
+               loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.60,.997),fontsize=MIN_FONT,columnspacing=1.4,handletextpad=.4)
+
+
+
     save(fig,"figure4_controls")
 
 
 def fig5():
-    fig=plt.figure(figsize=(WIDTH,6.05))
+    fig=plt.figure(figsize=(WIDTH,5.55))
     for i,pop in enumerate(["all","nonterminal","starting"]):
-        ax=fig.add_axes([.245,.72-i*.285,.46,.18])
+        ax=fig.add_axes([.245,.72-i*.275,.46,.20])
         correlation_panel(ax,5,chr(97+i),pop,matched=True,show_y=True,details=True)
         title(ax,chr(97+i),["All cells","Nonterminal","Selected start"][i])
         ax.set_xticks([-.25,0,.25,.5,.75,1],["−0.25","0","0.25","0.50","0.75","1.00"])
         ax.set_xlabel("Spearman ρ" if i==2 else "")
+        if i < 2: ax.tick_params(labelbottom=False)
     handles=[Line2D([],[],color=BLUE,marker="s",label="PCA"),Line2D([],[],color=ARM_COLORS["LiVAE"],marker="o",label="Revised LiVAE"),
              Line2D([],[],color=GRAY,marker="D",markerfacecolor="white",ls="",label="Proximity")]
-    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.031),columnspacing=1.1,handlelength=1.4)
-    fig.text(.245,.985,"Matched 2D interfaces · no-time reward",fontsize=MIN_FONT,color=GRAY,va="top")
-    fig.text(.55,.009,"Task labels include n; numbers at right repeat seed-median ρ.",ha="center",fontsize=MIN_FONT,color=GRAY)
+    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.015),columnspacing=1.1,handlelength=1.4)
+
+
     save(fig,"figure5_interfaces")
 
 
 def fig6():
-    fig=plt.figure(figsize=(WIDTH,5.95));gs=fig.add_gridspec(2,2,left=.16,right=.96,bottom=.25,top=.88,hspace=.86,wspace=.58,height_ratios=[1,1.08])
+    fig=plt.figure(figsize=(WIDTH,5.4));gs=fig.add_gridspec(2,2,left=.16,right=.95,bottom=.23,top=.90,hspace=.68,wspace=.28,height_ratios=[1,1.08])
     a=fig.add_subplot(gs[0,0]);b=fig.add_subplot(gs[0,1]);c=fig.add_subplot(gs[1,:])
     p=MATCHED/"seed_stability.csv"
     markers=["o","s","^"]
@@ -457,7 +496,7 @@ def fig6():
         ax.set_yticks(range(3),[COHORT_LABELS[x] for x in COHORTS]);ax.set_ylim(2.5,-.5);clean(ax,"x")
     a.set_xlim(0,1);a.set_xticks([0,.5,1]);a.set_xlabel("Assignment ARI");title(a,"a","scFocus seed agreement")
     b.set_xlim(.95,1);b.set_xticks([.95,.975,1],["0.950","0.975","1.000"]);b.set_xlabel("Median normalized entropy");title(b,"b","scFocus weight dispersion")
-    b.text(0,1.015,"Zoom: 0.95–1.00 (full: 0–1)",transform=b.transAxes,fontsize=MIN_FONT,color=GRAY)
+    b.set_yticklabels([])
     for y,(cohort,lineage) in enumerate(TASKS):
         for arm,off in [("PCA",-.23),("LiVAE",.23)]:
             values=series(6,"c",f"{cohort}:{lineage}:{arm}",p,"value",cohort=cohort,lineage=lineage,arm=arm,method="scRL",reward="neutral")
@@ -470,12 +509,12 @@ def fig6():
     title(c,"c","No-time scRL seed agreement")
     c.text(.025,1.015,"LiVAE range",transform=c.transAxes,fontsize=MIN_FONT,color=ARM_COLORS["LiVAE"])
     fig.legend(handles=[Line2D([],[],color=ARM_COLORS[x],marker="o",ls="",label="Revised LiVAE" if x=="LiVAE" else x) for x in ARMS],
-               loc="lower center",ncol=2,frameon=False,bbox_to_anchor=(.55,.118),fontsize=MIN_FONT)
+               loc="lower center",ncol=2,frameon=False,bbox_to_anchor=(.55,.077),fontsize=MIN_FONT)
     fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Pair {pair} / seed {seed}")
                         for m,pair,seed in zip(markers,["0–1","0–2","1–2"],["0","1","2"])],
-               loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.062),fontsize=MIN_FONT,columnspacing=1.1,handletextpad=.45)
-    fig.text(.55,.022,"a, c: seed pairs · b: individual seeds. Three downstream seeds per interface.",ha="center",fontsize=MIN_FONT,color=GRAY)
-    fig.text(.16,.985,"Matched 2D interfaces · initialization sensitivity",fontsize=MIN_FONT,color=GRAY,va="top")
+               loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.015),fontsize=MIN_FONT,columnspacing=1.1,handletextpad=.45)
+
+
     save(fig,"figure6_stability")
 
 
@@ -516,7 +555,7 @@ def main():
               "row_convention":"CSV data records numbered from 1; header excluded; source line is record + 1",
               "sources":SOURCES,"figure_checks":QA,"font":arial,
               "analysis_policy":"Saved summary tables only. No experimental reruns, new cell-level calculations, statistical tests, or new correlations.",
-              "export_policy":{"vector":"PDF with embedded TrueType fonts","raster":"PNG at 600 dpi","width_mm":WIDTH*25.4,"minimum_native_text_pt":MIN_FONT,"intended_print_width_inches":6.35},
+              "export_policy":{"vector":"PDF with embedded TrueType fonts; editable SVG with live Arial text","raster":"PNG at 600 dpi","width_mm":WIDTH*25.4,"minimum_native_text_pt":MIN_FONT,"intended_print_width_inches":6.35},
               "display_aggregations":["Figure 1 sum of distinct cohort counts and row counts of retained conditions/runs.",
                   "Composition fractions multiplied by 100. Figure 3a Other frozen labels is the exact 100% complement of the original three labels, traced in a separate five-row display ledger.",
                   "Figure 3d median of three already saved condition-level value-percentile medians.",

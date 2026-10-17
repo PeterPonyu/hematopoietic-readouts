@@ -1,6 +1,6 @@
 {
   "title": "Hematopoietic readouts: scientific code and aggregate source tables",
-  "description": "<p>Manuscript-specific software for <em>Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets</em>.</p><p>Original display and retained-artifact scientific replay utilities, aggregate source tables, numerical display references and upstream notices are included. Per-cell identifiers, count matrices, model outputs and fitted encoder artifacts are supplied separately as Supplementary Code 1 and Supplementary Data 1–8. Aggregate display reproduction, retained-artifact replay and full raw-data/model retraining have distinct boundaries. This release does not establish raw preparation, full model retraining or independent biological validation.</p><p>MIT terms apply to original software and its software documentation. Aggregate tables, source datasets and upstream code retain their own terms and attribution; see LICENSE, NOTICE.md and DATA_SOURCES.md.</p><p>Sole author: Zeyu Fu; ORCID 0009-0001-8329-0108. Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.</p>",
+  "description": "<p>Manuscript-specific software for <em>Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets</em>.</p><p>Original display and retained-artifact scientific replay utilities, aggregate source tables, numerical display references and upstream notices are included. Per-cell identifiers, count matrices, model outputs and fitted encoder artifacts are supplied separately as Supplementary Code 1 and Supplementary Data 1\u20138. Aggregate display reproduction, retained-artifact replay and full raw-data/model retraining have distinct boundaries. This release does not establish raw preparation, full model retraining or independent biological validation.</p><p>MIT terms apply to original software and its software documentation. Aggregate tables, source datasets and upstream code retain their own terms and attribution; see LICENSE, NOTICE.md and DATA_SOURCES.md.</p><p>Sole author: Zeyu Fu; ORCID 0009-0001-8329-0108. Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.</p><p>Software edition 1.0.1 updates figure presentation and adds editable SVG export for six main and two supplementary displays. Scientific inputs, aggregate numerical results and the 378-value main, 376-value supplementary and five-value Figure 3 context ledgers are unchanged. This edition is prepared for release and has no assigned archive DOI. The previously published software version 1.0.0 is archived at DOI 10.5281/zenodo.23435592.</p>",
   "upload_type": "software",
   "creators": [
     {
@@ -18,10 +18,10 @@
     "scientific reproducibility"
   ],
   "language": "eng",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "related_identifiers": [
     {
-      "identifier": "https://github.com/PeterPonyu/hematopoietic-readouts/tree/v1.0.0",
+      "identifier": "https://github.com/PeterPonyu/hematopoietic-readouts",
       "relation": "isSupplementTo",
       "scheme": "url"
     }

@@ -7,8 +7,8 @@
     {
       "source_path": "scripts/build_figures.py",
       "release_path": "scripts/build_figures.py",
-      "source_sha256": "f1f6d38eda5d16963b585bbc0e9f7befe88d7dfb43e73bd17fafe550c34f1be8",
-      "released_sha256": "13d48b676d59e273396fe087370b27df428324d6fc01011eab042a2021cc87d6",
+      "source_sha256": "b14c58994c383044f6cecf75eff602f3085ccfde38aaaeb3a6f321b878771592",
+      "released_sha256": "5344e01424c09e58e8e0c26c7ec13595d5f9dbfe05a8879a304b6ed26750254d",
       "transformation": "release-local paths and scientific metadata only; formulas unchanged"
     },
     {
@@ -28,8 +28,8 @@
     {
       "source_path": "scripts/build_interpretation_assets.py",
       "release_path": "scripts/build_interpretation_assets.py",
-      "source_sha256": "3dc79f0e06f88c3a7a6da0cd560c9027a8333daac2ff5a416a4a0847dcf6746d",
-      "released_sha256": "c81988e6be43d600c21631d4136462b9dd569a5719242ef6700b4aeaaee4fb24",
+      "source_sha256": "a39ec04626fcb8e2bdb1ff293174f4e2dde5939f0a049121ade9866a7b00d19d",
+      "released_sha256": "a39ec04626fcb8e2bdb1ff293174f4e2dde5939f0a049121ade9866a7b00d19d",
       "transformation": "release-local paths and scientific metadata only; formulas unchanged"
     },
     {
@@ -105,8 +105,8 @@
     {
       "source_path": "analysis_replay/figure_calculations.py",
       "release_path": "analysis_replay/figure_calculations.py",
-      "source_sha256": "fd9361cff7d4fa87b1254413f8f94aabcb3a32fa4610577b8b82c3a546866d8a",
-      "released_sha256": "4e2d6734e1c9dc2ad75901a001414a71793e8f721b3e1194f4c10f6c892f03bf",
+      "source_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
+      "released_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
       "transformation": "release-local paths and scientific metadata only; formulas unchanged"
     },
     {
@@ -1141,8 +1141,8 @@
     {
       "source_path": "analysis_replay/calculation_ports.json",
       "release_path": "analysis_replay/calculation_ports.json",
-      "source_sha256": "8796287af78fde887867274019675f1d3a31a8b9eeda27125364d6fb692a1daf",
-      "released_sha256": "8a26d96386f9bf60d5dcdf2cc47095b8512d0fbc5ff8c444b6d086e259ff9d3d",
+      "source_sha256": "4b08e83de3f39e966ea88f46939f20851ce46628d6ee3434b348ee8eff262a4d",
+      "released_sha256": "4a4c91ce93ca86853a51714a02d30030f6d9963fc9f06d1128d8878132587f8d",
       "transformation": "retain historical source attribution; record released utility hashes separately"
     }
   ]

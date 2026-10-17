@@ -25,8 +25,8 @@ E = P/'evidence'
 F = P/'figures'
 SOURCES, LEDGER, QA = {}, [], []
 WIDTH = 6.35
-MIN_FONT = 9.5
-BLUE, ORANGE, GRAY, INK = '#17689A', '#C6602A', '#657480', '#203440'
+MIN_FONT = 10
+BLUE, ORANGE, GRAY, INK = '#17689A', '#C6602A', '#707070', '#000000'
 TASKS = [('ucb', 'megakaryocyte', 'TPO Mk'), ('dapp1', 'erythroid', 'Dapp1 Ery'),
          ('dapp1', 'myeloid', 'Dapp1 My'), ('sleep', 'myeloid', 'Sleep My')]
 
@@ -59,10 +59,11 @@ def value(name, data, column, mark, transform='identity'):
 
 
 def panel(ax, letter, title):
-    ax.set_title(title, loc='left', pad=15, fontsize=10.5, fontweight='bold')
-    ax.annotate(letter.lower(), (0, 1), xycoords='axes fraction', xytext=(-16, 15),
-                textcoords='offset points', ha='right', va='bottom', fontsize=12.5,
-                fontweight='bold', annotation_clip=False)
+    ax.set_title(title, loc='center', pad=10, fontsize=10.5, fontweight='normal')
+    label = ax.figure.text(0, 0, letter.lower(), ha='right', va='top',
+                           fontsize=13, fontweight='bold', color=INK,
+                           gid='panel-letter-'+letter.lower())
+    label._panel_axis = ax
 
 
 
@@ -70,6 +71,16 @@ def save(fig, name):
     text_objects=[obj for obj in fig.findobj(matplotlib.text.Text) if obj.get_visible() and obj.get_text()]
     for obj in text_objects:
         obj.set_fontsize(max(MIN_FONT,obj.get_fontsize()))
+        obj.set_color(INK)
+        obj.set_fontweight('bold' if (obj.get_gid() or '').startswith('panel-letter-') else 'normal')
+    fig.canvas.draw()
+    renderer=fig.canvas.get_renderer()
+    for obj in text_objects:
+        if (obj.get_gid() or '').startswith('panel-letter-'):
+            ax = obj._panel_axis
+            title_box = ax.title.get_window_extent(renderer)
+            obj.set_position((ax.get_position().x0 - 12 / 72 / fig.get_figwidth(),
+                              title_box.y1 / fig.bbox.height))
     fig.canvas.draw()
     renderer=fig.canvas.get_renderer();width,height=fig.canvas.get_width_height()
     clipped=[]
@@ -77,15 +88,27 @@ def save(fig, name):
         box=item.get_window_extent(renderer)
         if box.width and box.height and (box.x0 < -1 or box.y0 < -1 or box.x1 > width+1 or box.y1 > height+1):
             clipped.append(item.get_text())
+    overlaps=[]
+    for i,item in enumerate(text_objects):
+        a=item.get_window_extent(renderer)
+        for other in text_objects[i+1:]:
+            b=other.get_window_extent(renderer)
+            if min(a.x1,b.x1)-max(a.x0,b.x0) > .5 and min(a.y1,b.y1)-max(a.y0,b.y0) > .5:
+                overlaps.append([item.get_text(),other.get_text()])
     QA.append({'figure':name,'width_inches':fig.get_figwidth(),'height_inches':fig.get_figheight(),
                'width_mm':fig.get_figwidth()*25.4,'height_mm':fig.get_figheight()*25.4,
                'min_text_pt':min(obj.get_fontsize() for obj in text_objects),
                'font_sizes_pt':sorted(set(obj.get_fontsize() for obj in text_objects)),
+               'text_colors':sorted(set(obj.get_color() for obj in text_objects)),
+               'bold_text':[obj.get_text() for obj in text_objects if obj.get_fontweight() == 'bold'],
+               'overlapping_text':overlaps,
                'out_of_canvas_text':clipped})
     assert not clipped,(name,clipped)
+    assert not overlaps,(name,overlaps)
     F.mkdir(exist_ok=True)
     fig.savefig(F/(name+'.pdf'),metadata={'CreationDate':None,'ModDate':None})
     fig.savefig(F/(name+'.png'),dpi=600)
+    fig.savefig(F/(name+'.svg'),metadata={'Date':None})
     plt.close(fig)
 
 
@@ -93,34 +116,34 @@ def supplementary_figure():
     group=load('s14_group_contrasts')
     composition=load('s15_tpo_cluster_composition')
     annotation=load('s17_annotation_diagnostics')
-    fig=plt.figure(figsize=(WIDTH,8.85))
-    gs=fig.add_gridspec(2,6,left=.10,right=.915,top=.90,bottom=.13,
-                         height_ratios=[1.18,1],hspace=.28,wspace=1.35)
+    fig=plt.figure(figsize=(WIDTH,7.6))
+    top = fig.add_gridspec(1,3,left=.085,right=.975,top=.935,bottom=.535,wspace=.24)
+    bottom = fig.add_gridspec(1,2,left=.085,right=.88,top=.43,bottom=.105,
+                              width_ratios=[.98,1],wspace=.36)
     for col,(cohort,program,title) in enumerate([
         ('dapp1','program_neutrophil','Dapp1 granulocytic'),
         ('dapp1','program_cycling','Dapp1 cycling'),
         ('sleep','program_neutrophil','Sleep granulocytic')]):
-        ax=fig.add_subplot(gs[0,2*col:2*col+2])
+        ax=fig.add_subplot(top[0,col])
         selected=group[(group.cohort==cohort)&(group.program==program)].sort_values('cluster')
         assert len(selected)==(19 if cohort=='sleep' else 11)
         for y,(i,row) in enumerate(selected.iterrows()):
             d=selected.loc[[i]]
             x=value('s14_group_contrasts',d,'mean_difference_b_minus_a',f'S1{col}:cluster{row.cluster}:contrast')
             w=value('s14_group_contrasts',d,'pooled_weight',f'S1{col}:cluster{row.cluster}:weight')
-            ax.axhspan(y-.43,y+.43,color='#F3F6F8' if y%2==0 else 'white',zorder=0)
-            ax.plot([0,x],[y,y],color='#CCD6DD',lw=1,zorder=1)
+            ax.axhspan(y-.43,y+.43,color='#F5F5F5' if y%2==0 else 'white',zorder=0)
+            ax.plot([0,x],[y,y],color='#CCCCCC',lw=1,zorder=1)
             ax.scatter(x,y,s=18+200*w,color=BLUE if x<0 else ORANGE,edgecolor='white',linewidth=.4,zorder=3)
         ax.set_yticks(range(len(selected)),selected.cluster.astype(str))
         ax.set_ylim(len(selected)-.45,-.55);ax.axvline(0,color=GRAY,ls='--',lw=.7)
-        ax.set_xlabel('Program difference');ax.set_ylabel('Cluster',labelpad=2)
-        ax.grid(axis='x',color='#E6EBEF',lw=.6);ax.set_axisbelow(True)
+        ax.set_xlabel('Program difference');ax.set_ylabel('Cluster' if col == 0 else '',labelpad=2)
+        ax.grid(axis='x',color='#E8E8E8',lw=.6);ax.set_axisbelow(True)
         limits=[(-.58,.03),(-.25,.38),(-.055,.16)][col]
         ticks=[[-.5,-.25,0],[-.2,0,.2],[-.05,0,.1]][col]
         ticklabels=[["−0.50","−0.25","0"],["−0.2","0","0.2"],["−0.05","0","0.10"]][col]
         ax.set_xlim(*limits);ax.set_xticks(ticks,ticklabels)
-        panel(ax,'ABC'[col],title.replace(' ','\n',1))
-        ax.text(0,1.012,'SD − CT' if cohort=='sleep' else 'KO − WT',transform=ax.transAxes,fontsize=MIN_FONT,color=GRAY)
-    ax=fig.add_subplot(gs[1,:3]);composition=composition.sort_values('cluster');counts=[]
+        panel(ax,'ABC'[col],title+'\n'+('SD − CT' if cohort=='sleep' else 'KO − WT'))
+    ax=fig.add_subplot(bottom[0,0]);composition=composition.sort_values('cluster');counts=[]
     for i,row in composition.iterrows():
         counts.append(value('s15_tpo_cluster_composition',composition.loc[[i]],'n_D0',f'S1D:cluster{row.cluster}:n'))
     colors=[ORANGE if int(x)==5 else BLUE for x in composition.cluster]
@@ -128,29 +151,36 @@ def supplementary_figure():
     ax.set_yticks(range(len(composition)),composition.cluster.astype(str))
     ax.set_ylim(len(composition)-.4,-.6);ax.set_xlim(0,3450);ax.set_xticks([0,1000,2000,3000],['0','1,000','2,000','3,000'])
     for y,(cluster,n) in enumerate(zip(composition.cluster,counts)):
-        if n>0:ax.text(n+45,y,f'{int(n):,}',va='center',fontsize=MIN_FONT,color=ORANGE if cluster==5 else INK)
+        if int(cluster) == 5:
+            ax.scatter(n,y,s=16,color=ORANGE,edgecolors='none',zorder=3,clip_on=False)
+        if n>0:ax.text(n+(70 if int(cluster) == 5 else 45),y,f'{int(n):,}',va='center',fontsize=MIN_FONT,color=INK)
     ax.set_xlabel('Retained cells at D0');ax.set_ylabel('Cluster',labelpad=2)
-    ax.grid(axis='x',color='#E6EBEF',lw=.6);ax.set_axisbelow(True)
+    ax.grid(axis='x',color='#E8E8E8',lw=.6);ax.set_axisbelow(True)
     panel(ax,'D','TPO: full D0 composition')
-    ax=fig.add_subplot(gs[1,3:]);scopes=['pooled','D0','D4','D7','D11','D14'];programs=['primitive','neutrophil','dendritic'];data=[];labels=[]
+    ax=fig.add_subplot(bottom[0,1]);scopes=['pooled','D0','D4','D7','D11','D14'];programs=['primitive','neutrophil','dendritic'];data=[];labels=[]
     for scope in scopes:
         selected=annotation[(annotation.cohort=='ucb')&(annotation.scope==scope)]
         assert len(selected)==1
         data.append([value('s17_annotation_diagnostics',selected,'program_'+program,f'S1E:{scope}:{program}') for program in programs])
         labels.append('Pooled' if scope=='pooled' else scope)
-    matrix=np.asarray(data);im=ax.imshow(matrix,cmap='RdBu_r',vmin=-1.1,vmax=1.1,aspect='auto')
+    score_colors = matplotlib.colors.LinearSegmentedColormap.from_list(
+        'score_with_black_text', plt.get_cmap('RdBu_r')(np.linspace(.20,.80,256)))
+    matrix=np.asarray(data)
+    im=ax.pcolormesh(range(3),range(6),matrix,cmap=score_colors,vmin=-1.1,vmax=1.1,
+                     shading='nearest',edgecolors='none',rasterized=False)
+    ax.set_xlim(-.5,2.5);ax.set_ylim(5.5,-.5)
     ax.set_yticks(range(6),labels)
-    ax.set_xticks(range(3),['Primitive','Granulocytic','Dendritic'],rotation=35,ha='right')
+    ax.set_xticks(range(3),['Primitive','Granulocytic','Dendritic'],rotation=35,ha='right',rotation_mode='anchor')
     for y in range(6):
         for x in range(3):
-            ax.text(x,y,f'{matrix[y,x]:.2f}',ha='center',va='center',fontsize=10,color='white' if abs(matrix[y,x])>.68 else INK)
+            ax.text(x,y,f'{matrix[y,x]:.2f}',ha='center',va='center',fontsize=MIN_FONT,color=INK)
     panel(ax,'E','Cluster 5: program scores')
-    colorbar=fig.colorbar(im,ax=ax,shrink=.9,pad=.03,fraction=.055,ticks=[-1,0,1])
+    colorbar_ax=fig.add_axes([.90,.105,.018,.325])
+    colorbar=fig.colorbar(im,cax=colorbar_ax,ticks=[-1,0,1])
+    colorbar.solids.set_rasterized(False)
+    colorbar.solids.set_edgecolor('face')
     colorbar.set_label('Mean program score',fontsize=MIN_FONT)
     colorbar.ax.tick_params(labelsize=MIN_FONT)
-    fig.text(.10,.985,'Group contrasts and annotation diagnostics',color=GRAY,fontsize=MIN_FONT,va='top')
-    fig.text(.10,.044,'a–c: all eligible clusters; area = pooled weight. d: all 16 D0 clusters.',fontsize=MIN_FONT,color=GRAY)
-    fig.text(.10,.016,'Orange = cluster 5 (D0 n = 17). e: competing scores; full scores in S15–S17.',fontsize=MIN_FONT,color=GRAY)
     save(fig,'supplementary_figure1_diagnostics')
 
 
@@ -218,8 +248,8 @@ The task labels identify frozen program-defined endpoint sets. Dapp1 Ery has 87 
 
 def reward_comparison():
     saved = load('s08_all_reward_associations')
-    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 4.65))
-    fig.subplots_adjust(left=.15, right=.98, top=.83, bottom=.32, wspace=.32)
+    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 3.45))
+    fig.subplots_adjust(left=.155, right=.98, top=.86, bottom=.275, wspace=.22)
     records, tex_rows = [], []
     colors = {'PCA': BLUE, 'LiVAE': '#8856A7'}
     rewards = [('decision', 'Decision'), ('neutral', 'No-time'), ('contribution', 'Contribution')]
@@ -227,7 +257,7 @@ def reward_comparison():
         ax = axes[k]
         for y, (cohort, lineage, label) in enumerate(TASKS):
             if y % 2 == 0:
-                ax.axhspan(y-.44, y+.44, color='#F3F6F8', zorder=0)
+                ax.axhspan(y-.44, y+.44, color='#F5F5F5', zorder=0)
             for arm, offset in [('PCA', -.19), ('LiVAE', .19)]:
                 selected = saved[(saved.cohort == cohort) & (saved.lineage == lineage) &
                                  (saved.arm == arm) & (saved.reward == reward) & (saved.population == 'all')].sort_values('seed')
@@ -258,15 +288,18 @@ def reward_comparison():
         ax.set_yticks(range(4), [x[2] for x in TASKS] if k == 0 else ['']*4)
         ax.set_ylim(3.55, -.55); ax.set_xlim(-1.03, 1.03); ax.set_xticks([-1, 0, 1])
         ax.axvline(0, color=GRAY, ls='--', lw=.7); ax.set_xlabel('Spearman ρ', fontsize=MIN_FONT)
-        ax.grid(axis='x', color='#E6EBEF', lw=.6); ax.set_axisbelow(True)
+        ax.grid(axis='x', color='#E8E8E8', lw=.6); ax.set_axisbelow(True)
         panel(ax, 'ABC'[k], reward_label)
     from matplotlib.lines import Line2D
     fig.legend(handles=[Line2D([], [], color=colors[a], marker='o', ls='', label='Revised LiVAE' if a == 'LiVAE' else a)
-                        for a in ['PCA', 'LiVAE']], loc='lower center', ncol=2, frameon=False, bbox_to_anchor=(.55, .175), fontsize=MIN_FONT)
-    fig.text(.15, .985, 'Matched interfaces · every retained reward · all cells', fontsize=MIN_FONT, color=GRAY, va='top')
-    fig.text(.55,.132,'Circle / square / triangle: seeds 0 / 1 / 2. Open diamond: proximity.',ha='center',fontsize=MIN_FONT,color=GRAY)
-    fig.text(.55,.086,'Segments span three seeds; they are not biological intervals.',ha='center',fontsize=MIN_FONT,color=GRAY)
-    fig.text(.55,.035,'TPO LiVAE Contribution associations change sign across seeds.',ha='center',fontsize=MIN_FONT,color=GRAY)
+                        for a in ['PCA', 'LiVAE']], loc='lower center', ncol=2, frameon=False,
+               bbox_to_anchor=(.565, .075), fontsize=MIN_FONT, handletextpad=.5,
+               borderaxespad=0, columnspacing=1.5)
+    fig.legend(handles=[Line2D([], [], color=INK, marker=marker, ls='', markersize=4.5,
+                               markerfacecolor='white' if marker == 'D' else INK, label=label)
+                        for marker,label in [('o','Seed 0'),('s','Seed 1'),('^','Seed 2'),('D','Proximity')]],
+               loc='lower center', ncol=4, frameon=False, bbox_to_anchor=(.565, .005),
+               fontsize=MIN_FONT, handletextpad=.4, columnspacing=1, borderaxespad=0)
     save(fig,'supplementary_figure2_rewards')
     with (T/'s19_reward_evidence.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(records[0])); writer.writeheader(); writer.writerows(records)
@@ -305,7 +338,7 @@ def flowing_evidence_table(text):
 def main():
     font_manager.findfont('Arial', fallback_to_default=False)
     plt.rcParams.update({'font.family': 'Arial', 'font.size': MIN_FONT, 'axes.labelsize': MIN_FONT, 'xtick.labelsize': MIN_FONT, 'ytick.labelsize': MIN_FONT, 'legend.fontsize': MIN_FONT, 'axes.spines.top': False,
-                         'axes.spines.right': False, 'axes.linewidth': .6, 'pdf.fonttype': 42,
+                         'axes.spines.right': False, 'axes.linewidth': .6, 'pdf.fonttype': 42, 'svg.fonttype': 'none', 'svg.hashsalt': 'hematopoietic-readouts',
                          'text.color': INK, 'axes.labelcolor': INK, 'xtick.color': INK, 'ytick.color': INK})
     E.mkdir(exist_ok=True)
     supplementary_figure(); task_table(); reward_comparison()
@@ -314,7 +347,7 @@ def main():
         file.write_text(flowing_evidence_table(file.read_text()))
     with (E/'interpretation_display_values.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(LEDGER[0])); writer.writeheader(); writer.writerows(LEDGER)
-    outputs = ['figures/'+name+'.'+ext for name in ['supplementary_figure1_diagnostics', 'supplementary_figure2_rewards'] for ext in ['pdf', 'png']]
+    outputs = ['figures/'+name+'.'+ext for name in ['supplementary_figure1_diagnostics', 'supplementary_figure2_rewards'] for ext in ['pdf', 'png', 'svg']]
     outputs += ['supplement_tables/'+name+'.'+ext for name in ['s18_task_evidence', 's19_reward_evidence'] for ext in ['csv', 'tex']]
     outputs += ['evidence/interpretation_display_values.csv']
     manifest = {'scope': 'Display assembly from saved supplementary CSVs; no new scientific fits or scores',
