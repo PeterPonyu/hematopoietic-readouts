@@ -1,0 +1,1656 @@
+{
+  "scope": "Aggregate inputs for the existing table formatter; no per-cell identifiers or full execution records",
+  "records": {
+    "results/application_reanalysis_20260921/ucb/protocol.json": {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "n_input": 50109,
+      "n_cells": 39911,
+      "n_genes": 30869,
+      "conditions": {
+        "D14": 9953,
+        "D4": 8354,
+        "D11": 8171,
+        "D7": 7978,
+        "D0": 5455
+      },
+      "root": "primitive",
+      "starts": [
+        "primitive"
+      ],
+      "ends": {
+        "megakaryocyte": [
+          "megakaryocyte"
+        ]
+      },
+      "program_genes": {
+        "primitive": [
+          "HLF",
+          "MECOM",
+          "MLLT3",
+          "PROCR",
+          "HOXA9",
+          "GATA2"
+        ],
+        "erythroid": [
+          "KLF1",
+          "GATA1",
+          "ALAS2",
+          "GYPA",
+          "SLC4A1",
+          "TFRC"
+        ],
+        "megakaryocyte": [
+          "PF4",
+          "PPBP",
+          "ITGA2B",
+          "GP9",
+          "GP1BB",
+          "FLI1"
+        ],
+        "neutrophil": [
+          "MPO",
+          "ELANE",
+          "CTSG",
+          "CEBPE",
+          "S100A8",
+          "S100A9"
+        ],
+        "monocyte": [
+          "CSF1R",
+          "CTSS",
+          "TYROBP",
+          "IRF8"
+        ],
+        "lymphoid": [
+          "DNTT",
+          "IL7R",
+          "EBF1",
+          "CD79A",
+          "VPREB1",
+          "RAG1"
+        ],
+        "interferon": [
+          "ISG15",
+          "IFIT1",
+          "IFIT3",
+          "IRF7",
+          "STAT1",
+          "MX1"
+        ],
+        "inflammatory": [
+          "IL1B",
+          "TNF",
+          "NFKBIA",
+          "CXCL2",
+          "S100A8",
+          "S100A9"
+        ],
+        "cycling": [
+          "MKI67",
+          "TOP2A",
+          "PCNA",
+          "CDK1",
+          "CCNB1",
+          "UBE2C"
+        ],
+        "t_cell": [
+          "CD3D",
+          "CD3E",
+          "CD3G",
+          "TRAC",
+          "LCK"
+        ],
+        "b_cell": [
+          "CD79A",
+          "CD79B",
+          "MS4A1",
+          "CD19",
+          "PAX5"
+        ],
+        "nk_cell": [
+          "NKG7",
+          "NCR1",
+          "PRF1",
+          "GZMA"
+        ],
+        "dendritic": [
+          "FLT3",
+          "CLEC9A",
+          "TCF4",
+          "ITGAX"
+        ],
+        "stromal": [
+          "COL1A1",
+          "COL1A2",
+          "LEPR",
+          "CXCL12",
+          "DCN"
+        ],
+        "mast": [
+          "CPA3",
+          "MS4A2",
+          "TPSB2",
+          "CMA1"
+        ]
+      },
+      "program_annotation_is_provisional": true
+    },
+    "results/application_reanalysis_20260921/dapp1/protocol.json": {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "n_input": 10224,
+      "n_cells": 10224,
+      "n_genes": 15695,
+      "conditions": {
+        "wt": 6236,
+        "ko": 3988
+      },
+      "root": "primitive",
+      "starts": [
+        "primitive"
+      ],
+      "ends": {
+        "erythroid": [
+          "erythroid"
+        ],
+        "myeloid": [
+          "neutrophil",
+          "monocyte"
+        ]
+      },
+      "program_genes": {
+        "primitive": [
+          "Hlf",
+          "Mecom",
+          "Mllt3",
+          "Procr",
+          "Hoxa9",
+          "Gata2"
+        ],
+        "erythroid": [
+          "Klf1",
+          "Gata1",
+          "Alas2",
+          "Gypa",
+          "Tfrc"
+        ],
+        "megakaryocyte": [
+          "Pf4",
+          "Ppbp",
+          "Itga2b",
+          "Gp9",
+          "Gp1bb",
+          "Fli1"
+        ],
+        "neutrophil": [
+          "Mpo",
+          "Elane",
+          "Ctsg",
+          "Cebpe",
+          "S100a8",
+          "S100a9"
+        ],
+        "monocyte": [
+          "Lyz2",
+          "Csf1r",
+          "Fcgr3",
+          "Ctss",
+          "Tyrobp",
+          "Irf8"
+        ],
+        "lymphoid": [
+          "Dntt",
+          "Il7r",
+          "Ebf1",
+          "Cd79a",
+          "Vpreb1"
+        ],
+        "interferon": [
+          "Isg15",
+          "Ifit1",
+          "Ifit3",
+          "Irf7",
+          "Stat1"
+        ],
+        "inflammatory": [
+          "Tnf",
+          "Nfkbia",
+          "Cxcl2",
+          "S100a8",
+          "S100a9"
+        ],
+        "cycling": [
+          "Mki67",
+          "Top2a",
+          "Pcna",
+          "Cdk1",
+          "Ccnb1",
+          "Ube2c"
+        ],
+        "t_cell": [
+          "Cd3d",
+          "Cd3g",
+          "Trac",
+          "Lck"
+        ],
+        "b_cell": [
+          "Cd79a",
+          "Cd79b",
+          "Cd19",
+          "Pax5"
+        ],
+        "nk_cell": [
+          "Nkg7",
+          "Ncr1",
+          "Klrb1c",
+          "Prf1",
+          "Gzma"
+        ],
+        "dendritic": [
+          "Flt3",
+          "Clec9a",
+          "Siglech",
+          "Tcf4",
+          "Itgax"
+        ],
+        "stromal": [
+          "Col1a2",
+          "Cxcl12"
+        ],
+        "mast": [
+          "Cpa3",
+          "Ms4a2"
+        ]
+      },
+      "program_annotation_is_provisional": true
+    },
+    "results/application_reanalysis_20260921/sleep/protocol.json": {
+      "cohort": "sleep",
+      "accession": "GSE280145",
+      "n_input": 30294,
+      "n_cells": 29127,
+      "n_genes": 21438,
+      "conditions": {
+        "CT": 15008,
+        "SD": 14119
+      },
+      "root": "primitive",
+      "starts": [
+        "primitive"
+      ],
+      "ends": {
+        "myeloid": [
+          "neutrophil",
+          "monocyte"
+        ]
+      },
+      "program_genes": {
+        "primitive": [
+          "Hlf",
+          "Mecom",
+          "Mllt3",
+          "Procr",
+          "Hoxa9",
+          "Gata2"
+        ],
+        "erythroid": [
+          "Klf1",
+          "Gata1",
+          "Alas2",
+          "Gypa",
+          "Slc4a1",
+          "Tfrc"
+        ],
+        "megakaryocyte": [
+          "Pf4",
+          "Ppbp",
+          "Itga2b",
+          "Gp9",
+          "Gp1bb",
+          "Fli1"
+        ],
+        "neutrophil": [
+          "Mpo",
+          "Elane",
+          "Ctsg",
+          "Cebpe",
+          "S100a8",
+          "S100a9"
+        ],
+        "monocyte": [
+          "Lyz2",
+          "Csf1r",
+          "Fcgr3",
+          "Ctss",
+          "Tyrobp",
+          "Irf8"
+        ],
+        "lymphoid": [
+          "Dntt",
+          "Il7r",
+          "Ebf1",
+          "Cd79a",
+          "Vpreb1",
+          "Rag1"
+        ],
+        "interferon": [
+          "Isg15",
+          "Ifit1",
+          "Ifit3",
+          "Irf7",
+          "Stat1"
+        ],
+        "inflammatory": [
+          "Il1b",
+          "Tnf",
+          "Nfkbia",
+          "Cxcl2",
+          "S100a8",
+          "S100a9"
+        ],
+        "cycling": [
+          "Mki67",
+          "Top2a",
+          "Pcna",
+          "Cdk1",
+          "Ccnb1",
+          "Ube2c"
+        ],
+        "t_cell": [
+          "Cd3d",
+          "Cd3e",
+          "Cd3g",
+          "Trac",
+          "Lck"
+        ],
+        "b_cell": [
+          "Cd79a",
+          "Cd79b",
+          "Ms4a1",
+          "Cd19",
+          "Pax5"
+        ],
+        "nk_cell": [
+          "Nkg7",
+          "Ncr1",
+          "Klrb1c",
+          "Prf1",
+          "Gzma"
+        ],
+        "dendritic": [
+          "Flt3",
+          "Clec9a",
+          "Siglech",
+          "Tcf4",
+          "Itgax"
+        ],
+        "stromal": [
+          "Col1a1",
+          "Col1a2",
+          "Lepr",
+          "Cxcl12",
+          "Dcn"
+        ],
+        "mast": [
+          "Cpa3",
+          "Ms4a2",
+          "Cma1"
+        ]
+      },
+      "program_annotation_is_provisional": true
+    },
+    "results/application_reanalysis_20260921/marrow/protocol.json": {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "n_input": 6011,
+      "n_cells": 6011,
+      "n_genes": 20750,
+      "conditions": {
+        "CMP": 1576,
+        "HSC": 1282,
+        "MEP": 1211,
+        "GMP": 1012,
+        "PreBNK": 592,
+        "MPP": 215,
+        "MLP": 123
+      },
+      "root": "HSC",
+      "starts": [
+        "HSC"
+      ],
+      "ends": {
+        "erythroid": [
+          "MEP"
+        ],
+        "myeloid": [
+          "GMP"
+        ]
+      },
+      "program_genes": {
+        "primitive": [
+          "HLF",
+          "MECOM",
+          "MLLT3",
+          "PROCR",
+          "HOXA9",
+          "GATA2"
+        ],
+        "erythroid": [
+          "KLF1",
+          "GATA1",
+          "ALAS2",
+          "GYPA",
+          "SLC4A1",
+          "TFRC"
+        ],
+        "megakaryocyte": [
+          "PF4",
+          "PPBP",
+          "ITGA2B",
+          "GP9",
+          "GP1BB",
+          "FLI1"
+        ],
+        "neutrophil": [
+          "MPO",
+          "ELANE",
+          "CTSG",
+          "CEBPE",
+          "S100A8",
+          "S100A9"
+        ],
+        "monocyte": [
+          "CSF1R",
+          "CTSS",
+          "TYROBP",
+          "IRF8"
+        ],
+        "lymphoid": [
+          "DNTT",
+          "IL7R",
+          "EBF1",
+          "CD79A",
+          "VPREB1",
+          "RAG1"
+        ],
+        "interferon": [
+          "ISG15",
+          "IFIT1",
+          "IFIT3",
+          "IRF7",
+          "STAT1",
+          "MX1"
+        ],
+        "inflammatory": [
+          "IL1B",
+          "TNF",
+          "NFKBIA",
+          "CXCL2",
+          "S100A8",
+          "S100A9"
+        ],
+        "cycling": [
+          "MKI67",
+          "TOP2A",
+          "PCNA",
+          "CDK1",
+          "CCNB1",
+          "UBE2C"
+        ]
+      },
+      "program_annotation_is_provisional": false
+    },
+    "results/recovered_integration_20261001/native_representation/ucb/receipt.json": {
+      "training_cells": 35920,
+      "optimization_validation_cells": 3991,
+      "actual_epochs": 200,
+      "best_epoch": 198,
+      "initial_validation_loss": 3939.648462855627,
+      "best_validation_loss": 1393.5120260802532,
+      "relative_optimization_loss_reduction": 0.6462851852852436,
+      "mean_15NN_overlap_with_frozen_PCA": 0.16099320989200971,
+      "median_15NN_overlap_with_frozen_PCA": 0.13333333333333333
+    },
+    "results/recovered_integration_20261001/native_representation/dapp1/receipt.json": {
+      "training_cells": 9202,
+      "optimization_validation_cells": 1022,
+      "actual_epochs": 200,
+      "best_epoch": 199,
+      "initial_validation_loss": 7282.751913647888,
+      "best_validation_loss": 3155.5256581106514,
+      "relative_optimization_loss_reduction": 0.5667124604097536,
+      "mean_15NN_overlap_with_frozen_PCA": 0.30822248304642674,
+      "median_15NN_overlap_with_frozen_PCA": 0.26666666666666666
+    },
+    "results/recovered_integration_20261001/native_representation/sleep/receipt.json": {
+      "training_cells": 26215,
+      "optimization_validation_cells": 2912,
+      "actual_epochs": 200,
+      "best_epoch": 198,
+      "initial_validation_loss": 2365.8231403044138,
+      "best_validation_loss": 880.0893339897125,
+      "relative_optimization_loss_reduction": 0.6279986787700157,
+      "mean_15NN_overlap_with_frozen_PCA": 0.14607294491937609,
+      "median_15NN_overlap_with_frozen_PCA": 0.13333333333333333
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/ucb/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/ucb/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/ucb/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        800
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/dapp1/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/dapp1/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/dapp1/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/sleep/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/sleep/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/PCA/sleep/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/ucb/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/ucb/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/ucb/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        800,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/dapp1/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/dapp1/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/dapp1/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/sleep/scfocus_seed0/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/sleep/scfocus_seed1/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    },
+    "results/recovered_integration_20261001/paired_downstream/LiVAE/sleep/scfocus_seed2/receipt.json": {
+      "actual_episodes": [
+        700,
+        700,
+        700
+      ]
+    }
+  },
+  "matched_run_inventory": [
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed0_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "ad370d7dffd8dbbe0e56e0f5649cfc49b475a0d6ddc04822d477c543a3fcfbe4"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed0_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "c37c30f51594248e0fc4dd6f84472c13f0b905a055e0405e71b293fb3a5f0bcf"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed0_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "8e678be9899c4aa42ba242846885447f0be246310d46a981401952a389a36638"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed1_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "209987d861cc7baedf31774bc816cff5057323b31f9fdb20d46851bffac5546f"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed1_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "3deabb657453b094154bc27db326e5433db7644a1232817b7463d35888cbf419"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed1_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "0ed003d8736a7a640c7f7a92a55d5955744331084afa009866dc525c53a577f1"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed2_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "f1c67d32d1b01a81fcb75a82c3ba198de6a65f94c7b863b20ef3bc76377e2470"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed2_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "0be160cfa47230b95d25d98e903838af0443cdc5c0c87e7b1f0735ab6c7bec71"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scRL_seed2_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "06871aaf29a150c8e7ac9084db90b6e20369317cc76dc6d73b3e2aa06878f303"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "8e50893cb1bee4e47f06dcf3b7326ea83c64b5715024a4be7bdfd28d7350badc"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "1827f139da6700411a6e7afaf891a3d28f02c3f1b2046e4647c4a78d25723ea9"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "PCA",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "be41797f7b9d975ea6d7d5983120cb48139aa7d5b1868945e22cec48a41109a4",
+      "output_sha256": "64833ed4c7b31981b5d5d17037ecc0c940102cba97588680cec0608fa4c8d59b"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_erythroid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "e06ad2e4c2dc99238cacc124aad688170724f4c03d3f73bab748bdc69880b707"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_erythroid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "8ca6292629262648fa189b0454dc3df8023d3ee52a481ddbfc54a82c3dcf5d7f"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_erythroid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "92a3d1deaf72648ad9d03fcf860fc367e57ac645d3e7e275b43efdddb392633e"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "f452ccddf131a3074ec94bf45812ddd75096f5225dcd3bb6949704178a5a0ba1"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "516e567cad4e79aff2ca6a2d62345b8d0d27639925541e8f5279f00b18460178"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "5ca97100a4445bf8b9695b606ddaba2ea4c1a7bd4bc5a559d6b417eef9866c67"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_erythroid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "fa26e3b8e914cbe6d7e4b2786737124a24b608660b707c86006d25221d481945"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_erythroid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "83dc60889ca198f15d2d703ee132d96b5754300466bed1e69c7198f60a5e2e80"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_erythroid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "5af29cbe47231cbb76a3dfe41dc5559a0f245caaca7615952bee7c1f8afa3f64"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "843e02bbec3fe02fa03921e3e1814916dffe7819ef72ebee16faeff6172dadc4"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "2956d5927e6ab0ab51cdcbe33682d49a723f21d543721ece606433bc0d55308a"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "8b938fdfe93c88ec872e8e166e6f92178cca2d0feb33e37c8f966dbe3ec90381"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_erythroid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "9ab92aeb97b65951d97ba8afc424b36083f3742b9a3f6b29fe8cabd7c9035ac9"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_erythroid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "c0d2d549d1735181221bc77f1f2b508523d359f918f205014614e353caab4fd2"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_erythroid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "b4da26f8196125e163eed23a05943b98e7a9b0263381f63eeaf4a686ba0b5795"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "65842bdcaf016ce4015c0f2d06083e8ac4c747b9c15856d7241304e668d410d9"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "bfc9a041447d4512631570651d4ed06c13a0d706a37d27353159e106c75af655"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "3866df349e1bfd69dc7ff58d3276a769b58ee406189db8c645c55eaebab77d36"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "427a60bd3528f5409adcd8d1b029d40467d31632217991bfa960236bd2201648"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "e292077cdc7f67d8c33b7b2a31d45519ed0796e5c1fda37f2d8f5705b8c82d15"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "PCA",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "46c8527e5adae640101e5aab0193f3c62c22d4c303ad36fdf37929eef75ccaee",
+      "output_sha256": "fa3e7de2731cd43e25ff70e797a3507a602865ff3ccbad7280662ab0108b80cb"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "b4ace854fe4c18a9993f05bfca4d7c134042f8d6c11e6c6b2079cfc91251e1a1"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "df28dae6e797ab7a77e9aec309f73e70618bccbc7fde66cc352803133853f9ab"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed0_myeloid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "db673bc9264d5f5dfe361749a0fe586689429a5c581397817aebe9aa8226fe36"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "0fe522cd5d8587869f3cee00db6a3c715f397e6994d35d578811d6e3f28ac408"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "0c3fc9430795536bf596667c90e71ddf65f159f0105530add20bf8eff82dd468"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed1_myeloid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "29e05f40ff4e39e47a737dfaf9207283e7a76ae33c066b6fbe1ac76674249bdf"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "b7b1e185845886bf2d6ca2146cda8b213f0f5c69c3ebdb7139fe75896bfb0ec2"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "3347d36baf606c8d5559d471002dbc071a98cf0d18b12feb664e50e039783ee4"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scRL_seed2_myeloid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "41bc6c599b3464e1008020ab6988278cfe4dde9b45497835e452b16c39c53b9b"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "5bf3c425da719f27ec1dbc8aa997c935bac340d94cc1f2f79fd01ad32fb10039"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "5188f0f359f06bfab75bd8ec24dd3b170e14c6f693dd6895aff33ebb8301680e"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "PCA",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "3b9f7278891155a958a1733a8676c900678bb12974d562feb1e732932529fecd",
+      "output_sha256": "59f090ad093d8ce3dc41d64ca852fdf6bbc1863fa72ea7e2db28e3b41d1026fa"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "0a59039be0b633b848b5419959d4b2a7e6b538d2cd17d193df961bbad6382bbc"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "ee3f5912e9b0066544aae49e453d24f451de03b4547cf564a4bf506849cc2e49"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "41c4b4969ad1d97d3f51f12fc9c00c2a96b8e777cc61af740d17e26d284d1c70"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "301151cd4e16b0900fba37aa1f5ede1a16c987b23be499e8319049288518b55d"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "8e918af00ca5b2a904759ce364af672eb46b1467638d9550096476a7c1129a62"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "1db700c32ffa26ab28d19b24d0408a61c06bfd7ad74699400a249fcdc741563a"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_megakaryocyte_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "7c8f66ad1b0905526af574d27f21741da2eaeddfb1caca0161a009c99e5bff54"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_megakaryocyte_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "d02c85ecea2b63483b54adbc8e23c5c9e905b7b60a1d9e3a9d78d3ef19a15c8d"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_megakaryocyte_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "0f7d219d732b70e4563431bb7b671a884fd756f8be07c3e36d6bf760f283fce6"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "c3fb1102a372f06f2936e7fa3fddd24bbda6278fcea2c81fcb43caee693f0a08"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "c04f90b0b0f20f035b567b2d6eb58d4f6c61a9de898086e16753a6cff27474fb"
+    },
+    {
+      "cohort": "ucb",
+      "arm": "LiVAE",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "39911",
+      "status": "completed",
+      "input_sha256": "5b85889a0b060f3927b8d811a7d7ee1f65451d3a854240ec6f66467e26f84926",
+      "output_sha256": "dc97ab53bb8db7b9cfab91a7120dc6be659f02100c7ca5ef0e36731823033949"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_erythroid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "ce04b088529368cbcaa1138aaf6cf427313093fc8db708fa4bc27542314e3b3d"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_erythroid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "60316da2e99d1a0bc1195d337d25653271a1cab4146a4167e666b90ad0aff2cb"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_erythroid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "b77becbbfcd661590c2442350711c1a0d66913a3cb14756848bb0724920ea502"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "c032ed7cff2331a369126d831f7b13f9ef60c95566bf873af0fd5970fedd202b"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "343f8764ecd5b6a59deb0739a1dd6199a9ba70fb92ab9bf8a511232dd6aa01c2"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "9dd149b474111b1f4032eabdb9d539b8c860a11f0e9ea8cdd3a4322575b44aaf"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_erythroid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "0dbbd755b25746c9d453ca50ec210edd3675d3b65804362136fa30f544c299df"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_erythroid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "638030fae05c83ab8fc73f3102b67dddbae158ec04170dc9e0ec504f991aba61"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_erythroid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "dbc661a8ff136fa846b1c554221e965ff0c9bdf40eeebe0dbd0f3110460f5f8f"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "907eae1475e3ed1a57e8de7ff5fd60a973f22a6f8b2d14f9d949770f4b16a248"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "cd73bf277e4aa4f2f4317dd61fca361e43c4a0a78fc33b1997d70166cb08c63d"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "b0165bdeefd447decfef92db316097fbe1d68e1a0d1a20b05b626c6d4aaf330c"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_erythroid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "a09fc046aedf72fb01f8315a3ae83fe106baa580d913039d449f6407216e7444"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_erythroid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "9a3e343d4828982d3a3f959991a584c243f0848aea4ae7471aec025def8f8744"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_erythroid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "3a6a50607326dce95834dc22e75e5c5d61d22739981dbe36f051aafdd5245ee4"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "db22c33d077f94e694a259fb883838a2fdf5b2546676f649f36341647b68530c"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "22fdd10b741822c93b006090696cd95e5effbdc99a97e48966f195ad28cf190d"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "439b58b6143a54bea9e297fd09709ad6bc346ec0328a6f8468fe2bb47a0a3010"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "efbd8c0ae924f857441572e5b9298888337ebc0dfd5bc7424eedecd36f16e8fa"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "d61a6c5c76ca6e3e6fc81a93246424054da441f405f1ceb81414d8a9d142266b"
+    },
+    {
+      "cohort": "dapp1",
+      "arm": "LiVAE",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "10224",
+      "status": "completed",
+      "input_sha256": "163ec09df589068478d72ba3d6ffe98f2324e7de8398df6ce362f8f92f186476",
+      "output_sha256": "14a48997c7bcd0060bd45f855c04aeb9fafc74d85429278a30fe94d593f0076e"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_contribution",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "aa0928ff23a5e672699a80957d29f2ec5a335cd31a2d3bd5a8348b3bd457dd2e"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_decision",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "8f656bdcc130f5068169c61dbdf8d537693224e7162f94fd3229ad081d4f2a99"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed0_myeloid_neutral",
+      "method": "scRL",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "6c54c306f5f7000d7c21eae672d4836ac1f1f4010338380bbdb40847ab29cc62"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_contribution",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "d67e6d9bfbe0a4436800da21a045762d88f9dc33834ff94efd8e5980ae390b20"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_decision",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "40b6797c608bf5be168d52e9f56ca876f67e3535e17c19cec683c56e0cb152c8"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed1_myeloid_neutral",
+      "method": "scRL",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "fd8267c5a138456eaed6707bef242c6cb7fd0cf0c179d32ab379a49b011fd810"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_contribution",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "1c87c58a98bbaae791d84a848332a11ec4652d59c223ee1e79844b7e340595d7"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_decision",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "3a4f4ea205dcbd81a89e7981ed2cdd65f9c1362c55f1ef3f48e155b598d1ef89"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scRL_seed2_myeloid_neutral",
+      "method": "scRL",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "b930c537dfde241c27f3769798d84dc41afa9e3ec098f87b931dc44a819645bd"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scfocus_seed0",
+      "method": "scfocus",
+      "seed": "0",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "c38d8833b97495405bd6a8a8e957655c468316f3c544595323185cc740548977"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scfocus_seed1",
+      "method": "scfocus",
+      "seed": "1",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "4179dc45fe7a6e704e8a14f5420f83e77b388841f4d8884bf7ed316aff912435"
+    },
+    {
+      "cohort": "sleep",
+      "arm": "LiVAE",
+      "run": "scfocus_seed2",
+      "method": "scfocus",
+      "seed": "2",
+      "n_cells": "29127",
+      "status": "completed",
+      "input_sha256": "85aeddf8e9bdd8c9317bea0c567eddca734aa39dcda1aff765753f724a4e44e5",
+      "output_sha256": "c54aa38e407d1b75cc800041cb78cbe801a3a20a2a500c3129531f6c116db051"
+    }
+  ]
+}

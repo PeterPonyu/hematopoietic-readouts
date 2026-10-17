@@ -1,0 +1,377 @@
+display_mark,source_file,source_rows_1based_excluding_header,source_column,transform,value
+S10:cluster0:contrast,supplement_tables/s14_group_contrasts.csv,1,mean_difference_b_minus_a,identity,-0.2321863239124745
+S10:cluster0:weight,supplement_tables/s14_group_contrasts.csv,1,pooled_weight,identity,0.189358372456964
+S10:cluster1:contrast,supplement_tables/s14_group_contrasts.csv,2,mean_difference_b_minus_a,identity,-0.1637934066705502
+S10:cluster1:weight,supplement_tables/s14_group_contrasts.csv,2,pooled_weight,identity,0.1744913928012519
+S10:cluster2:contrast,supplement_tables/s14_group_contrasts.csv,3,mean_difference_b_minus_a,identity,-0.0878275938300065
+S10:cluster2:weight,supplement_tables/s14_group_contrasts.csv,3,pooled_weight,identity,0.1561032863849765
+S10:cluster3:contrast,supplement_tables/s14_group_contrasts.csv,4,mean_difference_b_minus_a,identity,-0.0988395636993533
+S10:cluster3:weight,supplement_tables/s14_group_contrasts.csv,4,pooled_weight,identity,0.1329225352112676
+S10:cluster4:contrast,supplement_tables/s14_group_contrasts.csv,5,mean_difference_b_minus_a,identity,-0.1586879921041925
+S10:cluster4:weight,supplement_tables/s14_group_contrasts.csv,5,pooled_weight,identity,0.1168818466353677
+S10:cluster5:contrast,supplement_tables/s14_group_contrasts.csv,6,mean_difference_b_minus_a,identity,-0.30454410853405
+S10:cluster5:weight,supplement_tables/s14_group_contrasts.csv,6,pooled_weight,identity,0.106122848200313
+S10:cluster6:contrast,supplement_tables/s14_group_contrasts.csv,7,mean_difference_b_minus_a,identity,-0.5466715999189391
+S10:cluster6:weight,supplement_tables/s14_group_contrasts.csv,7,pooled_weight,identity,0.0737480438184663
+S10:cluster7:contrast,supplement_tables/s14_group_contrasts.csv,8,mean_difference_b_minus_a,identity,-0.1809677521807468
+S10:cluster7:weight,supplement_tables/s14_group_contrasts.csv,8,pooled_weight,identity,0.028169014084507
+S10:cluster8:contrast,supplement_tables/s14_group_contrasts.csv,9,mean_difference_b_minus_a,identity,-0.0808030576026936
+S10:cluster8:weight,supplement_tables/s14_group_contrasts.csv,9,pooled_weight,identity,0.0085093896713615
+S10:cluster9:contrast,supplement_tables/s14_group_contrasts.csv,10,mean_difference_b_minus_a,identity,-0.084689799311111
+S10:cluster9:weight,supplement_tables/s14_group_contrasts.csv,10,pooled_weight,identity,0.0070422535211267
+S10:cluster10:contrast,supplement_tables/s14_group_contrasts.csv,11,mean_difference_b_minus_a,identity,-0.0816949787154149
+S10:cluster10:weight,supplement_tables/s14_group_contrasts.csv,11,pooled_weight,identity,0.0066510172143974
+S11:cluster0:contrast,supplement_tables/s14_group_contrasts.csv,12,mean_difference_b_minus_a,identity,0.0705947453452553
+S11:cluster0:weight,supplement_tables/s14_group_contrasts.csv,12,pooled_weight,identity,0.189358372456964
+S11:cluster1:contrast,supplement_tables/s14_group_contrasts.csv,13,mean_difference_b_minus_a,identity,0.003790631795245
+S11:cluster1:weight,supplement_tables/s14_group_contrasts.csv,13,pooled_weight,identity,0.1744913928012519
+S11:cluster2:contrast,supplement_tables/s14_group_contrasts.csv,14,mean_difference_b_minus_a,identity,0.0130373307642351
+S11:cluster2:weight,supplement_tables/s14_group_contrasts.csv,14,pooled_weight,identity,0.1561032863849765
+S11:cluster3:contrast,supplement_tables/s14_group_contrasts.csv,15,mean_difference_b_minus_a,identity,0.018811844261648
+S11:cluster3:weight,supplement_tables/s14_group_contrasts.csv,15,pooled_weight,identity,0.1329225352112676
+S11:cluster4:contrast,supplement_tables/s14_group_contrasts.csv,16,mean_difference_b_minus_a,identity,-0.0014572472548268
+S11:cluster4:weight,supplement_tables/s14_group_contrasts.csv,16,pooled_weight,identity,0.1168818466353677
+S11:cluster5:contrast,supplement_tables/s14_group_contrasts.csv,17,mean_difference_b_minus_a,identity,0.0682260743635509
+S11:cluster5:weight,supplement_tables/s14_group_contrasts.csv,17,pooled_weight,identity,0.106122848200313
+S11:cluster6:contrast,supplement_tables/s14_group_contrasts.csv,18,mean_difference_b_minus_a,identity,0.320166289084543
+S11:cluster6:weight,supplement_tables/s14_group_contrasts.csv,18,pooled_weight,identity,0.0737480438184663
+S11:cluster7:contrast,supplement_tables/s14_group_contrasts.csv,19,mean_difference_b_minus_a,identity,0.0467276419546715
+S11:cluster7:weight,supplement_tables/s14_group_contrasts.csv,19,pooled_weight,identity,0.028169014084507
+S11:cluster8:contrast,supplement_tables/s14_group_contrasts.csv,20,mean_difference_b_minus_a,identity,0.2639308886363636
+S11:cluster8:weight,supplement_tables/s14_group_contrasts.csv,20,pooled_weight,identity,0.0085093896713615
+S11:cluster9:contrast,supplement_tables/s14_group_contrasts.csv,21,mean_difference_b_minus_a,identity,-0.0470875134370369
+S11:cluster9:weight,supplement_tables/s14_group_contrasts.csv,21,pooled_weight,identity,0.0070422535211267
+S11:cluster10:contrast,supplement_tables/s14_group_contrasts.csv,22,mean_difference_b_minus_a,identity,-0.2020271719861659
+S11:cluster10:weight,supplement_tables/s14_group_contrasts.csv,22,pooled_weight,identity,0.0066510172143974
+S12:cluster0:contrast,supplement_tables/s14_group_contrasts.csv,23,mean_difference_b_minus_a,identity,-0.0175636313089382
+S12:cluster0:weight,supplement_tables/s14_group_contrasts.csv,23,pooled_weight,identity,0.1108936725375081
+S12:cluster1:contrast,supplement_tables/s14_group_contrasts.csv,24,mean_difference_b_minus_a,identity,-0.0005386891303271
+S12:cluster1:weight,supplement_tables/s14_group_contrasts.csv,24,pooled_weight,identity,0.0829470937618017
+S12:cluster2:contrast,supplement_tables/s14_group_contrasts.csv,25,mean_difference_b_minus_a,identity,0.0311225165898335
+S12:cluster2:weight,supplement_tables/s14_group_contrasts.csv,25,pooled_weight,identity,0.0464517458028633
+S12:cluster3:contrast,supplement_tables/s14_group_contrasts.csv,26,mean_difference_b_minus_a,identity,0.0579874424035619
+S12:cluster3:weight,supplement_tables/s14_group_contrasts.csv,26,pooled_weight,identity,0.0354310433618292
+S12:cluster4:contrast,supplement_tables/s14_group_contrasts.csv,27,mean_difference_b_minus_a,identity,0.0885911467807564
+S12:cluster4:weight,supplement_tables/s14_group_contrasts.csv,27,pooled_weight,identity,0.1045078449548528
+S12:cluster5:contrast,supplement_tables/s14_group_contrasts.csv,28,mean_difference_b_minus_a,identity,-0.0396556625087409
+S12:cluster5:weight,supplement_tables/s14_group_contrasts.csv,28,pooled_weight,identity,0.0629313008548769
+S12:cluster6:contrast,supplement_tables/s14_group_contrasts.csv,29,mean_difference_b_minus_a,identity,0.0235981804497996
+S12:cluster6:weight,supplement_tables/s14_group_contrasts.csv,29,pooled_weight,identity,0.0716860644762591
+S12:cluster7:contrast,supplement_tables/s14_group_contrasts.csv,30,mean_difference_b_minus_a,identity,-0.0445832833668175
+S12:cluster7:weight,supplement_tables/s14_group_contrasts.csv,30,pooled_weight,identity,0.0660555498334878
+S12:cluster8:contrast,supplement_tables/s14_group_contrasts.csv,31,mean_difference_b_minus_a,identity,0.0553876491970125
+S12:cluster8:weight,supplement_tables/s14_group_contrasts.csv,31,pooled_weight,identity,0.0190544855288907
+S12:cluster9:contrast,supplement_tables/s14_group_contrasts.csv,32,mean_difference_b_minus_a,identity,-0.0213023744183198
+S12:cluster9:weight,supplement_tables/s14_group_contrasts.csv,32,pooled_weight,identity,0.0933498128883853
+S12:cluster10:contrast,supplement_tables/s14_group_contrasts.csv,33,mean_difference_b_minus_a,identity,0.0630388213358308
+S12:cluster10:weight,supplement_tables/s14_group_contrasts.csv,33,pooled_weight,identity,0.0534898891063274
+S12:cluster11:contrast,supplement_tables/s14_group_contrasts.csv,34,mean_difference_b_minus_a,identity,-0.0383232641996816
+S12:cluster11:weight,supplement_tables/s14_group_contrasts.csv,34,pooled_weight,identity,0.0460054245202046
+S12:cluster12:contrast,supplement_tables/s14_group_contrasts.csv,35,mean_difference_b_minus_a,identity,0.0679056103716343
+S12:cluster12:weight,supplement_tables/s14_group_contrasts.csv,35,pooled_weight,identity,0.0348130600473787
+S12:cluster13:contrast,supplement_tables/s14_group_contrasts.csv,36,mean_difference_b_minus_a,identity,0.0075862818820631
+S12:cluster13:weight,supplement_tables/s14_group_contrasts.csv,36,pooled_weight,identity,0.0512239502866755
+S12:cluster14:contrast,supplement_tables/s14_group_contrasts.csv,37,mean_difference_b_minus_a,identity,0.0575381197570088
+S12:cluster14:weight,supplement_tables/s14_group_contrasts.csv,37,pooled_weight,identity,0.0135956329179112
+S12:cluster15:contrast,supplement_tables/s14_group_contrasts.csv,38,mean_difference_b_minus_a,identity,0.0556566698211985
+S12:cluster15:weight,supplement_tables/s14_group_contrasts.csv,38,pooled_weight,identity,0.0272255982421807
+S12:cluster16:contrast,supplement_tables/s14_group_contrasts.csv,39,mean_difference_b_minus_a,identity,0.0333515813310894
+S12:cluster16:weight,supplement_tables/s14_group_contrasts.csv,39,pooled_weight,identity,0.0214920863803343
+S12:cluster17:contrast,supplement_tables/s14_group_contrasts.csv,40,mean_difference_b_minus_a,identity,0.0510336425752314
+S12:cluster17:weight,supplement_tables/s14_group_contrasts.csv,40,pooled_weight,identity,0.0309678305352422
+S12:cluster18:contrast,supplement_tables/s14_group_contrasts.csv,41,mean_difference_b_minus_a,identity,0.1500839996317036
+S12:cluster18:weight,supplement_tables/s14_group_contrasts.csv,41,pooled_weight,identity,0.0278779139629896
+S1D:cluster0:n,supplement_tables/s15_tpo_cluster_composition.csv,1,n_D0,identity,1694.0
+S1D:cluster1:n,supplement_tables/s15_tpo_cluster_composition.csv,2,n_D0,identity,2665.0
+S1D:cluster2:n,supplement_tables/s15_tpo_cluster_composition.csv,3,n_D0,identity,775.0
+S1D:cluster3:n,supplement_tables/s15_tpo_cluster_composition.csv,4,n_D0,identity,253.0
+S1D:cluster4:n,supplement_tables/s15_tpo_cluster_composition.csv,5,n_D0,identity,2.0
+S1D:cluster5:n,supplement_tables/s15_tpo_cluster_composition.csv,6,n_D0,identity,17.0
+S1D:cluster6:n,supplement_tables/s15_tpo_cluster_composition.csv,7,n_D0,identity,0.0
+S1D:cluster7:n,supplement_tables/s15_tpo_cluster_composition.csv,8,n_D0,identity,0.0
+S1D:cluster8:n,supplement_tables/s15_tpo_cluster_composition.csv,9,n_D0,identity,43.0
+S1D:cluster9:n,supplement_tables/s15_tpo_cluster_composition.csv,10,n_D0,identity,6.0
+S1D:cluster10:n,supplement_tables/s15_tpo_cluster_composition.csv,11,n_D0,identity,0.0
+S1D:cluster11:n,supplement_tables/s15_tpo_cluster_composition.csv,12,n_D0,identity,0.0
+S1D:cluster12:n,supplement_tables/s15_tpo_cluster_composition.csv,13,n_D0,identity,0.0
+S1D:cluster13:n,supplement_tables/s15_tpo_cluster_composition.csv,14,n_D0,identity,0.0
+S1D:cluster14:n,supplement_tables/s15_tpo_cluster_composition.csv,15,n_D0,identity,0.0
+S1D:cluster15:n,supplement_tables/s15_tpo_cluster_composition.csv,16,n_D0,identity,0.0
+S1E:pooled:primitive,supplement_tables/s17_annotation_diagnostics.csv,1,program_primitive,identity,0.54371595
+S1E:pooled:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,1,program_neutrophil,identity,0.2662814
+S1E:pooled:dendritic,supplement_tables/s17_annotation_diagnostics.csv,1,program_dendritic,identity,0.4886641
+S1E:D0:primitive,supplement_tables/s17_annotation_diagnostics.csv,2,program_primitive,identity,-0.2625679432352941
+S1E:D0:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,2,program_neutrophil,identity,1.030656084117647
+S1E:D0:dendritic,supplement_tables/s17_annotation_diagnostics.csv,2,program_dendritic,identity,0.2114423545882353
+S1E:D4:primitive,supplement_tables/s17_annotation_diagnostics.csv,3,program_primitive,identity,0.5688935257490312
+S1E:D4:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,3,program_neutrophil,identity,0.2258833044780118
+S1E:D4:dendritic,supplement_tables/s17_annotation_diagnostics.csv,3,program_dendritic,identity,0.5204163464654255
+S1E:D7:primitive,supplement_tables/s17_annotation_diagnostics.csv,4,program_primitive,identity,0.9075570253392072
+S1E:D7:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,4,program_neutrophil,identity,-0.0319770118370044
+S1E:D7:dendritic,supplement_tables/s17_annotation_diagnostics.csv,4,program_dendritic,identity,0.4830275649748898
+S1E:D11:primitive,supplement_tables/s17_annotation_diagnostics.csv,5,program_primitive,identity,0.612310144639819
+S1E:D11:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,5,program_neutrophil,identity,0.1156818365339366
+S1E:D11:dendritic,supplement_tables/s17_annotation_diagnostics.csv,5,program_dendritic,identity,0.511780038999095
+S1E:D14:primitive,supplement_tables/s17_annotation_diagnostics.csv,6,program_primitive,identity,0.4337447196992278
+S1E:D14:neutrophil,supplement_tables/s17_annotation_diagnostics.csv,6,program_neutrophil,identity,0.3975027651177896
+S1E:D14:dendritic,supplement_tables/s17_annotation_diagnostics.csv,6,program_dendritic,identity,0.4531367380063542
+S18:TPO Mk:endpoint_n,supplement_tables/s13_task_denominators.csv,1,n_endpoint,identity,17108.0
+S18:TPO Mk:PCA:seed_min,supplement_tables/s10_seed_stability.csv,2;5;8,value,min,0.9724743609544828
+S18:TPO Mk:PCA:seed_max,supplement_tables/s10_seed_stability.csv,2;5;8,value,max,0.973646823357403
+S18:TPO Mk:LiVAE:seed_min,supplement_tables/s10_seed_stability.csv,14;17;20,value,min,0.6315321340001958
+S18:TPO Mk:LiVAE:seed_max,supplement_tables/s10_seed_stability.csv,14;17;20,value,max,0.8231609121600728
+S18:TPO Mk:all:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,1,n_cells,identity,39911.0
+S18:TPO Mk:all:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,1,value_median,identity,0.7432213019286703
+S18:TPO Mk:all:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,1,geometry_rho,identity,0.8437609733754555
+S18:TPO Mk:all:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,1,increment_median,identity,-0.1005396714467852
+S18:TPO Mk:all:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,4,n_cells,identity,39911.0
+S18:TPO Mk:all:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,4,value_median,identity,0.6758687240916587
+S18:TPO Mk:all:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,4,geometry_rho,identity,0.8246812906960815
+S18:TPO Mk:all:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,4,increment_median,identity,-0.1488125666044228
+S18:TPO Mk:nonterminal:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,2,n_cells,identity,22803.0
+S18:TPO Mk:nonterminal:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,2,value_median,identity,0.5719314149163383
+S18:TPO Mk:nonterminal:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,2,geometry_rho,identity,0.6825266197975952
+S18:TPO Mk:nonterminal:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,2,increment_median,identity,-0.1105952048812569
+S18:TPO Mk:nonterminal:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,5,n_cells,identity,22803.0
+S18:TPO Mk:nonterminal:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,5,value_median,identity,0.6512400156232035
+S18:TPO Mk:nonterminal:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,5,geometry_rho,identity,0.6792955736954298
+S18:TPO Mk:nonterminal:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,5,increment_median,identity,-0.0280555580722262
+S18:TPO Mk:starting:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,3,n_cells,identity,2688.0
+S18:TPO Mk:starting:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,3,value_median,identity,0.1802144089848588
+S18:TPO Mk:starting:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,3,geometry_rho,identity,0.1833062181621758
+S18:TPO Mk:starting:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,3,increment_median,identity,-0.003091809177317
+S18:TPO Mk:starting:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,6,n_cells,identity,2688.0
+S18:TPO Mk:starting:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,6,value_median,identity,0.0010408909643731
+S18:TPO Mk:starting:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,6,geometry_rho,identity,0.0717352751347256
+S18:TPO Mk:starting:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,6,increment_median,identity,-0.0706943841703525
+S18:Dapp1 Ery:endpoint_n,supplement_tables/s13_task_denominators.csv,2,n_endpoint,identity,87.0
+S18:Dapp1 Ery:PCA:seed_min,supplement_tables/s10_seed_stability.csv,26;29;32,value,min,0.8903990880316047
+S18:Dapp1 Ery:PCA:seed_max,supplement_tables/s10_seed_stability.csv,26;29;32,value,max,0.9405496860644922
+S18:Dapp1 Ery:LiVAE:seed_min,supplement_tables/s10_seed_stability.csv,47;50;53,value,min,0.3646539828861849
+S18:Dapp1 Ery:LiVAE:seed_max,supplement_tables/s10_seed_stability.csv,47;50;53,value,max,0.6280417100756058
+S18:Dapp1 Ery:all:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,7,n_cells,identity,10224.0
+S18:Dapp1 Ery:all:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,7,value_median,identity,-0.0609600603459643
+S18:Dapp1 Ery:all:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,7,geometry_rho,identity,0.1181444909715027
+S18:Dapp1 Ery:all:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,7,increment_median,identity,-0.1791045513174671
+S18:Dapp1 Ery:all:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,13,n_cells,identity,10224.0
+S18:Dapp1 Ery:all:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,13,value_median,identity,0.3070544239262945
+S18:Dapp1 Ery:all:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,13,geometry_rho,identity,0.012230222612001
+S18:Dapp1 Ery:all:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,13,increment_median,identity,0.2948242013142934
+S18:Dapp1 Ery:nonterminal:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,8,n_cells,identity,10137.0
+S18:Dapp1 Ery:nonterminal:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,8,value_median,identity,-0.0884671978307523
+S18:Dapp1 Ery:nonterminal:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,8,geometry_rho,identity,0.0955996921620958
+S18:Dapp1 Ery:nonterminal:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,8,increment_median,identity,-0.1840668899928482
+S18:Dapp1 Ery:nonterminal:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,14,n_cells,identity,10137.0
+S18:Dapp1 Ery:nonterminal:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,14,value_median,identity,0.2903331242360464
+S18:Dapp1 Ery:nonterminal:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,14,geometry_rho,identity,-0.013935669964924
+S18:Dapp1 Ery:nonterminal:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,14,increment_median,identity,0.3042687942009704
+S18:Dapp1 Ery:starting:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,9,n_cells,identity,3143.0
+S18:Dapp1 Ery:starting:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,9,value_median,identity,0.0497943368049239
+S18:Dapp1 Ery:starting:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,9,geometry_rho,identity,0.0265612399412349
+S18:Dapp1 Ery:starting:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,9,increment_median,identity,0.023233096863689
+S18:Dapp1 Ery:starting:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,15,n_cells,identity,3143.0
+S18:Dapp1 Ery:starting:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,15,value_median,identity,0.0578463482988919
+S18:Dapp1 Ery:starting:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,15,geometry_rho,identity,0.1191566028633347
+S18:Dapp1 Ery:starting:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,15,increment_median,identity,-0.0613102545644428
+S18:Dapp1 My:endpoint_n,supplement_tables/s13_task_denominators.csv,3,n_endpoint,identity,1839.0
+S18:Dapp1 My:PCA:seed_min,supplement_tables/s10_seed_stability.csv,35;38;41,value,min,0.698653477524103
+S18:Dapp1 My:PCA:seed_max,supplement_tables/s10_seed_stability.csv,35;38;41,value,max,0.909405029642074
+S18:Dapp1 My:LiVAE:seed_min,supplement_tables/s10_seed_stability.csv,56;59;62,value,min,0.9053780885188182
+S18:Dapp1 My:LiVAE:seed_max,supplement_tables/s10_seed_stability.csv,56;59;62,value,max,0.9452498650032084
+S18:Dapp1 My:all:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,10,n_cells,identity,10224.0
+S18:Dapp1 My:all:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,10,value_median,identity,0.5010130970805068
+S18:Dapp1 My:all:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,10,geometry_rho,identity,0.4722457709793947
+S18:Dapp1 My:all:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,10,increment_median,identity,0.028767326101112
+S18:Dapp1 My:all:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,16,n_cells,identity,10224.0
+S18:Dapp1 My:all:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,16,value_median,identity,0.5140150871162504
+S18:Dapp1 My:all:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,16,geometry_rho,identity,0.5273037232733702
+S18:Dapp1 My:all:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,16,increment_median,identity,-0.0132886361571197
+S18:Dapp1 My:nonterminal:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,11,n_cells,identity,8385.0
+S18:Dapp1 My:nonterminal:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,11,value_median,identity,0.3289150469721712
+S18:Dapp1 My:nonterminal:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,11,geometry_rho,identity,0.2933092356992102
+S18:Dapp1 My:nonterminal:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,11,increment_median,identity,0.035605811272961
+S18:Dapp1 My:nonterminal:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,17,n_cells,identity,8385.0
+S18:Dapp1 My:nonterminal:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,17,value_median,identity,0.3898003475981143
+S18:Dapp1 My:nonterminal:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,17,geometry_rho,identity,0.3868236205666001
+S18:Dapp1 My:nonterminal:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,17,increment_median,identity,0.0029767270315142
+S18:Dapp1 My:starting:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,12,n_cells,identity,3143.0
+S18:Dapp1 My:starting:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,12,value_median,identity,0.2840738121340879
+S18:Dapp1 My:starting:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,12,geometry_rho,identity,0.3384835661785215
+S18:Dapp1 My:starting:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,12,increment_median,identity,-0.0544097540444336
+S18:Dapp1 My:starting:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,18,n_cells,identity,3143.0
+S18:Dapp1 My:starting:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,18,value_median,identity,0.3354602165890716
+S18:Dapp1 My:starting:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,18,geometry_rho,identity,0.4101897816638893
+S18:Dapp1 My:starting:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,18,increment_median,identity,-0.0747295650748177
+S18:Sleep My:endpoint_n,supplement_tables/s13_task_denominators.csv,4,n_endpoint,identity,18395.0
+S18:Sleep My:PCA:seed_min,supplement_tables/s10_seed_stability.csv,68;71;74,value,min,0.6365118209467052
+S18:Sleep My:PCA:seed_max,supplement_tables/s10_seed_stability.csv,68;71;74,value,max,0.9292200745193568
+S18:Sleep My:LiVAE:seed_min,supplement_tables/s10_seed_stability.csv,80;83;86,value,min,0.6826910361033661
+S18:Sleep My:LiVAE:seed_max,supplement_tables/s10_seed_stability.csv,80;83;86,value,max,0.9218698707691716
+S18:Sleep My:all:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,19,n_cells,identity,29127.0
+S18:Sleep My:all:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,19,value_median,identity,0.5368012074651566
+S18:Sleep My:all:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,19,geometry_rho,identity,0.5565663141994103
+S18:Sleep My:all:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,19,increment_median,identity,-0.0197651067342536
+S18:Sleep My:all:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,22,n_cells,identity,29127.0
+S18:Sleep My:all:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,22,value_median,identity,0.4506437689729817
+S18:Sleep My:all:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,22,geometry_rho,identity,0.5634798998268503
+S18:Sleep My:all:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,22,increment_median,identity,-0.1128361308538686
+S18:Sleep My:nonterminal:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,20,n_cells,identity,10732.0
+S18:Sleep My:nonterminal:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,20,value_median,identity,0.4038473339496616
+S18:Sleep My:nonterminal:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,20,geometry_rho,identity,0.5199729320521727
+S18:Sleep My:nonterminal:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,20,increment_median,identity,-0.116125598102511
+S18:Sleep My:nonterminal:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,23,n_cells,identity,10732.0
+S18:Sleep My:nonterminal:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,23,value_median,identity,0.4212296288246855
+S18:Sleep My:nonterminal:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,23,geometry_rho,identity,0.4521589970161454
+S18:Sleep My:nonterminal:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,23,increment_median,identity,-0.0309293681914599
+S18:Sleep My:starting:PCA:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,21,n_cells,identity,3044.0
+S18:Sleep My:starting:PCA:value_median,supplement_tables/s06_paired_neutral_geometry.csv,21,value_median,identity,0.7955910964526248
+S18:Sleep My:starting:PCA:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,21,geometry_rho,identity,0.8375569554114074
+S18:Sleep My:starting:PCA:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,21,increment_median,identity,-0.0419658589587825
+S18:Sleep My:starting:LiVAE:n_cells,supplement_tables/s06_paired_neutral_geometry.csv,24,n_cells,identity,3044.0
+S18:Sleep My:starting:LiVAE:value_median,supplement_tables/s06_paired_neutral_geometry.csv,24,value_median,identity,0.8122642629424037
+S18:Sleep My:starting:LiVAE:geometry_rho,supplement_tables/s06_paired_neutral_geometry.csv,24,geometry_rho,identity,0.7588093435983068
+S18:Sleep My:starting:LiVAE:increment_median,supplement_tables/s06_paired_neutral_geometry.csv,24,increment_median,identity,0.0534549193440969
+S2:TPO Mk:PCA:decision:seed0,supplement_tables/s08_all_reward_associations.csv,1,value_program_rho,identity,0.6157954318564254
+S2:TPO Mk:PCA:decision:seed1,supplement_tables/s08_all_reward_associations.csv,10,value_program_rho,identity,0.370143851682759
+S2:TPO Mk:PCA:decision:seed2,supplement_tables/s08_all_reward_associations.csv,19,value_program_rho,identity,0.676941200702802
+S2:TPO Mk:PCA:decision:proximity,supplement_tables/s08_all_reward_associations.csv,1,geometry_program_rho,identity,0.8437609733754555
+S19:TPO Mk:PCA:decision:median,supplement_tables/s08_all_reward_associations.csv,1;10;19,value_program_rho,median,0.6157954318564254
+S19:TPO Mk:PCA:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,1;10;19,increment_over_geometry,median,-0.2279655415190301
+S2:TPO Mk:LiVAE:decision:seed0,supplement_tables/s08_all_reward_associations.csv,28,value_program_rho,identity,0.7593959985135333
+S2:TPO Mk:LiVAE:decision:seed1,supplement_tables/s08_all_reward_associations.csv,37,value_program_rho,identity,0.6523186766171284
+S2:TPO Mk:LiVAE:decision:seed2,supplement_tables/s08_all_reward_associations.csv,46,value_program_rho,identity,0.5737936728015139
+S2:TPO Mk:LiVAE:decision:proximity,supplement_tables/s08_all_reward_associations.csv,28,geometry_program_rho,identity,0.8246812906960815
+S19:TPO Mk:LiVAE:decision:median,supplement_tables/s08_all_reward_associations.csv,28;37;46,value_program_rho,median,0.6523186766171284
+S19:TPO Mk:LiVAE:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,28;37;46,increment_over_geometry,median,-0.1723626140789531
+S2:Dapp1 Ery:PCA:decision:seed0,supplement_tables/s08_all_reward_associations.csv,55,value_program_rho,identity,0.0001941944630368
+S2:Dapp1 Ery:PCA:decision:seed1,supplement_tables/s08_all_reward_associations.csv,64,value_program_rho,identity,-0.0298430267709161
+S2:Dapp1 Ery:PCA:decision:seed2,supplement_tables/s08_all_reward_associations.csv,73,value_program_rho,identity,0.0982231242574822
+S2:Dapp1 Ery:PCA:decision:proximity,supplement_tables/s08_all_reward_associations.csv,55,geometry_program_rho,identity,0.1181444909715027
+S19:Dapp1 Ery:PCA:decision:median,supplement_tables/s08_all_reward_associations.csv,55;64;73,value_program_rho,median,0.0001941944630368
+S19:Dapp1 Ery:PCA:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,55;64;73,increment_over_geometry,median,-0.1179502965084659
+S2:Dapp1 Ery:LiVAE:decision:seed0,supplement_tables/s08_all_reward_associations.csv,109,value_program_rho,identity,0.0217929667929552
+S2:Dapp1 Ery:LiVAE:decision:seed1,supplement_tables/s08_all_reward_associations.csv,118,value_program_rho,identity,0.3637782182477491
+S2:Dapp1 Ery:LiVAE:decision:seed2,supplement_tables/s08_all_reward_associations.csv,127,value_program_rho,identity,0.2631710308102594
+S2:Dapp1 Ery:LiVAE:decision:proximity,supplement_tables/s08_all_reward_associations.csv,109,geometry_program_rho,identity,0.012230222612001
+S19:Dapp1 Ery:LiVAE:decision:median,supplement_tables/s08_all_reward_associations.csv,109;118;127,value_program_rho,median,0.2631710308102594
+S19:Dapp1 Ery:LiVAE:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,109;118;127,increment_over_geometry,median,0.2509408081982583
+S2:Dapp1 My:PCA:decision:seed0,supplement_tables/s08_all_reward_associations.csv,82,value_program_rho,identity,0.4118362347339073
+S2:Dapp1 My:PCA:decision:seed1,supplement_tables/s08_all_reward_associations.csv,91,value_program_rho,identity,0.1817545320867802
+S2:Dapp1 My:PCA:decision:seed2,supplement_tables/s08_all_reward_associations.csv,100,value_program_rho,identity,0.4137764342337368
+S2:Dapp1 My:PCA:decision:proximity,supplement_tables/s08_all_reward_associations.csv,82,geometry_program_rho,identity,0.4722457709793947
+S19:Dapp1 My:PCA:decision:median,supplement_tables/s08_all_reward_associations.csv,82;91;100,value_program_rho,median,0.4118362347339073
+S19:Dapp1 My:PCA:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,82;91;100,increment_over_geometry,median,-0.0604095362454873
+S2:Dapp1 My:LiVAE:decision:seed0,supplement_tables/s08_all_reward_associations.csv,136,value_program_rho,identity,0.3825769675589203
+S2:Dapp1 My:LiVAE:decision:seed1,supplement_tables/s08_all_reward_associations.csv,145,value_program_rho,identity,0.5010800888104475
+S2:Dapp1 My:LiVAE:decision:seed2,supplement_tables/s08_all_reward_associations.csv,154,value_program_rho,identity,0.4030078769440868
+S2:Dapp1 My:LiVAE:decision:proximity,supplement_tables/s08_all_reward_associations.csv,136,geometry_program_rho,identity,0.5273037232733702
+S19:Dapp1 My:LiVAE:decision:median,supplement_tables/s08_all_reward_associations.csv,136;145;154,value_program_rho,median,0.4030078769440868
+S19:Dapp1 My:LiVAE:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,136;145;154,increment_over_geometry,median,-0.1242958463292833
+S2:Sleep My:PCA:decision:seed0,supplement_tables/s08_all_reward_associations.csv,163,value_program_rho,identity,0.399279931922723
+S2:Sleep My:PCA:decision:seed1,supplement_tables/s08_all_reward_associations.csv,172,value_program_rho,identity,0.4256720154775908
+S2:Sleep My:PCA:decision:seed2,supplement_tables/s08_all_reward_associations.csv,181,value_program_rho,identity,0.3818792809576397
+S2:Sleep My:PCA:decision:proximity,supplement_tables/s08_all_reward_associations.csv,163,geometry_program_rho,identity,0.5565663141994103
+S19:Sleep My:PCA:decision:median,supplement_tables/s08_all_reward_associations.csv,163;172;181,value_program_rho,median,0.399279931922723
+S19:Sleep My:PCA:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,163;172;181,increment_over_geometry,median,-0.1572863822766873
+S2:Sleep My:LiVAE:decision:seed0,supplement_tables/s08_all_reward_associations.csv,190,value_program_rho,identity,0.248442713476934
+S2:Sleep My:LiVAE:decision:seed1,supplement_tables/s08_all_reward_associations.csv,199,value_program_rho,identity,0.608974803522523
+S2:Sleep My:LiVAE:decision:seed2,supplement_tables/s08_all_reward_associations.csv,208,value_program_rho,identity,0.3251696647901258
+S2:Sleep My:LiVAE:decision:proximity,supplement_tables/s08_all_reward_associations.csv,190,geometry_program_rho,identity,0.5634798998268503
+S19:Sleep My:LiVAE:decision:median,supplement_tables/s08_all_reward_associations.csv,190;199;208,value_program_rho,median,0.3251696647901258
+S19:Sleep My:LiVAE:decision:increment_median,supplement_tables/s08_all_reward_associations.csv,190;199;208,increment_over_geometry,median,-0.2383102350367245
+S2:TPO Mk:PCA:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,4,value_program_rho,identity,0.7254556060252259
+S2:TPO Mk:PCA:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,13,value_program_rho,identity,0.7432213019286703
+S2:TPO Mk:PCA:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,22,value_program_rho,identity,0.8246413723408986
+S2:TPO Mk:PCA:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,4,geometry_program_rho,identity,0.8437609733754555
+S19:TPO Mk:PCA:neutral:median,supplement_tables/s08_all_reward_associations.csv,4;13;22,value_program_rho,median,0.7432213019286703
+S19:TPO Mk:PCA:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,4;13;22,increment_over_geometry,median,-0.1005396714467852
+S2:TPO Mk:LiVAE:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,31,value_program_rho,identity,0.6868351605381067
+S2:TPO Mk:LiVAE:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,40,value_program_rho,identity,0.5414068106896309
+S2:TPO Mk:LiVAE:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,49,value_program_rho,identity,0.6758687240916587
+S2:TPO Mk:LiVAE:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,31,geometry_program_rho,identity,0.8246812906960815
+S19:TPO Mk:LiVAE:neutral:median,supplement_tables/s08_all_reward_associations.csv,31;40;49,value_program_rho,median,0.6758687240916587
+S19:TPO Mk:LiVAE:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,31;40;49,increment_over_geometry,median,-0.1488125666044228
+S2:Dapp1 Ery:PCA:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,58,value_program_rho,identity,-0.0609600603459643
+S2:Dapp1 Ery:PCA:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,67,value_program_rho,identity,-0.072387962145255
+S2:Dapp1 Ery:PCA:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,76,value_program_rho,identity,-0.0494126830901056
+S2:Dapp1 Ery:PCA:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,58,geometry_program_rho,identity,0.1181444909715027
+S19:Dapp1 Ery:PCA:neutral:median,supplement_tables/s08_all_reward_associations.csv,58;67;76,value_program_rho,median,-0.0609600603459643
+S19:Dapp1 Ery:PCA:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,58;67;76,increment_over_geometry,median,-0.1791045513174671
+S2:Dapp1 Ery:LiVAE:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,112,value_program_rho,identity,0.0147162965717861
+S2:Dapp1 Ery:LiVAE:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,121,value_program_rho,identity,0.3070544239262945
+S2:Dapp1 Ery:LiVAE:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,130,value_program_rho,identity,0.3465535693213098
+S2:Dapp1 Ery:LiVAE:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,112,geometry_program_rho,identity,0.012230222612001
+S19:Dapp1 Ery:LiVAE:neutral:median,supplement_tables/s08_all_reward_associations.csv,112;121;130,value_program_rho,median,0.3070544239262945
+S19:Dapp1 Ery:LiVAE:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,112;121;130,increment_over_geometry,median,0.2948242013142934
+S2:Dapp1 My:PCA:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,85,value_program_rho,identity,0.5158565352848623
+S2:Dapp1 My:PCA:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,94,value_program_rho,identity,0.5010130970805068
+S2:Dapp1 My:PCA:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,103,value_program_rho,identity,0.4102960247099375
+S2:Dapp1 My:PCA:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,85,geometry_program_rho,identity,0.4722457709793947
+S19:Dapp1 My:PCA:neutral:median,supplement_tables/s08_all_reward_associations.csv,85;94;103,value_program_rho,median,0.5010130970805068
+S19:Dapp1 My:PCA:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,85;94;103,increment_over_geometry,median,0.028767326101112
+S2:Dapp1 My:LiVAE:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,139,value_program_rho,identity,0.5478077447063138
+S2:Dapp1 My:LiVAE:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,148,value_program_rho,identity,0.5140150871162504
+S2:Dapp1 My:LiVAE:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,157,value_program_rho,identity,0.4898942081277494
+S2:Dapp1 My:LiVAE:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,139,geometry_program_rho,identity,0.5273037232733702
+S19:Dapp1 My:LiVAE:neutral:median,supplement_tables/s08_all_reward_associations.csv,139;148;157,value_program_rho,median,0.5140150871162504
+S19:Dapp1 My:LiVAE:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,139;148;157,increment_over_geometry,median,-0.0132886361571197
+S2:Sleep My:PCA:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,166,value_program_rho,identity,0.2365446391139205
+S2:Sleep My:PCA:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,175,value_program_rho,identity,0.5368012074651566
+S2:Sleep My:PCA:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,184,value_program_rho,identity,0.6411021447740816
+S2:Sleep My:PCA:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,166,geometry_program_rho,identity,0.5565663141994103
+S19:Sleep My:PCA:neutral:median,supplement_tables/s08_all_reward_associations.csv,166;175;184,value_program_rho,median,0.5368012074651566
+S19:Sleep My:PCA:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,166;175;184,increment_over_geometry,median,-0.0197651067342536
+S2:Sleep My:LiVAE:neutral:seed0,supplement_tables/s08_all_reward_associations.csv,193,value_program_rho,identity,0.4181301656379217
+S2:Sleep My:LiVAE:neutral:seed1,supplement_tables/s08_all_reward_associations.csv,202,value_program_rho,identity,0.4506437689729817
+S2:Sleep My:LiVAE:neutral:seed2,supplement_tables/s08_all_reward_associations.csv,211,value_program_rho,identity,0.5140429351593726
+S2:Sleep My:LiVAE:neutral:proximity,supplement_tables/s08_all_reward_associations.csv,193,geometry_program_rho,identity,0.5634798998268503
+S19:Sleep My:LiVAE:neutral:median,supplement_tables/s08_all_reward_associations.csv,193;202;211,value_program_rho,median,0.4506437689729817
+S19:Sleep My:LiVAE:neutral:increment_median,supplement_tables/s08_all_reward_associations.csv,193;202;211,increment_over_geometry,median,-0.1128361308538686
+S2:TPO Mk:PCA:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,7,value_program_rho,identity,0.8693108838241568
+S2:TPO Mk:PCA:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,16,value_program_rho,identity,0.873098999337244
+S2:TPO Mk:PCA:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,25,value_program_rho,identity,0.8389451239952616
+S2:TPO Mk:PCA:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,7,geometry_program_rho,identity,0.8437609733754555
+S19:TPO Mk:PCA:contribution:median,supplement_tables/s08_all_reward_associations.csv,7;16;25,value_program_rho,median,0.8693108838241568
+S19:TPO Mk:PCA:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,7;16;25,increment_over_geometry,median,0.0255499104487012
+S2:TPO Mk:LiVAE:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,34,value_program_rho,identity,0.6816458821845691
+S2:TPO Mk:LiVAE:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,43,value_program_rho,identity,-0.8862804390766521
+S2:TPO Mk:LiVAE:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,52,value_program_rho,identity,-0.7979694010419894
+S2:TPO Mk:LiVAE:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,34,geometry_program_rho,identity,0.8246812906960815
+S19:TPO Mk:LiVAE:contribution:median,supplement_tables/s08_all_reward_associations.csv,34;43;52,value_program_rho,median,-0.7979694010419894
+S19:TPO Mk:LiVAE:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,34;43;52,increment_over_geometry,median,-1.622650691738071
+S2:Dapp1 Ery:PCA:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,61,value_program_rho,identity,0.1269506860570625
+S2:Dapp1 Ery:PCA:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,70,value_program_rho,identity,0.2151873361900804
+S2:Dapp1 Ery:PCA:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,79,value_program_rho,identity,0.1033109307192815
+S2:Dapp1 Ery:PCA:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,61,geometry_program_rho,identity,0.1181444909715027
+S19:Dapp1 Ery:PCA:contribution:median,supplement_tables/s08_all_reward_associations.csv,61;70;79,value_program_rho,median,0.1269506860570625
+S19:Dapp1 Ery:PCA:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,61;70;79,increment_over_geometry,median,0.0088061950855597
+S2:Dapp1 Ery:LiVAE:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,115,value_program_rho,identity,0.110242955217969
+S2:Dapp1 Ery:LiVAE:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,124,value_program_rho,identity,0.1204369714595804
+S2:Dapp1 Ery:LiVAE:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,133,value_program_rho,identity,0.303797014320523
+S2:Dapp1 Ery:LiVAE:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,115,geometry_program_rho,identity,0.012230222612001
+S19:Dapp1 Ery:LiVAE:contribution:median,supplement_tables/s08_all_reward_associations.csv,115;124;133,value_program_rho,median,0.1204369714595804
+S19:Dapp1 Ery:LiVAE:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,115;124;133,increment_over_geometry,median,0.1082067488475793
+S2:Dapp1 My:PCA:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,88,value_program_rho,identity,0.094436028259008
+S2:Dapp1 My:PCA:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,97,value_program_rho,identity,0.2437316018013288
+S2:Dapp1 My:PCA:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,106,value_program_rho,identity,0.0368842465052688
+S2:Dapp1 My:PCA:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,88,geometry_program_rho,identity,0.4722457709793947
+S19:Dapp1 My:PCA:contribution:median,supplement_tables/s08_all_reward_associations.csv,88;97;106,value_program_rho,median,0.094436028259008
+S19:Dapp1 My:PCA:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,88;97;106,increment_over_geometry,median,-0.3778097427203867
+S2:Dapp1 My:LiVAE:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,142,value_program_rho,identity,0.5729265858481235
+S2:Dapp1 My:LiVAE:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,151,value_program_rho,identity,0.5312271947625626
+S2:Dapp1 My:LiVAE:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,160,value_program_rho,identity,0.5594005543738791
+S2:Dapp1 My:LiVAE:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,142,geometry_program_rho,identity,0.5273037232733702
+S19:Dapp1 My:LiVAE:contribution:median,supplement_tables/s08_all_reward_associations.csv,142;151;160,value_program_rho,median,0.5594005543738791
+S19:Dapp1 My:LiVAE:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,142;151;160,increment_over_geometry,median,0.0320968311005089
+S2:Sleep My:PCA:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,169,value_program_rho,identity,0.6022138766683971
+S2:Sleep My:PCA:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,178,value_program_rho,identity,0.6176039337176552
+S2:Sleep My:PCA:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,187,value_program_rho,identity,0.6404107811316369
+S2:Sleep My:PCA:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,169,geometry_program_rho,identity,0.5565663141994103
+S19:Sleep My:PCA:contribution:median,supplement_tables/s08_all_reward_associations.csv,169;178;187,value_program_rho,median,0.6176039337176552
+S19:Sleep My:PCA:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,169;178;187,increment_over_geometry,median,0.0610376195182449
+S2:Sleep My:LiVAE:contribution:seed0,supplement_tables/s08_all_reward_associations.csv,196,value_program_rho,identity,0.283719915661985
+S2:Sleep My:LiVAE:contribution:seed1,supplement_tables/s08_all_reward_associations.csv,205,value_program_rho,identity,0.498407669704536
+S2:Sleep My:LiVAE:contribution:seed2,supplement_tables/s08_all_reward_associations.csv,214,value_program_rho,identity,0.1905872704115292
+S2:Sleep My:LiVAE:contribution:proximity,supplement_tables/s08_all_reward_associations.csv,196,geometry_program_rho,identity,0.5634798998268503
+S19:Sleep My:LiVAE:contribution:median,supplement_tables/s08_all_reward_associations.csv,196;205;214,value_program_rho,median,0.283719915661985
+S19:Sleep My:LiVAE:contribution:increment_median,supplement_tables/s08_all_reward_associations.csv,196;205;214,increment_over_geometry,median,-0.2797599841648653

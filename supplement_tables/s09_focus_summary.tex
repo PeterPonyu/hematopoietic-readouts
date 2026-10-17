@@ -1,0 +1,40 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.08\linewidth}>{\raggedright\arraybackslash}p{0.1\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}@{}}
+\caption{Complete scFocus run summaries for the matched interfaces. Entropy is the median cell entropy after row normalization, divided by the log merged branch count. Raw sums show that original weights are not row-normalized probabilities. Episodes lists actual counts for the three ensemble members.}\label{tab:s09_focus_summary}\\
+\toprule
+Cohort / arm & Seed & Branches & Entropy & Raw row sums [min, max] & Episodes \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\small\tablename\ \thetable\ continued}\\
+\toprule
+Cohort / arm & Seed & Branches & Entropy & Raw row sums [min, max] & Episodes \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\small Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+TPO / PCA & 0 & 5 & 0.987 & [1.611, 3.852] & 700, 700, 700 \\
+TPO / PCA & 1 & 5 & 0.981 & [1.943, 3.756] & 700, 700, 700 \\
+TPO / PCA & 2 & 5 & 0.978 & [1.717, 3.792] & 700, 700, 800 \\
+TPO / LiVAE & 0 & 8 & 0.975 & [3.239, 6.357] & 700, 700, 700 \\
+TPO / LiVAE & 1 & 7 & 0.971 & [2.512, 5.410] & 700, 700, 700 \\
+TPO / LiVAE & 2 & 8 & 0.971 & [2.233, 6.381] & 700, 800, 700 \\
+Dapp1 / PCA & 0 & 5 & 0.968 & [2.138, 3.596] & 700, 700, 700 \\
+Dapp1 / PCA & 1 & 4 & 0.963 & [1.533, 2.834] & 700, 700, 700 \\
+Dapp1 / PCA & 2 & 5 & 0.965 & [1.999, 3.580] & 700, 700, 700 \\
+Dapp1 / LiVAE & 0 & 7 & 0.983 & [2.530, 5.445] & 700, 700, 700 \\
+Dapp1 / LiVAE & 1 & 5 & 0.976 & [1.951, 3.782] & 700, 700, 700 \\
+Dapp1 / LiVAE & 2 & 4 & 0.979 & [1.523, 2.972] & 700, 700, 700 \\
+Sleep / PCA & 0 & 6 & 0.953 & [2.314, 4.403] & 700, 700, 700 \\
+Sleep / PCA & 1 & 7 & 0.964 & [2.848, 5.295] & 700, 700, 700 \\
+Sleep / PCA & 2 & 6 & 0.960 & [2.071, 4.408] & 700, 700, 700 \\
+Sleep / LiVAE & 0 & 8 & 0.965 & [3.315, 6.132] & 700, 700, 700 \\
+Sleep / LiVAE & 1 & 6 & 0.953 & [2.612, 4.329] & 700, 700, 700 \\
+Sleep / LiVAE & 2 & 9 & 0.965 & [3.066, 6.673] & 700, 700, 700 \\
+\end{longtable}
+\endgroup

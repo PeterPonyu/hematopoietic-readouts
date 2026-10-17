@@ -1,0 +1,10 @@
+program,contrast,unadjusted_delta,composition_standardized_delta,matched_groups,fraction_cells_covered,scale
+program_primitive,ko-wt,0.1717297074415388,0.09993619450512253,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_erythroid,ko-wt,-0.024670557750232906,-0.03245427302310998,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_megakaryocyte,ko-wt,0.11197543826749887,0.09838558382081222,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_neutrophil,ko-wt,-0.39965829395340957,-0.18927701348683704,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_monocyte,ko-wt,-0.13703314548907136,-0.026496581092388772,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_lymphoid,ko-wt,0.12186063022872978,0.04127025684622973,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_interferon,ko-wt,-0.09624520962124228,-0.13253795860226394,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_inflammatory,ko-wt,0.160684873425897,0.1504522169859372,11,1.0,mean gene-wise standardized log1p(counts per 1e4)
+program_cycling,ko-wt,-0.10138072567992874,0.034751583250276614,11,1.0,mean gene-wise standardized log1p(counts per 1e4)

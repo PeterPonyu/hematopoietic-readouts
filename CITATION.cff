@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Please cite this manuscript-specific scientific software and the original source studies when using their data."
+type: software
+title: "Hematopoietic readouts: scientific code and aggregate source tables"
+authors:
+  - family-names: Fu
+    given-names: Zeyu
+    orcid: "https://orcid.org/0009-0001-8329-0108"
+    affiliation: "State Key Laboratory of Trauma and Chemical Poisoning, Institute of Combined Injury, Army Medical University, Chongqing, China"
+    email: "fuzeyu99@tmmu.edu.cn"
+contact:
+  - family-names: Fu
+    given-names: Zeyu
+    email: "fuzeyu99@126.com"
+    orcid: "https://orcid.org/0009-0001-8329-0108"
+license: MIT
+abstract: >-
+  Original display and retained-artifact replay utilities with aggregate source
+  tables for the associated hematopoietic readout manuscript identified in
+  ARTICLE.json and README.md. Per-cell inputs and fitted artifacts are distributed separately through the scientific
+  supplements. The MIT license is scoped to original software; dataset and
+  upstream software terms remain separate.
+keywords:
+  - single-cell transcriptomics
+  - hematopoiesis
+  - cell composition
+  - transcriptional programs
+  - reproducibility
+repository-code: "https://github.com/PeterPonyu/hematopoietic-readouts"

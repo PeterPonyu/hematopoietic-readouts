@@ -1,0 +1,293 @@
+{
+  "scope": "Raw source provenance only; no files downloaded or raw data included",
+  "sources": [
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593715_CT_matrix.mtx.gz",
+      "sha256": "495585a1c246a11da10606ae7da2c81065a2e4ee296c8c876e50257e9e5a40b7",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593715_CT_features.tsv.gz",
+      "sha256": "b587e76c0d7f42c7cfde001b7fd344250f321a091f27a001b0e812dfa71752aa",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593715_CT_barcodes.tsv.gz",
+      "sha256": "0f24b6aa51216221c56c41ab23a8622e6cdfa8266d2e634fd8f6859b9d1f2e66",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593716_D4_matrix.mtx.gz",
+      "sha256": "6c904e1360516637272fd8211f5125f9d984b70684fd45504c47c85981098f98",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593716_D4_features.tsv.gz",
+      "sha256": "77d1e418f326b5027eb19d4d2905b8ed2cd5905d4df0088f705c7ef4a40322f7",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593716_D4_barcodes.tsv.gz",
+      "sha256": "f227e2354e97b8d3d969ce1f2142c47b04afe56c1f0a90e2dc98cfb4ce2abf3f",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593717_D7_matrix.mtx.gz",
+      "sha256": "73632f6b1f5aa62472b93aeafcfbe15dd2f0a65a94991b2169cc7002ec0d3e4a",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593717_D7_features.tsv.gz",
+      "sha256": "57958fa30f1ebac34bf94e6363127a7f3c2e33ddf865a79bf459f6239b38ac3c",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593717_D7_barcodes.tsv.gz",
+      "sha256": "5ec93f5c9635f9329512b2657aa7e2c8275d82583f4aed6100a345e6756b1d45",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593718_D11_matrix.mtx.gz",
+      "sha256": "abf31dde3deb5b0b0414c7391eac7beeb8d2b812c092d56a9aefa3f562362b1d",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593718_D11_features.tsv.gz",
+      "sha256": "dc5a7e00e0ebcca23f904448700efb60033fb68a7df0c55cf1eea35a8f104701",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593718_D11_barcodes.tsv.gz",
+      "sha256": "ff5fea14e8bef5b354d31f5958c0e9da8a64c5f11f901a9efff188209002b398",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593719_D14_matrix.mtx.gz",
+      "sha256": "711c0f7499f29ecd2c103c6639217b7c6ed4b6ca43d5b1f4139f7798a28b4000",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593719_D14_features.tsv.gz",
+      "sha256": "8127c8e72a6f2bab5e56007216378c6e815872bbfab83546987a66048a47a919",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "ucb",
+      "accession": "GSE280270",
+      "file": "GSM8593719_D14_barcodes.tsv.gz",
+      "sha256": "98718dc81cd1d1dba73b3a5c433e1a548330096fa8ee4c4983b72b6d01ccef88",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280270/suppl/GSE280270_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "wtko0312.h5ad",
+      "sha256": "5dc695cfa17e9287e222c9a5d24f5f0749d750371c2ca93001ba734d03a357c7",
+      "acquisition_url": null,
+      "public_source": false,
+      "role": "historical membership/coordinates; not required by saved replay"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518011_wt_barcodes.tsv.gz",
+      "sha256": "3eae130145125a27528d01e72bc28e3385fe6252b0de33ca7a9fd62b75872344",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518011_wt_features.tsv.gz",
+      "sha256": "2b3455366d91784c08b5e1903ad2b4f76f8e8661b7f150e8aa0e028b56d165ba",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518011_wt_matrix.mtx.gz",
+      "sha256": "86b566786518d62c05a75407127ef312bd606403bdd0d6fad40912606d1e1728",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518012_ko_barcodes.tsv.gz",
+      "sha256": "40525c39e85b99b899c5be3f2d5ff0d3716b4bce2541c0068cc372677ce357ac",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518012_ko_features.tsv.gz",
+      "sha256": "e296bd5fa0bfdedcd976611f4859c5ad7458680c6e9a12806252c92147fe6a42",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1",
+      "accession": "GSE277292",
+      "file": "GSM8518012_ko_matrix.mtx.gz",
+      "sha256": "b1709a7d60840004821950a7c782040081429a480b9e0b8bb45b90e654a46cc4",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277292/suppl/GSE277292_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "sleep",
+      "accession": "GSE280145",
+      "file": "GSM8588850_CONTROL.loom.gz",
+      "sha256": "55663462e3078f173f772a43d17c19bdce965f2e65e4663dc19ba8b8bfd4ace1",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280145/suppl/GSE280145_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "sleep",
+      "accession": "GSE280145",
+      "file": "GSM8588851_SD.loom.gz",
+      "sha256": "5a178360b7327c55506885c1ef5a1e0146ad7ce43be0645abb5904ce8c161e07",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280145/suppl/GSE280145_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305359_HSC.raw_counts.tsv.gz",
+      "sha256": "fb8efb9b265e751aecda082b9bb22be4e062cac938753d3f4ae2392e10cc9e98",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305360_MPP.raw_counts.tsv.gz",
+      "sha256": "4b169a2306331d8ae6105ddd56db175ef1cc8e04cb1da37f632d186256161f42",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305361_MLP.raw_counts.tsv.gz",
+      "sha256": "db494187e876cda5a7788b9a78702fc7027b8fee929f978d85cb9a46fcd12ff8",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305362_PreBNK.raw_counts.tsv.gz",
+      "sha256": "3d58dd5f1962107a85ddb54d2adb41e53759425eb02e85b5b829fbd76cc13e41",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305363_MEP.raw_counts.tsv.gz",
+      "sha256": "ad9f6b94deddc3f8e95da6c058725961d8479b7bb6b98b7fb7288fe48861bac6",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305364_CMP.raw_counts.tsv.gz",
+      "sha256": "91090aa09c0a6cc7699fc5a3b1aafd9ad9ee3b5a20a87d5a34211fe60ffa68bf",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "marrow",
+      "accession": "GSE117498",
+      "file": "GSM3305365_GMP.raw_counts.tsv.gz",
+      "sha256": "658c18d33e56ed07e277f045bcf62200eb9492313f627ef5a0134ea7f555d984",
+      "acquisition_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117498/suppl/GSE117498_RAW.tar",
+      "public_source": true,
+      "role": "raw deposited counts"
+    },
+    {
+      "cohort": "dapp1_spliced",
+      "accession": "GSE277292",
+      "file": "wtko0312.h5ad",
+      "sha256": "5dc695cfa17e9287e222c9a5d24f5f0749d750371c2ca93001ba734d03a357c7",
+      "acquisition_url": null,
+      "public_source": false,
+      "role": "historical membership/coordinates; not required by saved replay"
+    }
+  ]
+}

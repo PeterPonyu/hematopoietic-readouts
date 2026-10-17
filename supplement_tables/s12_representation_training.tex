@@ -1,0 +1,25 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}@{}}
+\caption{Saved upstream LiVAE optimization diagnostics. All fits used seed 0 and reached 200 epochs. Losses describe the declared weighted objective; relative reduction and neighbour overlap are saved diagnostics, not independent biological validation. The companion CSV includes exact train/validation counts and median neighbour overlaps.}\label{tab:s12_representation_training}\\
+\toprule
+Cohort & Best epoch & Initial loss & Best loss & Reduction & Mean 15NN overlap \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\small\tablename\ \thetable\ continued}\\
+\toprule
+Cohort & Best epoch & Initial loss & Best loss & Reduction & Mean 15NN overlap \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\small Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+TPO & 198 & 3939.65 & 1393.51 & 0.646 & 0.161 \\
+Dapp1 & 199 & 7282.75 & 3155.53 & 0.567 & 0.308 \\
+Sleep & 198 & 2365.82 & 880.09 & 0.628 & 0.146 \\
+\end{longtable}
+\endgroup

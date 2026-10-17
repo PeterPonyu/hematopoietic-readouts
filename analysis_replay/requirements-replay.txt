@@ -1,0 +1,11 @@
+# Observed compatible versions for this saved-analysis replay; not a full training lock.
+# Python 3.13.7; Linux x86_64; CPU inference. No packages installed by this revision.
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.2
+scikit-learn==1.6.1
+matplotlib==3.10.7
+# Encoder tier only: tested torch 2.12.1+cu130, CPU map_location.
+# CUDA wheel source and transitive dependencies are environment-specific; this
+# local-version observation is not claimed to be a universally installable lock.
+torch==2.12.1

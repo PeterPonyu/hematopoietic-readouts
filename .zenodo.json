@@ -1,0 +1,21 @@
+{
+  "title": "Hematopoietic readouts: scientific code and aggregate source tables",
+  "description": "<p>Manuscript-specific software for <em>Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets</em>.</p><p>Original display and retained-artifact scientific replay utilities, aggregate source tables, numerical display references and upstream notices are included. Per-cell identifiers, count matrices, model outputs and fitted encoder artifacts are supplied separately as Supplementary Code 1 and Supplementary Data 1–8. Aggregate display reproduction, retained-artifact replay and full raw-data/model retraining have distinct boundaries. This release does not establish raw preparation, full model retraining or independent biological validation.</p><p>MIT terms apply to original software and its software documentation. Aggregate tables, source datasets and upstream code retain their own terms and attribution; see LICENSE, NOTICE.md and DATA_SOURCES.md.</p><p>Sole author: Zeyu Fu; ORCID 0009-0001-8329-0108. Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.</p>",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Fu, Zeyu",
+      "affiliation": "State Key Laboratory of Trauma and Chemical Poisoning, Institute of Combined Injury, Army Medical University, Chongqing, China",
+      "orcid": "0009-0001-8329-0108"
+    }
+  ],
+  "license": "mit",
+  "keywords": [
+    "single-cell transcriptomics",
+    "hematopoiesis",
+    "cell composition",
+    "transcriptional programs",
+    "scientific reproducibility"
+  ],
+  "language": "eng"
+}

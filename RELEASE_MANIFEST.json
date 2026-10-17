@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "scope": "Lean manuscript-specific source release",
+  "generated_files": [
+    "ARTICLE.json",
+    "LICENSES/LiVAE.txt",
+    "LICENSES/scRL.txt",
+    "LICENSES/scfocus.txt",
+    "aggregate_metadata.json",
+    "analysis_replay/biological_calculations.py",
+    "analysis_replay/calculation_ports.json",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/cluster_programs.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/composition_counts.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/composition_standardized_effects.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/seed_stability.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/thesis_composition.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/within_group_gene_means.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/within_group_program_means.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/geometry_reference/associations.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/geometry_reference/summary.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/marrow/reward_timing.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/sleep/cluster_programs.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/sleep/composition_counts.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/sleep/composition_standardized_effects.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/sleep/thesis_composition.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/sleep/within_group_program_means.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/cluster_programs.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/composition_counts.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/condition_gene_means.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/condition_program_means.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/starting_population_programs.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv",
+    "analysis_replay/expected/results/application_reanalysis_20260921/ucb/thesis_composition.csv",
+    "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/associations_all_rewards.csv",
+    "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/focus_summary.csv",
+    "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/neutral_summary.csv",
+    "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/paired_representation_effects.csv",
+    "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/seed_stability.csv",
+    "analysis_replay/expected_figure_values.csv",
+    "analysis_replay/figure_calculations.py",
+    "analysis_replay/frozen_calculations.py",
+    "analysis_replay/geometry_calculations.py",
+    "analysis_replay/matched_calculations.py",
+    "analysis_replay/render_figures.py",
+    "analysis_replay/replay.py",
+    "analysis_replay/replay_common.py",
+    "analysis_replay/requirements-replay.txt",
+    "analysis_replay/tolerances.json",
+    "analysis_replay/vendor/LiVAE-LICENSE",
+    "analysis_replay/vendor/livae/__init__.py",
+    "analysis_replay/vendor/livae/module.py",
+    "analysis_replay/vendor/livae/utils.py",
+    "provenance/source_acquisition.json",
+    "provenance/source_copies.json",
+    "reference_data/figure3_composition_context.csv",
+    "reference_data/figure3_composition_context.json",
+    "reference_data/figure_values.csv",
+    "reference_data/frozen_readout_table_sources.json",
+    "reference_data/interpretation_display_values.csv",
+    "reference_data/program_sensitivity_summary.json",
+    "scripts/build_figures.py",
+    "scripts/build_frozen_readout_table.py",
+    "scripts/build_interpretation_assets.py",
+    "scripts/build_revision_tables.py",
+    "scripts/build_sensitivity_table.py",
+    "scripts/build_supplement_tables.py",
+    "scripts/calculate_program_sensitivity.py",
+    "scripts/verify_supplements.py",
+    "sensitivity_data/marker_sensitivity_existing_reference_checks.csv",
+    "sensitivity_data/marker_sensitivity_full_precision.csv",
+    "sensitivity_data/marker_sensitivity_group_weights.csv",
+    "sensitivity_data/marker_sensitivity_manifest.json",
+    "source_data/results/application_reanalysis_20260921/dapp1/cluster_programs.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/composition_counts.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/composition_standardized_effects.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/thesis_composition.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/within_group_gene_means.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1/within_group_program_means.csv",
+    "source_data/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv",
+    "source_data/results/application_reanalysis_20260921/geometry_reference/associations.csv",
+    "source_data/results/application_reanalysis_20260921/geometry_reference/summary.csv",
+    "source_data/results/application_reanalysis_20260921/marrow/reward_timing.csv",
+    "source_data/results/application_reanalysis_20260921/sleep/cluster_programs.csv",
+    "source_data/results/application_reanalysis_20260921/sleep/composition_counts.csv",
+    "source_data/results/application_reanalysis_20260921/sleep/composition_standardized_effects.csv",
+    "source_data/results/application_reanalysis_20260921/sleep/thesis_composition.csv",
+    "source_data/results/application_reanalysis_20260921/sleep/within_group_program_means.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/cluster_programs.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/composition_counts.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/condition_program_means.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/starting_population_programs.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv",
+    "source_data/results/application_reanalysis_20260921/ucb/thesis_composition.csv",
+    "source_data/results/recovered_integration_20261001/native_analysis/associations_all_rewards.csv",
+    "source_data/results/recovered_integration_20261001/native_analysis/focus_summary.csv",
+    "source_data/results/recovered_integration_20261001/native_analysis/neutral_summary.csv",
+    "source_data/results/recovered_integration_20261001/native_analysis/paired_representation_effects.csv",
+    "source_data/results/recovered_integration_20261001/native_analysis/seed_stability.csv",
+    "supplement_tables/matched_run_inventory.csv",
+    "supplement_tables/s01_cohort_counts.csv",
+    "supplement_tables/s01_cohort_counts.tex",
+    "supplement_tables/s02_program_contrasts.csv",
+    "supplement_tables/s02_program_contrasts.tex",
+    "supplement_tables/s03_tpo_program_means.csv",
+    "supplement_tables/s03_tpo_program_means.tex",
+    "supplement_tables/s04_detected_program_genes.csv",
+    "supplement_tables/s04_detected_program_genes.tex",
+    "supplement_tables/s05_frozen_geometry.csv",
+    "supplement_tables/s05_frozen_geometry.tex",
+    "supplement_tables/s06_paired_neutral_geometry.csv",
+    "supplement_tables/s06_paired_neutral_geometry.tex",
+    "supplement_tables/s07_paired_differences.csv",
+    "supplement_tables/s07_paired_differences.tex",
+    "supplement_tables/s08_all_reward_associations.csv",
+    "supplement_tables/s08_all_reward_associations.tex",
+    "supplement_tables/s09_focus_summary.csv",
+    "supplement_tables/s09_focus_summary.tex",
+    "supplement_tables/s10_seed_stability.csv",
+    "supplement_tables/s10_seed_stability.tex",
+    "supplement_tables/s11_marrow_reward_timing.csv",
+    "supplement_tables/s11_marrow_reward_timing.tex",
+    "supplement_tables/s12_representation_training.csv",
+    "supplement_tables/s12_representation_training.tex",
+    "supplement_tables/s13_task_denominators.csv",
+    "supplement_tables/s13_task_denominators.tex",
+    "supplement_tables/s14_group_contrasts.csv",
+    "supplement_tables/s14_group_contrasts.tex",
+    "supplement_tables/s15_tpo_cluster_composition.csv",
+    "supplement_tables/s15_tpo_cluster_composition.tex",
+    "supplement_tables/s16_annotation_audit.csv",
+    "supplement_tables/s16_annotation_audit.tex",
+    "supplement_tables/s17_annotation_diagnostics.csv",
+    "supplement_tables/s17_annotation_diagnostics.tex",
+    "supplement_tables/s17_annotation_marker_evidence.csv",
+    "supplement_tables/s18_task_evidence.csv",
+    "supplement_tables/s18_task_evidence.tex",
+    "supplement_tables/s19_reward_evidence.csv",
+    "supplement_tables/s19_reward_evidence.tex",
+    "supplement_tables/s20_marker_sensitivity.csv",
+    "supplement_tables/s20_marker_sensitivity.tex",
+    "supplement_tables/s21_additional_frozen_readouts.csv",
+    "supplement_tables/s21_additional_frozen_readouts.tex"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 96,
+      "sha256": "a5323a4acd8d70f4b1248aadd967a102c125e9b387e69ccaeac4148ccc6565d1"
+    },
+    {
+      "path": ".zenodo.json",
+      "bytes": 1638,
+      "sha256": "645a70a78d78c7fcb31814e314c6438df122bcac4793d94d9adb4869bace5c73"
+    },
+    {
+      "path": "ARTICLE.json",
+      "bytes": 460,
+      "sha256": "4f6789adff82fac76d288bfcb98c41086ca18be591f366d6b7a845c559a6bcd1"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 1268,
+      "sha256": "d9c781fc778e7d22d5d029e2645f907748fb34096ac49c0fbbeb73c9269f390e"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 1517,
+      "sha256": "481bd6ed4d899437cd8bfd0be9b290458a65e5694206351550d6332f15160e81"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1676,
+      "sha256": "f3744a36c73c266fdd170d9cc1ef90176368e2f9443ea3a263dd0b5ed88a2e01"
+    },
+    {
+      "path": "LICENSES/LiVAE.txt",
+      "bytes": 1064,
+      "sha256": "7878b27f9d3d83be5d85c2918b71b87952566a5b4203061d4374f6c8c9fb7752"
+    },
+    {
+      "path": "LICENSES/scRL.txt",
+      "bytes": 1064,
+      "sha256": "ce17151c661626823286e04244ecb4a8c4a88d03379a78b3eedf6d7c63a18120"
+    },
+    {
+      "path": "LICENSES/scfocus.txt",
+      "bytes": 1064,
+      "sha256": "ce17151c661626823286e04244ecb4a8c4a88d03379a78b3eedf6d7c63a18120"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1612,
+      "sha256": "345365bf7cece9900d9b7eb75962100a3c4cdf7c3943ae3cd6e4f3deb024938d"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "bytes": 2653,
+      "sha256": "5e08489afe3528687b25ee6df4d555abc14106f5cc9271be47d0fe1d250d8e59"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5188,
+      "sha256": "f720a3acbe63eae4dae320a1800e892c59539057173f956859c6e76365f775af"
+    },
+    {
+      "path": "aggregate_metadata.json",
+      "bytes": 48682,
+      "sha256": "ed68bfe4a690bde89b52091be8f18de933bc32d71a2544fc313f6bc3dbb6dd1b"
+    },
+    {
+      "path": "analysis_replay/biological_calculations.py",
+      "bytes": 5124,
+      "sha256": "553c25db93ee2d5e623e041e05c6c1584acb8832dbedf8912534f15c013d4429"
+    },
+    {
+      "path": "analysis_replay/calculation_ports.json",
+      "bytes": 3021,
+      "sha256": "8a26d96386f9bf60d5dcdf2cc47095b8512d0fbc5ff8c444b6d086e259ff9d3d"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/cluster_programs.csv",
+      "bytes": 1790,
+      "sha256": "0836c1a55fe5b0bd13f0a0899f6971e6a25ba1f2b2bd67fd61126fce04806433"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/composition_counts.csv",
+      "bytes": 122,
+      "sha256": "c82966dfd3e309a6d227ced4ec2fdcad5ee77146779e094a4d10594a3a8b4239"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/composition_standardized_effects.csv",
+      "bytes": 1930,
+      "sha256": "0f8b2e7b45aefda5141c3ad604de749dc2f6fb038c956789885332d7327201fc"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/seed_stability.csv",
+      "bytes": 1447,
+      "sha256": "bcfa4e2bc1faa747ed571450dad9cf6e14cf94dcdf50b8c033c7baa0b91e7dcf"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/thesis_composition.csv",
+      "bytes": 126,
+      "sha256": "32bba95cd67f9d03d02235da32dc76b06d1d1f05f1ae01c34b9fbbb3b5d58051"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/within_group_gene_means.csv",
+      "bytes": 28916,
+      "sha256": "9676cd098aef7d1a10e8e7cb1892d0d457412c090c5740812237f8a86696ae05"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1/within_group_program_means.csv",
+      "bytes": 7004,
+      "sha256": "c923a1e607249b7b7104bdfd595c2b2ad6db9ed3353b19fc1cc6956e2c8e34d0"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv",
+      "bytes": 1211,
+      "sha256": "553e4d4ec3c38604a54d74a91643e7e3b21038896efb24ba3031c9ecfa0228c5"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/geometry_reference/associations.csv",
+      "bytes": 7130,
+      "sha256": "0d60258990cdd7e72ac40082834fc913410ccd9d14ba46b7e3f9d2f0a0aa9500"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/geometry_reference/summary.csv",
+      "bytes": 2393,
+      "sha256": "59ff0df7621761d113301cb5541bfcc22c1b8d5ccf070ecb604c74275cf4665c"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/marrow/reward_timing.csv",
+      "bytes": 1153,
+      "sha256": "9f0ec9c4915da326571454a839ffa883b38ba52d69cddfd99949a4a009f38c32"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/sleep/cluster_programs.csv",
+      "bytes": 2934,
+      "sha256": "813a43a2920e2886b42c2bc36e5f7f3c1e664eb476a1308476d2b9872e26088c"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/sleep/composition_counts.csv",
+      "bytes": 225,
+      "sha256": "327f24b4ce49b47742ba2bc0a319ea189ce26a8a43cb27e54b7239074a045d19"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/sleep/composition_standardized_effects.csv",
+      "bytes": 1950,
+      "sha256": "f6b7a88f8338b40a15374488c0acd2fe5460f6c6d18fe2234eec3d021969ac5e"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/sleep/thesis_composition.csv",
+      "bytes": 154,
+      "sha256": "6a803a98ecda46c02276577d6b42d55328ce7ae6c0e3ea0b4c6cb82d828b4674"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/sleep/within_group_program_means.csv",
+      "bytes": 12079,
+      "sha256": "5333825406afedabdb25368818eced2e9216189c496fed5082f1796665a1dc44"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/cluster_programs.csv",
+      "bytes": 2485,
+      "sha256": "5d9b5adc70ec3917c3c44a1165767f62db1c6cc65337d9b24a3cf245b9eaf359"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/composition_counts.csv",
+      "bytes": 332,
+      "sha256": "5f114ca96fc8b6e138c2219e970d7436e0cf8d50e174aa98355c55f7ffecd365"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/condition_gene_means.csv",
+      "bytes": 8571,
+      "sha256": "848179cc0937a3f4a3c9e6b65759bb22f20a3cfcb4ae634479d8aeaadc311a98"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/condition_program_means.csv",
+      "bytes": 1834,
+      "sha256": "435827c81897254573026ff329171e3efc7ff26722da9c94e10aeb653b7090c3"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/starting_population_programs.csv",
+      "bytes": 384,
+      "sha256": "8b3a86f49917b0118dcf932093f9bf98a2cfae05439b41c76844d2d096770eed"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv",
+      "bytes": 7746,
+      "sha256": "e7ed4b4cc87fc28114af3a921144ed58f63d0fedd6d5fc510122725f70e293a9"
+    },
+    {
+      "path": "analysis_replay/expected/results/application_reanalysis_20260921/ucb/thesis_composition.csv",
+      "bytes": 327,
+      "sha256": "181f5398991088fca54a89e9cca40155cdd1584c36b8a87782b54cf2e93bd70f"
+    },
+    {
+      "path": "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/associations_all_rewards.csv",
+      "bytes": 26647,
+      "sha256": "fd80b62a074ab758c88c2bb19ad6330fadc5715464218925171ccc861229d125"
+    },
+    {
+      "path": "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/focus_summary.csv",
+      "bytes": 1333,
+      "sha256": "e1f0d9b9f0dce5564ca2e429b9bfcf4b955a1519b243d7dcd9a624f418db7856"
+    },
+    {
+      "path": "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/neutral_summary.csv",
+      "bytes": 3302,
+      "sha256": "a1af0b329d406d42fa5a9ea64e65edb3a560fcfad2495cdc5974360c99c7b3d0"
+    },
+    {
+      "path": "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/paired_representation_effects.csv",
+      "bytes": 1624,
+      "sha256": "380ff3dfa52006c242f331ec0039c90eb77a5e4576434fb25cfcc38dcc30f293"
+    },
+    {
+      "path": "analysis_replay/expected/results/recovered_integration_20261001/native_analysis/seed_stability.csv",
+      "bytes": 6670,
+      "sha256": "707e5ce04ab1a12dafbd032f2d90f8dbb6dfc28e1eea5abb7becabcd83917908"
+    },
+    {
+      "path": "analysis_replay/expected_figure_values.csv",
+      "bytes": 106925,
+      "sha256": "033833512420c54915075492ce8de283397ebe03ebc8349b3663f888f5374479"
+    },
+    {
+      "path": "analysis_replay/figure_calculations.py",
+      "bytes": 42072,
+      "sha256": "4e2d6734e1c9dc2ad75901a001414a71793e8f721b3e1194f4c10f6c892f03bf"
+    },
+    {
+      "path": "analysis_replay/frozen_calculations.py",
+      "bytes": 8729,
+      "sha256": "e1cf632d0878618aaf41d2143dc066f7b0e6278753fbb23db1d5b28f6de1e6ff"
+    },
+    {
+      "path": "analysis_replay/geometry_calculations.py",
+      "bytes": 5974,
+      "sha256": "dd39bf26a41ec3584389d47b5e16ceba7d7069361ed97fbb7f38f45ad8dfe53c"
+    },
+    {
+      "path": "analysis_replay/matched_calculations.py",
+      "bytes": 8660,
+      "sha256": "a7b864f42d926ae3c14a1bd377f964c9ef5823747113eb79bb4c6b6d66422c34"
+    },
+    {
+      "path": "analysis_replay/render_figures.py",
+      "bytes": 3225,
+      "sha256": "3c33c9175a8120c932282963edd5dff06a54de8e2f03435e0ab9d9b5d42c0f61"
+    },
+    {
+      "path": "analysis_replay/replay.py",
+      "bytes": 15443,
+      "sha256": "0954be2ea7e6ae2237e47125e9778d0d100f2802f1da2497647a7a1fb6ce288b"
+    },
+    {
+      "path": "analysis_replay/replay_common.py",
+      "bytes": 290,
+      "sha256": "82a4ba12837cfe302a800ba1cf7ed10c63d0405fc2845819f90f9d556473254d"
+    },
+    {
+      "path": "analysis_replay/requirements-replay.txt",
+      "bytes": 495,
+      "sha256": "ac0532797f31099139958c1fdc30852ed5281373a1ce040e0af684e6fb167aaf"
+    },
+    {
+      "path": "analysis_replay/tolerances.json",
+      "bytes": 953,
+      "sha256": "65b0a74b1dcede7e6d1f5db35a4e03bee03e23ce41aebc17d534b4196a587a0b"
+    },
+    {
+      "path": "analysis_replay/vendor/LiVAE-LICENSE",
+      "bytes": 1064,
+      "sha256": "7878b27f9d3d83be5d85c2918b71b87952566a5b4203061d4374f6c8c9fb7752"
+    },
+    {
+      "path": "analysis_replay/vendor/livae/__init__.py",
+      "bytes": 68,
+      "sha256": "e93e541b0c7f873ad17f8f523f01b464fa3d1d8a9385d08833d8fc829d9a5190"
+    },
+    {
+      "path": "analysis_replay/vendor/livae/module.py",
+      "bytes": 7007,
+      "sha256": "8ce69be2f8dd4541a27c47d66ff397a31d2c843eb28f530eb93bf3ef4a07362f"
+    },
+    {
+      "path": "analysis_replay/vendor/livae/utils.py",
+      "bytes": 3049,
+      "sha256": "232002616534ee5e26ed3c43da4fc650cc49189b218e72fa74f66d56da8c4a48"
+    },
+    {
+      "path": "provenance/source_acquisition.json",
+      "bytes": 12117,
+      "sha256": "b9b30f5fdc5dcb9b4cbddf236857fb01c1096ffce205ade652e2138d094bebfb"
+    },
+    {
+      "path": "provenance/source_copies.json",
+      "bytes": 71712,
+      "sha256": "4b02f4fd70f9376d5866e04171927174ddd1fdffffceff08013abd2c3969dcba"
+    },
+    {
+      "path": "reference_data/figure3_composition_context.csv",
+      "bytes": 1507,
+      "sha256": "85026d055222dae767b7906505cd6d5049f6be36110ae699becbc96483333097"
+    },
+    {
+      "path": "reference_data/figure3_composition_context.json",
+      "bytes": 1204,
+      "sha256": "393e0f0f1ff95f669f3712f9baee922e890c49286bb1615ab18e7e03746feb38"
+    },
+    {
+      "path": "reference_data/figure_values.csv",
+      "bytes": 106925,
+      "sha256": "033833512420c54915075492ce8de283397ebe03ebc8349b3663f888f5374479"
+    },
+    {
+      "path": "reference_data/frozen_readout_table_sources.json",
+      "bytes": 962,
+      "sha256": "79ea039ef4fbdc788665d24bf8c9c39a0290ed91f35331de70747f6bf8f09d4d"
+    },
+    {
+      "path": "reference_data/interpretation_display_values.csv",
+      "bytes": 47702,
+      "sha256": "a384c9b456f87251819b4b5a7bf0c8721a986e1e4571d30b3d283dc70d1c8016"
+    },
+    {
+      "path": "reference_data/program_sensitivity_summary.json",
+      "bytes": 2216,
+      "sha256": "b174acbf3b5046cf882c716bb39ad3cd28cb69badf3bcb4014b2046399abb820"
+    },
+    {
+      "path": "requirements-display.txt",
+      "bytes": 361,
+      "sha256": "c8d978de0bfe6e1ba44421ecd37822a661664f489430d4b2801507c5e16b7a08"
+    },
+    {
+      "path": "run.py",
+      "bytes": 11972,
+      "sha256": "943e9f789719063e3b2094c77a1fbc754ed240abdb7792327e6d7a30e1c9fe50"
+    },
+    {
+      "path": "scripts/build_figures.py",
+      "bytes": 42076,
+      "sha256": "13d48b676d59e273396fe087370b27df428324d6fc01011eab042a2021cc87d6"
+    },
+    {
+      "path": "scripts/build_frozen_readout_table.py",
+      "bytes": 4588,
+      "sha256": "73ce6041ad54964bb9725599cbfaf8d2f10aa3583e21589df153001fc6baaa35"
+    },
+    {
+      "path": "scripts/build_interpretation_assets.py",
+      "bytes": 20460,
+      "sha256": "e8732e6e1a8b22dd469d6e06183fc42f49741af38caef52efed476d8f3d5bbd2"
+    },
+    {
+      "path": "scripts/build_revision_tables.py",
+      "bytes": 25809,
+      "sha256": "c6927d06f044655f161cfa48cf0b72178f6448aab4872b8349301d78d05efdc9"
+    },
+    {
+      "path": "scripts/build_sensitivity_table.py",
+      "bytes": 4623,
+      "sha256": "d323b0bf5deda47904bd3ceacc2cfd6c19d1cb9381752cb6167113c6ffe85d6e"
+    },
+    {
+      "path": "scripts/build_supplement_tables.py",
+      "bytes": 16611,
+      "sha256": "c5e7f74609c01953e09124fd53d62c725dab069e2f77d604d993f320e449ca5e"
+    },
+    {
+      "path": "scripts/calculate_program_sensitivity.py",
+      "bytes": 11567,
+      "sha256": "bc52834bf2a8538f2f5dd97b46d28b686a3437c967fec600c26d14d779dc3094"
+    },
+    {
+      "path": "scripts/verify_supplements.py",
+      "bytes": 2752,
+      "sha256": "3a598e953b3c0ca1a88955170a1e4b477f8b29ff1f620f458a8e38896fc083bb"
+    },
+    {
+      "path": "sensitivity_data/marker_sensitivity_existing_reference_checks.csv",
+      "bytes": 543,
+      "sha256": "f7e09c4bf1042ba5eebc76d34212586fb8b8cdd34bc0732189d39e1ddc27540c"
+    },
+    {
+      "path": "sensitivity_data/marker_sensitivity_full_precision.csv",
+      "bytes": 10328,
+      "sha256": "dbe23962c27bfb5989f6a39e25a5c92fd4ed5d120157951091900101e8603624"
+    },
+    {
+      "path": "sensitivity_data/marker_sensitivity_group_weights.csv",
+      "bytes": 2245,
+      "sha256": "0fb8a341ab8efb9d2765a55342b64daa913e57cb88f01e04d58c64231a869536"
+    },
+    {
+      "path": "sensitivity_data/marker_sensitivity_manifest.json",
+      "bytes": 7642,
+      "sha256": "c8b9f87413e228cbcdded7429faa9913a4ad4011bc7329e1fddee043a00e6300"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/cluster_programs.csv",
+      "bytes": 1790,
+      "sha256": "0836c1a55fe5b0bd13f0a0899f6971e6a25ba1f2b2bd67fd61126fce04806433"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/composition_counts.csv",
+      "bytes": 122,
+      "sha256": "c82966dfd3e309a6d227ced4ec2fdcad5ee77146779e094a4d10594a3a8b4239"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/composition_standardized_effects.csv",
+      "bytes": 1930,
+      "sha256": "0f8b2e7b45aefda5141c3ad604de749dc2f6fb038c956789885332d7327201fc"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv",
+      "bytes": 1447,
+      "sha256": "bcfa4e2bc1faa747ed571450dad9cf6e14cf94dcdf50b8c033c7baa0b91e7dcf"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/thesis_composition.csv",
+      "bytes": 126,
+      "sha256": "32bba95cd67f9d03d02235da32dc76b06d1d1f05f1ae01c34b9fbbb3b5d58051"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/within_group_gene_means.csv",
+      "bytes": 28916,
+      "sha256": "9676cd098aef7d1a10e8e7cb1892d0d457412c090c5740812237f8a86696ae05"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1/within_group_program_means.csv",
+      "bytes": 7004,
+      "sha256": "c923a1e607249b7b7104bdfd595c2b2ad6db9ed3353b19fc1cc6956e2c8e34d0"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv",
+      "bytes": 1211,
+      "sha256": "553e4d4ec3c38604a54d74a91643e7e3b21038896efb24ba3031c9ecfa0228c5"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/geometry_reference/associations.csv",
+      "bytes": 7130,
+      "sha256": "0d60258990cdd7e72ac40082834fc913410ccd9d14ba46b7e3f9d2f0a0aa9500"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/geometry_reference/summary.csv",
+      "bytes": 2393,
+      "sha256": "59ff0df7621761d113301cb5541bfcc22c1b8d5ccf070ecb604c74275cf4665c"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/marrow/reward_timing.csv",
+      "bytes": 1153,
+      "sha256": "9f0ec9c4915da326571454a839ffa883b38ba52d69cddfd99949a4a009f38c32"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/sleep/cluster_programs.csv",
+      "bytes": 2934,
+      "sha256": "813a43a2920e2886b42c2bc36e5f7f3c1e664eb476a1308476d2b9872e26088c"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/sleep/composition_counts.csv",
+      "bytes": 225,
+      "sha256": "327f24b4ce49b47742ba2bc0a319ea189ce26a8a43cb27e54b7239074a045d19"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/sleep/composition_standardized_effects.csv",
+      "bytes": 1950,
+      "sha256": "f6b7a88f8338b40a15374488c0acd2fe5460f6c6d18fe2234eec3d021969ac5e"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/sleep/thesis_composition.csv",
+      "bytes": 154,
+      "sha256": "6a803a98ecda46c02276577d6b42d55328ce7ae6c0e3ea0b4c6cb82d828b4674"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/sleep/within_group_program_means.csv",
+      "bytes": 12079,
+      "sha256": "5333825406afedabdb25368818eced2e9216189c496fed5082f1796665a1dc44"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/cluster_programs.csv",
+      "bytes": 2485,
+      "sha256": "5d9b5adc70ec3917c3c44a1165767f62db1c6cc65337d9b24a3cf245b9eaf359"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/composition_counts.csv",
+      "bytes": 332,
+      "sha256": "5f114ca96fc8b6e138c2219e970d7436e0cf8d50e174aa98355c55f7ffecd365"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv",
+      "bytes": 8571,
+      "sha256": "848179cc0937a3f4a3c9e6b65759bb22f20a3cfcb4ae634479d8aeaadc311a98"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/condition_program_means.csv",
+      "bytes": 1834,
+      "sha256": "435827c81897254573026ff329171e3efc7ff26722da9c94e10aeb653b7090c3"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/starting_population_programs.csv",
+      "bytes": 384,
+      "sha256": "8b3a86f49917b0118dcf932093f9bf98a2cfae05439b41c76844d2d096770eed"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv",
+      "bytes": 7746,
+      "sha256": "e7ed4b4cc87fc28114af3a921144ed58f63d0fedd6d5fc510122725f70e293a9"
+    },
+    {
+      "path": "source_data/results/application_reanalysis_20260921/ucb/thesis_composition.csv",
+      "bytes": 327,
+      "sha256": "181f5398991088fca54a89e9cca40155cdd1584c36b8a87782b54cf2e93bd70f"
+    },
+    {
+      "path": "source_data/results/recovered_integration_20261001/native_analysis/associations_all_rewards.csv",
+      "bytes": 26647,
+      "sha256": "fd80b62a074ab758c88c2bb19ad6330fadc5715464218925171ccc861229d125"
+    },
+    {
+      "path": "source_data/results/recovered_integration_20261001/native_analysis/focus_summary.csv",
+      "bytes": 1333,
+      "sha256": "e1f0d9b9f0dce5564ca2e429b9bfcf4b955a1519b243d7dcd9a624f418db7856"
+    },
+    {
+      "path": "source_data/results/recovered_integration_20261001/native_analysis/neutral_summary.csv",
+      "bytes": 3302,
+      "sha256": "a1af0b329d406d42fa5a9ea64e65edb3a560fcfad2495cdc5974360c99c7b3d0"
+    },
+    {
+      "path": "source_data/results/recovered_integration_20261001/native_analysis/paired_representation_effects.csv",
+      "bytes": 1624,
+      "sha256": "380ff3dfa52006c242f331ec0039c90eb77a5e4576434fb25cfcc38dcc30f293"
+    },
+    {
+      "path": "source_data/results/recovered_integration_20261001/native_analysis/seed_stability.csv",
+      "bytes": 6670,
+      "sha256": "707e5ce04ab1a12dafbd032f2d90f8dbb6dfc28e1eea5abb7becabcd83917908"
+    },
+    {
+      "path": "supplement_tables/matched_run_inventory.csv",
+      "bytes": 17410,
+      "sha256": "02457c2e3e2a18ee100cf56a570e6cae4d88712b5cba8f5e50c76893e9ed79b0"
+    },
+    {
+      "path": "supplement_tables/s01_cohort_counts.csv",
+      "bytes": 404,
+      "sha256": "0e691c844f716784a718a2f28963fcddfd3aa5c4c9e4803bcf4cd2abf1c9ea35"
+    },
+    {
+      "path": "supplement_tables/s01_cohort_counts.tex",
+      "bytes": 1538,
+      "sha256": "b32ce8d26d6a515460e03376f348e5ee88b427ddddcd92b269ca683ed1a0d7aa"
+    },
+    {
+      "path": "supplement_tables/s02_program_contrasts.csv",
+      "bytes": 3989,
+      "sha256": "ca96e11de5e2a273b3005af61b4622e00dd108bb6ab6dde6df15ec7049791249"
+    },
+    {
+      "path": "supplement_tables/s02_program_contrasts.tex",
+      "bytes": 2650,
+      "sha256": "6c2f100930b1dbae08288a8a7ce81dac1d69bc1a9a65838dad897a84e876b964"
+    },
+    {
+      "path": "supplement_tables/s03_tpo_program_means.csv",
+      "bytes": 1840,
+      "sha256": "9ce10d72ea042f928b080912eba5fbfbd16edb9ff26d5e593b95135a01840fec"
+    },
+    {
+      "path": "supplement_tables/s03_tpo_program_means.tex",
+      "bytes": 1774,
+      "sha256": "9d35985772b64e0f4d7fa1b91e120d12b520ce54c3d902efdc2652b3d8a79db8"
+    },
+    {
+      "path": "supplement_tables/s04_detected_program_genes.csv",
+      "bytes": 2128,
+      "sha256": "c3d7a541e614fc86c755cf3a849fad3a9604b24751f7d32357a69c80750c01ea"
+    },
+    {
+      "path": "supplement_tables/s04_detected_program_genes.tex",
+      "bytes": 3392,
+      "sha256": "bc1871985acc082f9981b55ea612829267ced5f40e5febb1d19d78f5099388f7"
+    },
+    {
+      "path": "supplement_tables/s05_frozen_geometry.csv",
+      "bytes": 1621,
+      "sha256": "80d2fc09a096c9f4d235883ebf919dab081b52218eb2f58083ff542bcb78e29b"
+    },
+    {
+      "path": "supplement_tables/s05_frozen_geometry.tex",
+      "bytes": 2026,
+      "sha256": "eab7fce545939bb1773751faad96f6d683d4cca14570b1c3c4fe9af13dfaa749"
+    },
+    {
+      "path": "supplement_tables/s06_paired_neutral_geometry.csv",
+      "bytes": 3327,
+      "sha256": "d7f297b64483c9197a37a1232311e5be2064dc528d5773fd2b5e408f1591a945"
+    },
+    {
+      "path": "supplement_tables/s06_paired_neutral_geometry.tex",
+      "bytes": 2991,
+      "sha256": "7b2fbb8c9d00de8a79677f9a7e97332823ecdee4f316baafc53dc69b53c1b346"
+    },
+    {
+      "path": "supplement_tables/s07_paired_differences.csv",
+      "bytes": 1637,
+      "sha256": "ba7f6cf07d86d9c76dc164147b48574e7c9492845d0d4fadadf61b7f046dae05"
+    },
+    {
+      "path": "supplement_tables/s07_paired_differences.tex",
+      "bytes": 1871,
+      "sha256": "7cd43368a74e45302a054cff867be3bd4cb03161330cea1c26e0e587ef990586"
+    },
+    {
+      "path": "supplement_tables/s08_all_reward_associations.csv",
+      "bytes": 26864,
+      "sha256": "e9bb33e287f14c9195f09131fb562ef5846eccb4aa49e3a57c76cd8982f864a9"
+    },
+    {
+      "path": "supplement_tables/s08_all_reward_associations.tex",
+      "bytes": 6421,
+      "sha256": "2b2a01193f5da3d7e8c68fdf1f3e7a08c16321850d71d5bb1d7ef6c4ecc334fd"
+    },
+    {
+      "path": "supplement_tables/s09_focus_summary.csv",
+      "bytes": 1584,
+      "sha256": "8a98877dc58c6b182f381bed2c0fdc97a7503175ee8155ca704212f0d2de1243"
+    },
+    {
+      "path": "supplement_tables/s09_focus_summary.tex",
+      "bytes": 2287,
+      "sha256": "8f3d4abb5d592f8bedcb03f00a4bf9876c4513243bd5237079f01d408a5de045"
+    },
+    {
+      "path": "supplement_tables/s10_seed_stability.csv",
+      "bytes": 6761,
+      "sha256": "2e77bbcd7dbdbf61f482166f428ffe688ece49a3f4164fa95e5071ddd8c385a9"
+    },
+    {
+      "path": "supplement_tables/s10_seed_stability.tex",
+      "bytes": 3283,
+      "sha256": "75f551d0ecd6cbb7c7928b50511270f48a726863bf51c4fa2ec22599fe0ba44f"
+    },
+    {
+      "path": "supplement_tables/s11_marrow_reward_timing.csv",
+      "bytes": 1172,
+      "sha256": "c1dc09457e1daa2e8c5c81b18b295dba702bc7f0c4beaf5821048f8534493027"
+    },
+    {
+      "path": "supplement_tables/s11_marrow_reward_timing.tex",
+      "bytes": 1916,
+      "sha256": "8480826e0a33904b7a8f08431b4148d6a9219d7c9d87b38a9159117104d0e4e8"
+    },
+    {
+      "path": "supplement_tables/s12_representation_training.csv",
+      "bytes": 593,
+      "sha256": "72fc784dce05c672b61cb4466db141c2d7bfe7bde44a2690fc9d652baef2690e"
+    },
+    {
+      "path": "supplement_tables/s12_representation_training.tex",
+      "bytes": 1330,
+      "sha256": "925641a61c651d58d6a9baaa3ad4032bafb877982e6b2676f06048de5cc0c13b"
+    },
+    {
+      "path": "supplement_tables/s13_task_denominators.csv",
+      "bytes": 443,
+      "sha256": "f1ef0dfd3d02d7972196c2682d1b9cfbc152c9d2029e4eeb97cfef9973809e10"
+    },
+    {
+      "path": "supplement_tables/s13_task_denominators.tex",
+      "bytes": 1342,
+      "sha256": "5d353a36ac2cd3c30cae18df26c49865954aaf421a119648f2f09ec3521b3053"
+    },
+    {
+      "path": "supplement_tables/s14_group_contrasts.csv",
+      "bytes": 9083,
+      "sha256": "dff4ac5b85061215b323c4a4ea883c022249ed9096875eafe5f1e5a05bb73970"
+    },
+    {
+      "path": "supplement_tables/s14_group_contrasts.tex",
+      "bytes": 4807,
+      "sha256": "16b0b6dfb17095010aac0924916e7ce826c70668e5d86d2447342ad1d6b445b1"
+    },
+    {
+      "path": "supplement_tables/s15_tpo_cluster_composition.csv",
+      "bytes": 6507,
+      "sha256": "b3864e60b8be157d1f94f3a3a1d070c8602651603f387c8b763871f099eb1c25"
+    },
+    {
+      "path": "supplement_tables/s15_tpo_cluster_composition.tex",
+      "bytes": 2567,
+      "sha256": "e019b8c5029597b642b05ff19d08eb3bf1a38419142b18806d64d6e91bc7c3c3"
+    },
+    {
+      "path": "supplement_tables/s16_annotation_audit.csv",
+      "bytes": 39739,
+      "sha256": "01aea2183a2d5135cf903df7fb8b461750b95605fecf87f7c0327b45077b9b03"
+    },
+    {
+      "path": "supplement_tables/s16_annotation_audit.tex",
+      "bytes": 3885,
+      "sha256": "b75c312065f8d0413439ca61dbf25f78a39cbbb367dbcb7e48cf5772077fbbe0"
+    },
+    {
+      "path": "supplement_tables/s17_annotation_diagnostics.csv",
+      "bytes": 4583,
+      "sha256": "923336ad6c5290a0c8fc16177aa06af8ff24852e629abb96c68c79d79a883bb4"
+    },
+    {
+      "path": "supplement_tables/s17_annotation_diagnostics.tex",
+      "bytes": 2751,
+      "sha256": "0e8ca5cea681d60479432ee6d14b5444a5adacb421dc2d8861839ecad50229df"
+    },
+    {
+      "path": "supplement_tables/s17_annotation_marker_evidence.csv",
+      "bytes": 580942,
+      "sha256": "5d7149acad0b13d2b2e1eea170bd0514c9e1270d028d003b4229569f463796a2"
+    },
+    {
+      "path": "supplement_tables/s18_task_evidence.csv",
+      "bytes": 5306,
+      "sha256": "b9606dc3abec6364aea88b3125f644a812d4d94072036d7eeefe9b0663f64130"
+    },
+    {
+      "path": "supplement_tables/s18_task_evidence.tex",
+      "bytes": 2666,
+      "sha256": "e6773b03ad692368f72e4fd5e7b7b3e96dda8d663a132cab309488b3f780b68b"
+    },
+    {
+      "path": "supplement_tables/s19_reward_evidence.csv",
+      "bytes": 4904,
+      "sha256": "8a590b2d9001e9418778feaf44a2af6d0a36a79257da0019b318aeee443bb91b"
+    },
+    {
+      "path": "supplement_tables/s19_reward_evidence.tex",
+      "bytes": 2926,
+      "sha256": "375a21a5dd7c687258ca8cbf8a0aee4fd7e5fafc09ef0990808a80101bd4997e"
+    },
+    {
+      "path": "supplement_tables/s20_marker_sensitivity.csv",
+      "bytes": 10328,
+      "sha256": "dbe23962c27bfb5989f6a39e25a5c92fd4ed5d120157951091900101e8603624"
+    },
+    {
+      "path": "supplement_tables/s20_marker_sensitivity.tex",
+      "bytes": 3089,
+      "sha256": "78d5e04fc587fb7dda2289f4d72f4d5a48b8a1eb533e53e0e52540e924f795c9"
+    },
+    {
+      "path": "supplement_tables/s21_additional_frozen_readouts.csv",
+      "bytes": 4211,
+      "sha256": "085deed183342d29e549f08b1d94ca09be44c9ef45fcf0a08598b6dd170a51e5"
+    },
+    {
+      "path": "supplement_tables/s21_additional_frozen_readouts.tex",
+      "bytes": 2256,
+      "sha256": "81eb9b1a1648c4b1e04f0be4adbd4998fc6594a9f9194207d3621902f388730b"
+    },
+    {
+      "path": "tools/refresh_from_article.py",
+      "bytes": 16701,
+      "sha256": "f385d2c6dfc4afb803320a732a908f48b40c56929bbdb8012bf6f8816c8bf324"
+    }
+  ],
+  "missing_final_inputs": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "portable_file": "frozen_calculations.py",
+    "portable_sha256": "e1cf632d0878618aaf41d2143dc066f7b0e6278753fbb23db1d5b28f6de1e6ff",
+    "historical_source": "scripts/applications/analyze_results.py",
+    "historical_sha256": "df2b0660cb869b537095698d62f73e16298ecf82fb9a455daef8f642ad4d343a",
+    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
+    "article_portable_sha256": "e1cf632d0878618aaf41d2143dc066f7b0e6278753fbb23db1d5b28f6de1e6ff"
+  },
+  {
+    "portable_file": "matched_calculations.py",
+    "portable_sha256": "a7b864f42d926ae3c14a1bd377f964c9ef5823747113eb79bb4c6b6d66422c34",
+    "historical_source": "scripts/applications/recovered_native_analysis.py",
+    "historical_sha256": "d22efbd35a510078e8d6d2688b9b10a6526f446c0329aafa24b838d9a4fd75d9",
+    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
+    "article_portable_sha256": "a7b864f42d926ae3c14a1bd377f964c9ef5823747113eb79bb4c6b6d66422c34"
+  },
+  {
+    "portable_file": "geometry_calculations.py",
+    "portable_sha256": "dd39bf26a41ec3584389d47b5e16ceba7d7069361ed97fbb7f38f45ad8dfe53c",
+    "historical_source": "scripts/applications/geometry_reference.py",
+    "historical_sha256": "5f937cd133cc8b262b35e3fd97ed6ad4e061114974a8d535528c04db93d7748f",
+    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
+    "article_portable_sha256": "dd39bf26a41ec3584389d47b5e16ceba7d7069361ed97fbb7f38f45ad8dfe53c"
+  },
+  {
+    "portable_file": "biological_calculations.py",
+    "portable_sha256": "553c25db93ee2d5e623e041e05c6c1584acb8832dbedf8912534f15c013d4429",
+    "historical_source": "scripts/applications/biological_readouts.py",
+    "historical_sha256": "8d824c795ceb8b1150d4379df928003956eb606d22f315d2285590485075326e",
+    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
+    "article_portable_sha256": "553c25db93ee2d5e623e041e05c6c1584acb8832dbedf8912534f15c013d4429"
+  },
+  {
+    "portable_file": "figure_calculations.py",
+    "portable_sha256": "4e2d6734e1c9dc2ad75901a001414a71793e8f721b3e1194f4c10f6c892f03bf",
+    "historical_source": "paper/scientific-reports-hematopoietic-readouts/scripts/build_figures.py",
+    "historical_sha256": "be3038b860b5aa9454a1d1be747bc17aa7102b3f2f64a7ecf02f1d943748fc66",
+    "changes": "separate portable display adaptation: root initialization no longer assumes repository depth; wrapper reads only regenerated tables and calls six figure functions, not archival main/caption writer",
+    "article_portable_sha256": "79c9ba41afc9ae40692accecf0d2759d36d430e9134ca037dcef0b9970749909"
+  }
+]

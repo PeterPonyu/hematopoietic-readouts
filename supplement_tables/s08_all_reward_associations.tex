@@ -1,0 +1,94 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.11\linewidth}@{}}
+\caption{Complete per-seed program correlations under all three rewards in the matched-interface experiment. The 216 saved correlations are reshaped into 72 rows without averaging. Geometry is fixed within an arm/task/subset. The companion CSV additionally retains cell counts, endpoint counts and each saved value-minus-geometry increment.}\label{tab:s08_all_reward_associations}\\
+\toprule
+Task / arm & Subset & Reward & Seed 0 & Seed 1 & Seed 2 & Geometry \\
+\midrule
+\endfirsthead
+\multicolumn{7}{l}{\small\tablename\ \thetable\ continued}\\
+\toprule
+Task / arm & Subset & Reward & Seed 0 & Seed 1 & Seed 2 & Geometry \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{\small Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+TPO-Mk / PCA & All & Decision & 0.616 & 0.370 & 0.677 & 0.844 \\
+TPO-Mk / PCA & Nonterminal & Decision & 0.539 & 0.559 & 0.679 & 0.683 \\
+TPO-Mk / PCA & Starting & Decision & 0.142 & 0.193 & 0.264 & 0.183 \\
+TPO-Mk / PCA & All & No time & 0.725 & 0.743 & 0.825 & 0.844 \\
+TPO-Mk / PCA & Nonterminal & No time & 0.551 & 0.578 & 0.572 & 0.683 \\
+TPO-Mk / PCA & Starting & No time & 0.165 & 0.180 & 0.224 & 0.183 \\
+TPO-Mk / PCA & All & Contribution & 0.869 & 0.873 & 0.839 & 0.844 \\
+TPO-Mk / PCA & Nonterminal & Contribution & 0.623 & 0.641 & 0.437 & 0.683 \\
+TPO-Mk / PCA & Starting & Contribution & 0.229 & 0.351 & 0.331 & 0.183 \\
+TPO-Mk / LiVAE & All & Decision & 0.759 & 0.652 & 0.574 & 0.825 \\
+TPO-Mk / LiVAE & Nonterminal & Decision & 0.562 & 0.688 & 0.613 & 0.679 \\
+TPO-Mk / LiVAE & Starting & Decision & 0.054 & -0.069 & 0.067 & 0.072 \\
+TPO-Mk / LiVAE & All & No time & 0.687 & 0.541 & 0.676 & 0.825 \\
+TPO-Mk / LiVAE & Nonterminal & No time & 0.651 & 0.653 & 0.480 & 0.679 \\
+TPO-Mk / LiVAE & Starting & No time & 0.062 & 0.001 & -0.013 & 0.072 \\
+TPO-Mk / LiVAE & All & Contribution & 0.682 & -0.886 & -0.798 & 0.825 \\
+TPO-Mk / LiVAE & Nonterminal & Contribution & 0.579 & -0.559 & -0.089 & 0.679 \\
+TPO-Mk / LiVAE & Starting & Contribution & 0.042 & -0.094 & -0.275 & 0.072 \\
+Dapp1-E / PCA & All & Decision & 0.000 & -0.030 & 0.098 & 0.118 \\
+Dapp1-E / PCA & Nonterminal & Decision & -0.026 & -0.057 & 0.075 & 0.096 \\
+Dapp1-E / PCA & Starting & Decision & -0.024 & -0.034 & -0.029 & 0.027 \\
+Dapp1-E / PCA & All & No time & -0.061 & -0.072 & -0.049 & 0.118 \\
+Dapp1-E / PCA & Nonterminal & No time & -0.088 & -0.100 & -0.077 & 0.096 \\
+Dapp1-E / PCA & Starting & No time & 0.071 & -0.004 & 0.050 & 0.027 \\
+Dapp1-E / PCA & All & Contribution & 0.127 & 0.215 & 0.103 & 0.118 \\
+Dapp1-E / PCA & Nonterminal & Contribution & 0.104 & 0.196 & 0.081 & 0.096 \\
+Dapp1-E / PCA & Starting & Contribution & -0.056 & -0.034 & -0.030 & 0.027 \\
+Dapp1-M / PCA & All & Decision & 0.412 & 0.182 & 0.414 & 0.472 \\
+Dapp1-M / PCA & Nonterminal & Decision & 0.260 & 0.062 & 0.205 & 0.293 \\
+Dapp1-M / PCA & Starting & Decision & 0.260 & 0.292 & 0.262 & 0.338 \\
+Dapp1-M / PCA & All & No time & 0.516 & 0.501 & 0.410 & 0.472 \\
+Dapp1-M / PCA & Nonterminal & No time & 0.329 & 0.336 & 0.215 & 0.293 \\
+Dapp1-M / PCA & Starting & No time & 0.284 & 0.384 & 0.174 & 0.338 \\
+Dapp1-M / PCA & All & Contribution & 0.094 & 0.244 & 0.037 & 0.472 \\
+Dapp1-M / PCA & Nonterminal & Contribution & 0.060 & 0.177 & 0.007 & 0.293 \\
+Dapp1-M / PCA & Starting & Contribution & 0.287 & 0.293 & 0.333 & 0.338 \\
+Dapp1-E / LiVAE & All & Decision & 0.022 & 0.364 & 0.263 & 0.012 \\
+Dapp1-E / LiVAE & Nonterminal & Decision & -0.003 & 0.348 & 0.245 & -0.014 \\
+Dapp1-E / LiVAE & Starting & Decision & 0.042 & 0.141 & 0.110 & 0.119 \\
+Dapp1-E / LiVAE & All & No time & 0.015 & 0.307 & 0.347 & 0.012 \\
+Dapp1-E / LiVAE & Nonterminal & No time & -0.011 & 0.290 & 0.330 & -0.014 \\
+Dapp1-E / LiVAE & Starting & No time & 0.054 & 0.068 & 0.058 & 0.119 \\
+Dapp1-E / LiVAE & All & Contribution & 0.110 & 0.120 & 0.304 & 0.012 \\
+Dapp1-E / LiVAE & Nonterminal & Contribution & 0.087 & 0.098 & 0.292 & -0.014 \\
+Dapp1-E / LiVAE & Starting & Contribution & 0.034 & 0.050 & 0.102 & 0.119 \\
+Dapp1-M / LiVAE & All & Decision & 0.383 & 0.501 & 0.403 & 0.527 \\
+Dapp1-M / LiVAE & Nonterminal & Decision & 0.384 & 0.392 & 0.359 & 0.387 \\
+Dapp1-M / LiVAE & Starting & Decision & 0.419 & 0.340 & 0.387 & 0.410 \\
+Dapp1-M / LiVAE & All & No time & 0.548 & 0.514 & 0.490 & 0.527 \\
+Dapp1-M / LiVAE & Nonterminal & No time & 0.429 & 0.389 & 0.390 & 0.387 \\
+Dapp1-M / LiVAE & Starting & No time & 0.343 & 0.311 & 0.335 & 0.410 \\
+Dapp1-M / LiVAE & All & Contribution & 0.573 & 0.531 & 0.559 & 0.527 \\
+Dapp1-M / LiVAE & Nonterminal & Contribution & 0.458 & 0.419 & 0.423 & 0.387 \\
+Dapp1-M / LiVAE & Starting & Contribution & 0.328 & 0.290 & 0.338 & 0.410 \\
+Sleep-M / PCA & All & Decision & 0.399 & 0.426 & 0.382 & 0.557 \\
+Sleep-M / PCA & Nonterminal & Decision & 0.402 & 0.390 & 0.382 & 0.520 \\
+Sleep-M / PCA & Starting & Decision & 0.795 & 0.786 & 0.784 & 0.838 \\
+Sleep-M / PCA & All & No time & 0.237 & 0.537 & 0.641 & 0.557 \\
+Sleep-M / PCA & Nonterminal & No time & 0.390 & 0.404 & 0.409 & 0.520 \\
+Sleep-M / PCA & Starting & No time & 0.788 & 0.796 & 0.796 & 0.838 \\
+Sleep-M / PCA & All & Contribution & 0.602 & 0.618 & 0.640 & 0.557 \\
+Sleep-M / PCA & Nonterminal & Contribution & 0.426 & 0.440 & 0.428 & 0.520 \\
+Sleep-M / PCA & Starting & Contribution & 0.815 & 0.822 & 0.814 & 0.838 \\
+Sleep-M / LiVAE & All & Decision & 0.248 & 0.609 & 0.325 & 0.563 \\
+Sleep-M / LiVAE & Nonterminal & Decision & 0.379 & 0.411 & 0.355 & 0.452 \\
+Sleep-M / LiVAE & Starting & Decision & 0.596 & 0.784 & 0.560 & 0.759 \\
+Sleep-M / LiVAE & All & No time & 0.418 & 0.451 & 0.514 & 0.563 \\
+Sleep-M / LiVAE & Nonterminal & No time & 0.427 & 0.366 & 0.421 & 0.452 \\
+Sleep-M / LiVAE & Starting & No time & 0.842 & 0.733 & 0.812 & 0.759 \\
+Sleep-M / LiVAE & All & Contribution & 0.284 & 0.498 & 0.191 & 0.563 \\
+Sleep-M / LiVAE & Nonterminal & Contribution & 0.199 & 0.265 & 0.211 & 0.452 \\
+Sleep-M / LiVAE & Starting & Contribution & 0.743 & 0.645 & 0.570 & 0.759 \\
+\end{longtable}
+\endgroup

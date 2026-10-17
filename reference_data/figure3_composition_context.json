@@ -1,0 +1,25 @@
+{
+  "scope": "Five complementary display values for Figure 3a, separate from the unchanged original 378-row figure ledger.",
+  "formula": "other_frozen_labels_pct = 100 - primitive_fraction_pct - megakaryocyte_fraction_pct - erythroid_fraction_pct",
+  "source_formula": "100 - 100 * (Prim-like + Mk-like + Ery-like)",
+  "source_file": "results/application_reanalysis_20260921/ucb/thesis_composition.csv",
+  "source_sha256": "181f5398991088fca54a89e9cca40155cdd1584c36b8a87782b54cf2e93bd70f",
+  "source_columns": [
+    "Prim-like",
+    "Mk-like",
+    "Ery-like"
+  ],
+  "source_rows_1based_excluding_header": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "original_ledger": "figure_values.csv, figure 3 panel a, marks Prim-like:D0\u2013D14; Mk-like:D0\u2013D14; Ery-like:D0\u2013D14",
+  "derived_rows": 5,
+  "original_ledger_rows_unchanged": 378,
+  "interpretation": "Other frozen labels is the exact complement of the three plotted provisional labels; it is not a single validated cell type.",
+  "scientific_policy": "Display arithmetic only; no new fits, relabelling, cell-level scoring or inferential analysis.",
+  "context_csv_sha256": "85026d055222dae767b7906505cd6d5049f6be36110ae699becbc96483333097"
+}

@@ -1,0 +1,23 @@
+cohort,quantity,setting,value,unit,n_cells,source
+Dapp1,Granulocytic program,Spliced raw KO-WT,-0.39965829395340957,cohort-standardized program score,,source_data/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv
+Dapp1,Granulocytic program,Spliced fixed KO-WT,-0.18927701348683704,cohort-standardized program score,,source_data/results/application_reanalysis_20260921/dapp1_spliced/composition_standardized_effects.csv
+TPO,No-time value percentile,D0; All cells,0.11800005011149808,median of three seed-specific condition medians,5455,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D4; All cells,0.4710981934804941,median of three seed-specific condition medians,8354,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D7; All cells,0.6172483776402495,median of three seed-specific condition medians,7978,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D11; All cells,0.6160832853098144,median of three seed-specific condition medians,8171,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D14; All cells,0.5335997594648092,median of three seed-specific condition medians,9953,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D0; Cluster 5,0.13929743679687304,median of three seed-specific condition medians,17,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D4; Cluster 5,0.175402771165844,median of three seed-specific condition medians,1187,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D7; Cluster 5,0.16963994888627196,median of three seed-specific condition medians,227,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D11; Cluster 5,0.17174463180576782,median of three seed-specific condition medians,221,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+TPO,No-time value percentile,D14; Cluster 5,0.14637568590113004,median of three seed-specific condition medians,1036,source_data/results/application_reanalysis_20260921/ucb/state_values_by_condition.csv
+Dapp1,No-time seed agreement,Erythroid; 0-1,0.37572663554770136,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+Dapp1,No-time seed agreement,Erythroid; 0-2,0.15010631659473947,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+Dapp1,No-time seed agreement,Erythroid; 1-2,0.22034913383744703,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+Dapp1,No-time seed agreement,Myeloid; 0-1,0.8546117843764661,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+Dapp1,No-time seed agreement,Myeloid; 0-2,0.9335550384141104,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+Dapp1,No-time seed agreement,Myeloid; 1-2,0.8941178135961372,all-cell value Spearman correlation,,source_data/results/application_reanalysis_20260921/dapp1/seed_stability.csv
+TPO,PF4 mean log expression,D11,2.9278144181360912,mean log1p(counts per 10000),,source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv
+TPO,PPBP mean log expression,D11,2.9933323863713133,mean log1p(counts per 10000),,source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv
+TPO,ITGA2B mean log expression,D0,0.10675837309257562,mean log1p(counts per 10000),,source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv
+TPO,ITGA2B mean log expression,D11,2.5400379273320275,mean log1p(counts per 10000),,source_data/results/application_reanalysis_20260921/ucb/condition_gene_means.csv
