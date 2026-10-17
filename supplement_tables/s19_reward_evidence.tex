@@ -1,10 +1,18 @@
-\begin{table}[htbp]
-\centering\small
-\caption{All-cell matched-interface associations for every retained task and reward. Each seed column is one saved value--program Spearman correlation; proximity uses the same interface and is reward-independent. These are same-data associations, not observed-fate accuracy.}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lllrrrr@{}}
+\begingroup
+\small
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{6pt}
+\begin{longtable}{@{\extracolsep{\fill}}lllrrrr@{}}
+\caption{All-cell matched-interface associations for every retained task and reward. Each seed column is one saved value--program Spearman correlation; proximity uses the same interface and is reward-independent. These are same-data associations, not observed-fate accuracy.}\\
 \toprule
 Task & Reward & Interface & Seed 0 & Seed 1 & Seed 2 & Proximity \\
 \midrule
+\endfirsthead
+\multicolumn{7}{l}{\small Table \thetable\ continued}\\
+\toprule
+Task & Reward & Interface & Seed 0 & Seed 1 & Seed 2 & Proximity \\
+\midrule
+\endhead
 TPO Mk & Decision & PCA & 0.616 & 0.370 & 0.677 & 0.844 \\
 TPO Mk & Decision & LiVAE & 0.759 & 0.652 & 0.574 & 0.825 \\
 \addlinespace[.25em]
@@ -42,7 +50,7 @@ Sleep My & Contribution & PCA & 0.602 & 0.618 & 0.640 & 0.557 \\
 Sleep My & Contribution & LiVAE & 0.284 & 0.498 & 0.191 & 0.563 \\
 \addlinespace[.25em]
 \bottomrule
-\end{tabular*}
-\par\smallskip\footnotesize
+\end{longtable}
+\par\smallskip\small
 Every four-task, three-reward and two-interface combination is shown. The three seeds share cells, programs, endpoint sets and fixed upstream fits. No-time removes temporal reward terms but retains the task environment. The TPO Contribution sign disagreement in the revised LiVAE interface is conditional on this task and training configuration; it is not evidence of a general failure of the method. Dapp1 Ery uses the annotation-ambiguous 87-cell endpoint. Companion CSVs provide medians, ranges, denominators and increments over proximity; the complete population-specific saved correlations remain in Table S8. Source: Table S8.
-\end{table}
+\endgroup

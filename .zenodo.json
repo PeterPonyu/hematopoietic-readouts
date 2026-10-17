@@ -17,5 +17,13 @@
     "transcriptional programs",
     "scientific reproducibility"
   ],
-  "language": "eng"
+  "language": "eng",
+  "version": "1.0.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/PeterPonyu/hematopoietic-readouts/tree/v1.0.0",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
 }

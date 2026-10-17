@@ -26,4 +26,7 @@ keywords:
   - cell composition
   - transcriptional programs
   - reproducibility
+
+version: "1.0.0"
+date-released: "2026-10-17"
 repository-code: "https://github.com/PeterPonyu/hematopoietic-readouts"

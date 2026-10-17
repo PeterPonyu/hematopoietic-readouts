@@ -286,6 +286,22 @@ Every four-task, three-reward and two-interface combination is shown. The three 
 ''')
 
 
+
+def flowing_evidence_table(text):
+    """Let long joint-evidence tables use page space in numerical order."""
+    lines=text.splitlines()
+    caption=next(line for line in lines if line.startswith(r'\caption{'))
+    start=next(i for i,line in enumerate(lines) if line.startswith(r'\begin{tabular*}'))
+    mid=next(i for i,line in enumerate(lines[start:],start) if line==r'\midrule')
+    end=next(i for i,line in enumerate(lines) if line==r'\end{tabular*}')
+    columns=lines[start].replace(r'\begin{tabular*}{\textwidth}',r'\begin{longtable}')
+    header=lines[start+1:mid+1]
+    trailing=[line.replace(r'\footnotesize',r'\small') for line in lines[end+1:] if line!=r'\end{table}']
+    return '\n'.join([r'\begingroup',r'\small',r'\setlength{\LTpre}{6pt}',r'\setlength{\LTpost}{6pt}',
+        columns,caption+r'\\',*header,r'\endfirsthead',
+        r'\multicolumn{7}{l}{\small Table \thetable\ continued}\\',*header,r'\endhead',
+        *lines[mid+1:end],r'\end{longtable}',*trailing,r'\endgroup',''])
+
 def main():
     font_manager.findfont('Arial', fallback_to_default=False)
     plt.rcParams.update({'font.family': 'Arial', 'font.size': MIN_FONT, 'axes.labelsize': MIN_FONT, 'xtick.labelsize': MIN_FONT, 'ytick.labelsize': MIN_FONT, 'legend.fontsize': MIN_FONT, 'axes.spines.top': False,
@@ -293,6 +309,9 @@ def main():
                          'text.color': INK, 'axes.labelcolor': INK, 'xtick.color': INK, 'ytick.color': INK})
     E.mkdir(exist_ok=True)
     supplementary_figure(); task_table(); reward_comparison()
+    for name in ['s18_task_evidence', 's19_reward_evidence']:
+        file=T/(name+'.tex')
+        file.write_text(flowing_evidence_table(file.read_text()))
     with (E/'interpretation_display_values.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(LEDGER[0])); writer.writeheader(); writer.writerows(LEDGER)
     outputs = ['figures/'+name+'.'+ext for name in ['supplementary_figure1_diagnostics', 'supplementary_figure2_rewards'] for ext in ['pdf', 'png']]

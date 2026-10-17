@@ -152,8 +152,8 @@
     },
     {
       "path": ".zenodo.json",
-      "bytes": 1638,
-      "sha256": "645a70a78d78c7fcb31814e314c6438df122bcac4793d94d9adb4869bace5c73"
+      "bytes": 1850,
+      "sha256": "09b25cc940b926d3dd3b56eef3ee7b9218e2284ee97e991597e7ef5e8106c246"
     },
     {
       "path": "ARTICLE.json",
@@ -162,8 +162,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 1268,
-      "sha256": "d9c781fc778e7d22d5d029e2645f907748fb34096ac49c0fbbeb73c9269f390e"
+      "bytes": 1314,
+      "sha256": "f378dc149ac048db5cd19234b4c42f119f81f36c5968b4a58b53cd645af82430"
     },
     {
       "path": "DATA_SOURCES.md",
@@ -438,7 +438,7 @@
     {
       "path": "provenance/source_copies.json",
       "bytes": 71712,
-      "sha256": "4b02f4fd70f9376d5866e04171927174ddd1fdffffceff08013abd2c3969dcba"
+      "sha256": "36682beb11c4bb7a020f3e90a436ca793b11a452ffd802c958062369fa9fb107"
     },
     {
       "path": "reference_data/figure3_composition_context.csv",
@@ -492,8 +492,8 @@
     },
     {
       "path": "scripts/build_interpretation_assets.py",
-      "bytes": 20460,
-      "sha256": "e8732e6e1a8b22dd469d6e06183fc42f49741af38caef52efed476d8f3d5bbd2"
+      "bytes": 21621,
+      "sha256": "c81988e6be43d600c21631d4136462b9dd569a5719242ef6700b4aeaaee4fb24"
     },
     {
       "path": "scripts/build_revision_tables.py",
@@ -867,8 +867,8 @@
     },
     {
       "path": "supplement_tables/s18_task_evidence.tex",
-      "bytes": 2666,
-      "sha256": "e6773b03ad692368f72e4fd5e7b7b3e96dda8d663a132cab309488b3f780b68b"
+      "bytes": 2888,
+      "sha256": "7236511075993ab800177094290873d22f9c74ce62fdeb867cc7bc158bc501aa"
     },
     {
       "path": "supplement_tables/s19_reward_evidence.csv",
@@ -877,8 +877,8 @@
     },
     {
       "path": "supplement_tables/s19_reward_evidence.tex",
-      "bytes": 2926,
-      "sha256": "375a21a5dd7c687258ca8cbf8a0aee4fd7e5fafc09ef0990808a80101bd4997e"
+      "bytes": 3105,
+      "sha256": "fea9201a9c64daeb3a7b026a14a3a1032653cdfe8ac9199ce7e5c84249bb9363"
     },
     {
       "path": "supplement_tables/s20_marker_sensitivity.csv",
