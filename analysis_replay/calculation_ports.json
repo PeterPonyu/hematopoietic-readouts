@@ -33,10 +33,10 @@
   },
   {
     "portable_file": "figure_calculations.py",
-    "portable_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
+    "portable_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f",
     "historical_source": "paper/scientific-reports-hematopoietic-readouts/scripts/build_figures.py",
-    "historical_sha256": "b14c58994c383044f6cecf75eff602f3085ccfde38aaaeb3a6f321b878771592",
-    "changes": "Display adaptation of the current figure renderer: explicit roots, regular black text and centered titles, black bold panel letters, compact layouts and editable SVG; numerical ledger operations retained unchanged.",
-    "article_portable_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f"
+    "historical_sha256": "107f79ebcaafca4e30f7ca3aceb343377ff9037e2a74db39154d70c18f0bc3c0",
+    "changes": "Display adaptation of current renderer: explicit roots; black text and panel letters; centered titles; editable SVG; shortened Cluster 5 legend labels and manual Figure 3b/Figure 4 legend positions. Numerical operations unchanged.",
+    "article_portable_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f"
   }
 ]

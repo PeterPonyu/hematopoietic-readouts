@@ -7,8 +7,8 @@
     {
       "source_path": "scripts/build_figures.py",
       "release_path": "scripts/build_figures.py",
-      "source_sha256": "b14c58994c383044f6cecf75eff602f3085ccfde38aaaeb3a6f321b878771592",
-      "released_sha256": "5344e01424c09e58e8e0c26c7ec13595d5f9dbfe05a8879a304b6ed26750254d",
+      "source_sha256": "107f79ebcaafca4e30f7ca3aceb343377ff9037e2a74db39154d70c18f0bc3c0",
+      "released_sha256": "1d25ed0c6443d00e74e0319f00f282e845a13c25c07c9883e91ca293999a8c0b",
       "transformation": "release-local paths and scientific metadata only; formulas unchanged"
     },
     {
@@ -105,8 +105,8 @@
     {
       "source_path": "analysis_replay/figure_calculations.py",
       "release_path": "analysis_replay/figure_calculations.py",
-      "source_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
-      "released_sha256": "3e4d21c0086dfa80cf74786c7875c525064e2c07d24ba16ea4a238874505e07f",
+      "source_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f",
+      "released_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f",
       "transformation": "release-local paths and scientific metadata only; formulas unchanged"
     },
     {
@@ -1141,8 +1141,8 @@
     {
       "source_path": "analysis_replay/calculation_ports.json",
       "release_path": "analysis_replay/calculation_ports.json",
-      "source_sha256": "4b08e83de3f39e966ea88f46939f20851ce46628d6ee3434b348ee8eff262a4d",
-      "released_sha256": "4a4c91ce93ca86853a51714a02d30030f6d9963fc9f06d1128d8878132587f8d",
+      "source_sha256": "993c781f468abaed2777ba1ad676ce063a74e3518bad0ebe7e312c2287393067",
+      "released_sha256": "90445fffdd4ffb7c7a83cb9f86fc4edb3f4adeda425bad5c2f24562b53cd573a",
       "transformation": "retain historical source attribution; record released utility hashes separately"
     }
   ]

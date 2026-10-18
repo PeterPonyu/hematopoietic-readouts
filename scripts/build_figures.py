@@ -318,7 +318,7 @@ def fig3():
     for col,label,color,marker in [("Prim-like","Primitive label",GREEN,"o"),("Mk-like","Mk label",BLUE,"s"),("Ery-like","Ery label",ORANGE,"^")]:
         values=[one(3,"a",f"{col}:{c}",p,col,scale=100,**{"Unnamed: 0":c}) for c in conditions]
         fractions.append(values)
-        ax.plot(days,values,marker=marker,color=color,label=label.replace("Start-label subset", "Selected cluster 5"))
+        ax.plot(days,values,marker=marker,color=color,label=label.replace("Start-label subset", "Cluster 5"))
     # Account for every captured cell without changing the 378 original ledger rows.
     # The additional five arithmetic display values have their own source ledger.
     other=100-np.sum(np.asarray(fractions),axis=0)
@@ -359,9 +359,11 @@ def fig3():
     for file,label,color,marker in [("condition_program_means.csv","All cells",BLUE,"o"),("starting_population_programs.csv","Start-label subset",ORANGE,"s")]:
         p=FROZEN/"ucb"/file
         values=[one(3,"b",f"{label}:{c}",p,"program_megakaryocyte",condition=c) for c in conditions]
-        ax.plot(days,values,marker=marker,color=color,label=label.replace("Start-label subset", "Selected cluster 5"))
+        ax.plot(days,values,marker=marker,color=color,label=label.replace("Start-label subset", "Cluster 5"))
     ax.axhline(0,color=LIGHT,lw=.8);ax.set_ylabel("Mean program score");ax.set_ylim(-1.2,.9)
-    ax.legend(frameon=False,loc="upper left");title(ax,"b","Megakaryocyte program")
+    ax.legend(frameon=False,loc="upper left",bbox_to_anchor=(0,1),
+              borderaxespad=.35,handlelength=1.25,labelspacing=.25)
+    title(ax,"b","Megakaryocyte program")
     ax=axes[1,0];p=FROZEN/"ucb/condition_gene_means.csv"
     for gene,color,marker in [("PF4",BLUE,"o"),("PPBP",ORANGE,"s"),("ITGA2B",GREEN,"^")]:
         values=[one(3,"c",f"{gene}:{c}",p,gene,condition=c) for c in conditions]
@@ -377,7 +379,7 @@ def fig3():
         for c in conditions:
             d=rows(p,reward="neutral",population=pop,condition=c)
             med.append(record(3,"d",f"{pop}:seed median:{c}",p,d,"median_value_percentile",d.median_value_percentile.median(),"median of three saved condition-level medians"))
-        ax.plot(days,med,color=color,marker=marker,label=label.replace("Start-label subset", "Selected cluster 5"))
+        ax.plot(days,med,color=color,marker=marker,label=label.replace("Start-label subset", "Cluster 5"))
     denominators=[]
     for condition in conditions:
         denominators.append(one(3,"d",f"{condition} starting denominator",p,"n_cells",seed=0,reward="neutral",population="starting_population",condition=condition))
@@ -451,7 +453,7 @@ def fig4():
     handles=[Line2D([],[],color=BLUE,marker="o",label="scRL value"),
              Line2D([],[],ls="",marker="s",color=ORANGE,label="UMAP proximity"),
              Line2D([],[],ls="",marker="^",color=GREEN,label="PCA30 proximity")]
-    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.025),columnspacing=1.0,handlelength=1.4,fontsize=MIN_FONT)
+    fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.014),columnspacing=1.0,handlelength=1.4,fontsize=MIN_FONT)
 
     fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Seed {i}") for i,m in enumerate(["o","s","^"])],
                loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.60,.997),fontsize=MIN_FONT,columnspacing=1.4,handletextpad=.4)

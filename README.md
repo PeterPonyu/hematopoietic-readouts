@@ -1,8 +1,8 @@
-# Hematopoietic readouts: scientific code (v1.0.1)
+# Hematopoietic readouts: scientific code (v1.0.2)
 
 Code and aggregate source tables for **Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets**, by Zeyu Fu ([ORCID 0009-0001-8329-0108](https://orcid.org/0009-0001-8329-0108)). Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.
 
-Software edition **1.0.1** updates figure presentation and adds editable SVG export alongside PDF and 600 dpi PNG for all eight figures. Text is black and regular, panel letters are bold at 13 pt, subpanel titles are centered and regular, and the minimum native text size is 10 pt. Scientific inputs, aggregate numerical results and the original 378-value, supplementary 376-value and five-value Figure 3 context ledgers are unchanged. See [CHANGELOG.md](CHANGELOG.md). This edition is prepared for release; no archive DOI has been assigned to v1.0.1.
+Software edition **1.0.2** corrects Figure 3 and Figure 4 legend placement and clarifies the portable reproduction instructions. All eight figures retain vector PDF, editable SVG and 600 dpi PNG output, black regular text, bold 13 pt panel letters, centered regular titles and a minimum native text size of 10 pt. Scientific inputs, aggregate numerical results and the original 378-value, supplementary 376-value and five-value Figure 3 context ledgers are unchanged. See [CHANGELOG.md](CHANGELOG.md). No Zenodo DOI has been assigned to v1.0.2.
 
 The study compares captured composition, fixed transcriptional programs and conditional model readouts in TPO culture, Dapp1 and sleep cohorts. Normal marrow is a separate technical control. Program-based cell labels are provisional; computational seeds are not biological replicates.
 
@@ -14,9 +14,11 @@ Three reproducibility tiers have different inputs and claims:
 | Retained-artifact scientific replay | Separately supplied Supplementary Code 1 and Supplementary Data 1–8; commands below | Recalculates 28 scientific summary tables from retained cell-level outputs; checks expression/program reconstruction. Optional `--checkpoints` exports deterministic posterior means and bottlenecks for three retained encoders. The additional sensitivity command recomputes single-marker and leave-one-marker-out summaries under frozen groups. |
 | Raw preparation and model retraining | Original public matrices, source preparation choices and complete training environment | Documented limits and source accessions are provided. This release does not establish raw preparation, model retraining, downstream model-checkpoint inference, historical in-memory code identity, independent annotation or biological validation. |
 
+Tables **S1–S21** are included as aggregate CSV/TeX references. The `tables` command regenerates S1–S13 and S20–S21 from aggregate inputs while carrying S14–S19 as references; `display` also regenerates S18–S19. Recomputing S14–S17 from frozen cell identities requires the separately supplied scientific supplements. The 28-table scientific replay does **not** recompute S20; use the separate `sensitivity` command below for its marker calculations.
+
 Start with `python run.py verify`. This standard-library check validates the repository file inventory and SHA-256 checksums; it does not execute an analysis. All output paths must be new and outside this repository.
 
-For scientific replay, extract **all nine independent ZIP archives** into one parent directory, preserving their common `scientific-reports-hematopoietic-readouts` folder. Then use that folder as `BUNDLE`:
+For scientific replay, separately obtain **Supplementary Code 1 and Supplementary Data 1–8**, the nine numbered scientific-supplement ZIP archives. The public source ZIP contains no cell-level data and does not replace those supplements. Extract all nine into one parent directory, preserving their common `scientific-reports-hematopoietic-readouts` folder, and use that extracted folder as `BUNDLE`:
 
 ```bash
 python run.py verify-supplements --bundle /path/to/BUNDLE
@@ -38,4 +40,4 @@ python tools/refresh_from_article.py --source /path/to/scientific-reports-hemato
 python run.py verify
 ```
 
-The refresh records source and released checksums, updates the associated manuscript title, and removes superseded generated copies. It does not copy the manuscript, author forms, review records or general project history. `CITATION.cff` and `.zenodo.json` describe software edition 1.0.1 without assigning it a DOI. The **previous version 1.0.0** is frozen at [Zenodo DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592); that identifier belongs to v1.0.0. Software archiving does not assert journal publication. The dedicated source repository is [PeterPonyu/hematopoietic-readouts](https://github.com/PeterPonyu/hematopoietic-readouts).
+The refresh records source and released checksums, updates the associated manuscript title, and removes superseded generated copies. It does not copy the manuscript, author forms, review records or general project history. `CITATION.cff` and `.zenodo.json` describe software edition 1.0.2 without assigning it a DOI. The **previous version 1.0.0** is frozen at [Zenodo DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592); that identifier belongs to v1.0.0. Software archiving does not assert journal publication. The dedicated source repository is [PeterPonyu/hematopoietic-readouts](https://github.com/PeterPonyu/hematopoietic-readouts).
