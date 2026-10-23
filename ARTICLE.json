@@ -2,7 +2,7 @@
   "title": "Cell composition, endpoint geometry and policy learning in single-cell fate analysis",
   "author": "Zeyu Fu",
   "orcid": "0009-0001-8329-0108",
-  "software_version": "2.0.0",
+  "software_version": "2.0.1",
   "cohorts": [
     "irradiation",
     "TPO",

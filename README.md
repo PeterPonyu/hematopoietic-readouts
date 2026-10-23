@@ -44,7 +44,7 @@ The current manuscript and supplementary PDF are submitted separately to the
 journal. They are not published by this software release. The earlier
 [DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592) identifies
 the preceding three-cohort software edition, not the current release. No new
-Zenodo DOI is claimed. The versioned current release is [https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.0](https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.0).
+Zenodo DOI is claimed. The versioned current release is [https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.1](https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.1).
 
 ## Attribution
 

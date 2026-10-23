@@ -21,8 +21,8 @@
     },
     {
       "path": "scripts/build_presentation_assets.py",
-      "source_sha256": "1cc993cc1810ed75924358d2b049ad3bb3b499cd6ab3caa5c4ffcf7a5dc21d9d",
-      "released_sha256": "182536b39fe579d10e0bdc2729749aaff62c3e188352e532688924fc8ae169cc",
+      "source_sha256": "e35020694be3786e2e1a1223f4262130032d9f99953d9ecd3a0776a8baedc811",
+      "released_sha256": "d1bdfd675b8f7a9f02f29a4cd07dcf0e365fbe0fc02524e240c5076a52ca72dc",
       "adaptation": "standalone output paths and removal of manuscript-caption export only"
     },
     {

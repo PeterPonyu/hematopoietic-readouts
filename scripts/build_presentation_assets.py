@@ -287,7 +287,7 @@ def training():
     s.seed_legend(fig);emit(fig,MAIN[6])
 
 
-def lineage_plot(fig,box,letter,historical=False):
+def lineage_plot(fig,box,letter,historical=False,show_letter=True):
     ax=s.axes(fig,*box);rel=R3+'tables/trajectory_associations.csv' if historical else R4+'components/trajectory_associations.csv'
     order=[('ucb','megakaryocyte',1,'TPO Mk'),('dapp1','erythroid',8,'Dapp1 Ery'),('dapp1','neutrophil',6,'Dapp1 Neut.'),('dapp1','monocyte',5,'Dapp1 Mono.'),('sleep','monocyte',1,'Sleep Mono.'),('sleep','neutrophil',1,'Sleep Neut.')]
     # Resolve lineage indices by component. Sleep has two component evaluations
@@ -315,7 +315,8 @@ def lineage_plot(fig,box,letter,historical=False):
     n=len(labels);ax.set_ylim(n-.45,-.65);ax.set_yticks([]);s.correlation_axis(ax)
     title_y=ax.get_position().y1+.36/fig.get_figheight()
     fig.text(.52,title_y,'Slingshot and references · assigned nonterminal cells',ha='center',fontsize=s.TITLE)
-    item=fig.text(.08/s.WIDTH,title_y,letter,fontsize=s.PANEL);item._panel_letter=True
+    if show_letter:
+        item=fig.text(.08/s.WIDTH,title_y,letter,fontsize=s.PANEL);item._panel_letter=True
     fig.canvas.draw();s.count_columns(fig,ax,labels,counts,coverage,x_name=.08,x_n=1.84,x_coverage=2.57)
     handles=[Line2D([],[],color=c,marker=m,ls='',label=key) for key,(c,m) in s.METHODS.items() if key in (['PCA','UMAP','Diffusion','Slingshot','scRL'] if historical else ['PCA','UMAP','Diffusion','Slingshot'])]
     fig.legend(handles=handles,loc='lower center',bbox_to_anchor=(.53,.003),ncol=len(handles),frameon=False,columnspacing=1,handlelength=1,handletextpad=.4)
@@ -330,7 +331,7 @@ def external_supplements():
     ax=s.axes(fig,1.12,3.15,5.10,.95);s.matrix(ax,matrix,[t[2] for t in tasks],['scRL','PCA30','UMAP','Diffusion','Palantir\n1.4.2','CellRank\nDPT','FateID\nPython'])
     s.panel(ax,'a','Broad-target program associations',offset=-75)
     lineage_plot(fig,(2.85,.77,3.32,1.45),'b',historical=True);emit(fig,SUPPLEMENT[3])
-    fig=plt.figure(figsize=(s.WIDTH,3.3));lineage_plot(fig,(2.85,.77,3.32,1.60),'a',historical=False);emit(fig,SUPPLEMENT[4])
+    fig=plt.figure(figsize=(s.WIDTH,3.3));lineage_plot(fig,(2.85,.77,3.32,1.60),'a',historical=False,show_letter=False);emit(fig,SUPPLEMENT[4])
 
 
 def training_supplement():

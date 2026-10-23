@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: "Cite this software release and the original source studies."
 type: software
 title: "Hematopoietic readouts: code and summary data"
-version: "2.0.0"
+version: "2.0.1"
 repository-code: "https://github.com/PeterPonyu/hematopoietic-readouts"
-url: "https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.0"
+url: "https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.1"
 authors:
   - family-names: Fu
     given-names: Zeyu

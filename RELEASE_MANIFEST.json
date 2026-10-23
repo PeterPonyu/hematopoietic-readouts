@@ -1,8 +1,8 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scope": "Code and aggregate scientific tables; large cell-level inputs excluded",
   "file_count": 230,
-  "total_bytes": 3416502,
+  "total_bytes": 3416561,
   "files": {
     ".gitignore": {
       "bytes": 45,
@@ -10,11 +10,11 @@
     },
     "ARTICLE.json": {
       "bytes": 356,
-      "sha256": "0810148b0a95f8447f661dc074f0157410e2e9c33643a59a4a162b6995d30017"
+      "sha256": "8a68c06d496e609b5813aa630ade028b6f871b593c6f611df136e9b8a717d540"
     },
     "CITATION.cff": {
       "bytes": 479,
-      "sha256": "2676f4325b98a7f75ea1bf0d799b6f508dfe28aaaa9bba73656889053d26a555"
+      "sha256": "125355732e7d4d686e035a3d6b7e27a0ffd80e784de8ba3aa36ec5126c87526c"
     },
     "DATA_SOURCES.md": {
       "bytes": 1402,
@@ -42,11 +42,11 @@
     },
     "README.md": {
       "bytes": 3441,
-      "sha256": "91fa37243bcbd79a66ba1488dbd1c3bb736a83aa614068e19687146d0587d3eb"
+      "sha256": "91e432de39afc7efa768d751012aec722579aaaf0cd597679a7784788a343488"
     },
     "SOURCE_BINDINGS.json": {
       "bytes": 68181,
-      "sha256": "66f3ff86af0df3b2190f244ec6409273091b95fdec85c6861da375b128c7be01"
+      "sha256": "3d9e82ea2113f15c83a804919b29fd8a8ff44dbf5fdce5ff7aca9a7d13cbd0ed"
     },
     "analysis_replay/biological_calculations.py": {
       "bytes": 5177,
@@ -597,8 +597,8 @@
       "sha256": "4ebfc2f02266df0548d448aa2f1d36346a8787d8fa32c45b51befff320b57515"
     },
     "scripts/build_presentation_assets.py": {
-      "bytes": 34239,
-      "sha256": "182536b39fe579d10e0bdc2729749aaff62c3e188352e532688924fc8ae169cc"
+      "bytes": 34298,
+      "sha256": "d1bdfd675b8f7a9f02f29a4cd07dcf0e365fbe0fc02524e240c5076a52ca72dc"
     },
     "scripts/calculate_program_sensitivity.py": {
       "bytes": 11567,
