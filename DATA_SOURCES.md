@@ -1,14 +1,23 @@
-# Data sources and terms
+# Source data and access boundaries
 
-The aggregate tables derive from these public GEO studies, as identified in the article's frozen acquisition manifest:
+The public source matrices are identified by GEO accessions
+[GSE280270](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280270) (TPO),
+[GSE277292](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277292) (Dapp1),
+[GSE280145](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280145) (sleep),
+and [GSE117498](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117498)
+(separate normal-marrow reference).
 
-| Article role | Accession | Source record |
-| --- | --- | --- |
-| TPO cord-blood culture | GSE280270 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280270 |
-| Dapp1 WT/KO and spliced-expression sensitivity | GSE277292 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277292 |
-| Sleep control/deprivation | GSE280145 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280145 |
-| Normal-marrow technical control | GSE117498 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117498 |
+Irradiation was analysed using an author-supplied filtered matrix. Public
+records map day 2 to GSE278673 and days 8/11/14/21 to GSE280305. A complete
+public deposit for the retained days 0/5/30 has not been verified. The retained
+matrix contains 41,252 cells and 18,876 genes. It is not included in this small
+release; equivalence to a complete public time-point collection is not asserted.
+Sequencing reads, pre-filtering droplets and unresolved animal/pooling metadata
+are not recovered by the aggregate tables.
 
-`provenance/source_acquisition.json` retains source filenames, raw-file checksums and acquisition URLs from that manifest. These are source provenance records, not a claim that an online acquisition was repeated for this release. Cite the original source studies and their accessions when reusing derived material. The software license does not grant a new dataset license or determine source consent, ethics, institutional secondary-use status or ownership.
-
-This source repository contains aggregate summaries only. Program/marker counts, cell identifiers, frozen coordinates, downstream outputs and encoder artifacts needed for retained-artifact replay are distributed separately as Supplementary Data 1–8 with Supplementary Code 1. Preserve the common extraction folder and supplied integrity manifest. Original full raw matrices are not duplicated here.
+Only aggregate scientific results and software are released here. Full
+cell-level replay additionally requires the retained matrices, identities,
+scores, masks and checkpoints omitted from this release. Questions about
+those materials should be directed to the corresponding author at
+fuzeyu99@tmmu.edu.cn. This contact statement is not a public deposit or a
+claim that the omitted files are contained in the supplementary PDF.

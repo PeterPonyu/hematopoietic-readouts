@@ -1,0 +1,43 @@
+cohort,method,seed,run,role,status,error,elapsed_seconds,peak_rss_MiB,receipt_sha256
+dapp1,palantir,0,dapp1/palantir/seed0,technical_diagnostic,fail,"AssertionError: 
+Not equal to tolerance rtol=0, atol=1e-06
+
+Mismatched elements: 657 / 10224 (6.43%)
+Max absolute difference among violations: 0.01324091
+Max relative difference among violations: 0.01324091
+ ACTUAL: array([1.      , 1.      , 1.      , ..., 0.995217, 1.      , 1.      ],
+      shape=(10224,))
+ DESIRED: array(1)",28.071121215820312,1303.91796875,72483e67379c43f2769612f544296cc6781fd62333a39357b1c1d08ce416a42e
+dapp1,palantir,0,dapp1/palantir/seed0_cutoff_checked,primary_attempt,pass,,24.32454228401184,1243.2734375,43a7c2b1d7e3b5206b0b465d587b24454f39ac8cb67aee9ce4835b3fee555dc5
+dapp1,palantir,1,dapp1/palantir/seed1,primary_attempt,pass,,25.8945095539093,1249.25,e75bafcd43389c4e17485b584e74996164d62880c1dc12b1c598bd3dc6f62ff5
+dapp1,palantir,2,dapp1/palantir/seed2,primary_attempt,pass,,25.855949878692627,1240.05859375,90bce222f9629d6893148a47b36c4808e67cd4d420040819e9f78d0c96694e81
+dapp1,cellrank,0,dapp1/cellrank/seed0,primary_attempt,pass,,20.166269063949585,1910.4140625,545c50ef00bbde13d53bbf81f186707d28629f64106dc8e40c79e4c74c7eff4b
+dapp1,cellrank,1,dapp1/cellrank/seed1,primary_attempt,pass,,21.85612916946411,1911.91015625,85a481785f431e9e51f01151eca400249d0a98cfcdc1aa3435f36d772634c3c7
+dapp1,cellrank,2,dapp1/cellrank/seed2,primary_attempt,pass,,21.83063244819641,1912.76953125,27952ae7484e2e3b71cf0275c5cef85f19d2e7aa8daf5f5e2786c3622b78d34a
+dapp1,fateid,0,dapp1/fateid/seed0,primary_attempt,pass,,317.02578568458557,2043.1875,44adef6d76676c7dcc20c60994247ae25f17c876a55ade03d42434bdf5d91546
+dapp1,fateid,0,dapp1/fateid/seed0_blocked_median_check,technical_diagnostic,pass,,223.4302499294281,1645.546875,682b02b49511f5ca3858805ae524d6d43231056b5b45acb3330a302aab7da849
+dapp1,fateid,0,dapp1/fateid/seed0_membership_check,technical_diagnostic,pass,,221.62788653373718,2100.7734375,9c52d4b72f6a59845ee88702ef85acf61d19ab891f76b595e0e6d99c10ba84d2
+dapp1,fateid,0,dapp1/fateid/seed0_parallel_median_check,technical_diagnostic,pass,,166.02751398086548,1686.8125,d4510b405269201142016e785fccafd3aead35e311271c0491e0664bb7f21156
+dapp1,fateid,1,dapp1/fateid/seed1,primary_attempt,pass,,305.092848777771,2082.26953125,355222c6cfbc0787cbeed8e6bd1feb436754499d2f071e48788f75a137b4168f
+dapp1,fateid,2,dapp1/fateid/seed2,primary_attempt,pass,,293.6884996891022,2066.2734375,321ce970178a258a204b0b5df4e906c31cf12e3e4ac34151a723a88d2daa6efe
+dapp1,slingshot,0,dapp1/slingshot/seed0,technical_diagnostic,fail,ValueError: x must be increasing if s > 0,261.81279945373535,272.2890625,c098e4687853da77983cc73839101d9249a431266e63ea4a741276e5145113d1
+dapp1,slingshot,0,dapp1/slingshot/seed0_upstream_R,primary_attempt,pass,,70.74170684814453,894.68359375,2f6bfc2fd47b78297cbccb01c3a4b8e3c74cf589dc1e2534bb6d2caf22007042
+irradiation,palantir,0,irradiation/palantir/seed0,primary_attempt,fail,AssertionError: ,67.69845080375671,2877.80078125,0bbf3274f00b4bfc01d339041c814e7353cb23164dad21f9733ddb7acfb4a770
+irradiation,palantir,1,irradiation/palantir/seed1,primary_attempt,fail,AssertionError: ,67.10679006576538,2854.41015625,5e120d0cf91e805d4ec73e2e49d9acd0b6ca49d097e11ce6cc936110c5898894
+irradiation,palantir,2,irradiation/palantir/seed2,primary_attempt,fail,AssertionError: ,70.34787702560425,2880.4921875,c94b14c848e06f6efb4aa3b217f32bbeb69b58111fd2e2dcb64e8963e76d819c
+irradiation,cellrank,0,irradiation/cellrank/seed0,primary_attempt,pass,,80.83832955360413,8036.63671875,58b1954290903f6e8c78c6851062e5c61d7d340f436f1469ebfa87ac02fbcc20
+irradiation,cellrank,1,irradiation/cellrank/seed1,primary_attempt,pass,,81.39767384529114,8038.96875,5e515009f29829712efa1743ba8dbe21c6cb1725ab3a3566f98681b126b25334
+irradiation,cellrank,2,irradiation/cellrank/seed2,primary_attempt,pass,,73.99326753616333,8083.66796875,a041bcf68cebb0590f322d00cd35f48b12eb21173cdcf38d3ac084f8819abb84
+irradiation,fateid,0,irradiation/fateid/seed0,technical_diagnostic,cancelled,"Operator restarted the batch with concurrent, independent seed jobs after the full Dapp1 equivalence gate passed. No irradiation probability output had been created.",,,da375be3b5c738ae26d9788da9a53c261afeaa1ffb914bdae16eaea8f5d74b95
+irradiation,fateid,0,irradiation/fateid/seed0_bounded,primary_attempt,pass,,2263.1481959819794,11284.7578125,16944420ced0699b288d32ae021b293cbd29c71631082a058322346dee264945
+irradiation,fateid,0,irradiation/fateid/seed0_concurrent,technical_diagnostic,cancelled,Resource-only restart after bounded-memory median equivalence checks; no completed irradiation probability output existed.,,,11423aae9fc84e0b1a1bef1765e095770c74a43f6551a7c36c5268b0c7c92ab9
+irradiation,fateid,1,irradiation/fateid/seed1,technical_diagnostic,pass,,2265.8127937316895,20780.81640625,56159a1fe4e2cf9352bb03689b3846b589337686f68f029f9e0151e744987dcc
+irradiation,fateid,1,irradiation/fateid/seed1_bounded,primary_attempt,pass,,2229.3950107097626,11259.609375,44b737abbfbc1b6cc03529b636bcb0e4e642c8b730b7b9bb3beefb662edd2070
+irradiation,fateid,1,irradiation/fateid/seed1_concurrent,technical_diagnostic,cancelled,Resource-only restart after bounded-memory median equivalence checks; no completed irradiation probability output existed.,,,424c1f4089b8098bb28a9d7e3bce72710993af2e079b720aba23c287a309f940
+irradiation,fateid,2,irradiation/fateid/seed2,technical_diagnostic,cancelled,Stopped a superseded sequential resource attempt; the prospectively selected bounded primary fit has completed.,,,0ffeefe5ad2aa22ab3bc499f9ef69fb6e47ee3fede54874f8f08c3a42437286c
+irradiation,fateid,2,irradiation/fateid/seed2_bounded,primary_attempt,pass,,2228.1163613796234,11250.01953125,38790e4af61a0726c9355ccc879710f82236f518fd0a993bcb561a364241df68
+irradiation,fateid,2,irradiation/fateid/seed2_concurrent,technical_diagnostic,cancelled,Resource-only restart after bounded-memory median equivalence checks; no completed irradiation probability output existed.,,,97f34bb78905bcf042d9ab5db49fb6031bfc174b9703aaf8f723cc0fc1ead2df
+irradiation,slingshot,0,irradiation/slingshot/seed0,technical_diagnostic,cancelled,Stopped Python-port expansion after the Dapp1 spline failure; upstream R fallback will be registered separately.,,,e9d2f8633e18d988fa3c011f1545ef1144d4014873ba644aeb43a262a1438306
+irradiation,slingshot,0,irradiation/slingshot/seed0_upstream_R,primary_attempt,fail,Resource limit: upstream R fit exceeded the prospectively extended 3600-second wall-clock window.,,,a39b26cbdbb1788cc73594e1ab2d993f75ae8ca3a475487ffe6da58c6501e6b6
+ucb,slingshot,0,ucb/slingshot/seed0_upstream_R,primary_attempt,pass,,950.2987129688263,1208.1328125,dbdb82316ab3463588014e8eb73501d58fc3366b3f8c0c5b0245a4a018c5c0ba
+sleep,slingshot,0,sleep/slingshot/seed0_upstream_R,primary_attempt,pass,,332.9681372642517,1100.203125,80a2ac45dc163053014abc50a6d3cee6de5798ddbbb0a740b7f062b7e35f5d62

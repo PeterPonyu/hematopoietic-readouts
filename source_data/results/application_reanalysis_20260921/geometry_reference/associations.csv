@@ -1,4 +1,34 @@
 cohort,lineage,program,population,method,n_cells,n_endpoint,spearman
+irradiation,erythroid,erythroid,all,UMAP distance,41252,8457,0.5974152203729519
+irradiation,erythroid,erythroid,all,PCA30 distance,41252,8457,0.6191977883898331
+irradiation,erythroid,erythroid,all,scRL seed 0,41252,8457,0.5956845124457075
+irradiation,erythroid,erythroid,all,scRL seed 1,41252,8457,0.5109963871333589
+irradiation,erythroid,erythroid,all,scRL seed 2,41252,8457,0.5855392813244468
+irradiation,erythroid,erythroid,nonterminal,UMAP distance,32795,8457,0.2121272457225698
+irradiation,erythroid,erythroid,nonterminal,PCA30 distance,32795,8457,0.2503874708007846
+irradiation,erythroid,erythroid,nonterminal,scRL seed 0,32795,8457,0.26018995611181556
+irradiation,erythroid,erythroid,nonterminal,scRL seed 1,32795,8457,0.12365363885891897
+irradiation,erythroid,erythroid,nonterminal,scRL seed 2,32795,8457,0.2125204439284841
+irradiation,erythroid,erythroid,starting,UMAP distance,16821,8457,0.076184062973579
+irradiation,erythroid,erythroid,starting,PCA30 distance,16821,8457,0.20891129432467348
+irradiation,erythroid,erythroid,starting,scRL seed 0,16821,8457,0.0664346049526151
+irradiation,erythroid,erythroid,starting,scRL seed 1,16821,8457,0.04880377515495317
+irradiation,erythroid,erythroid,starting,scRL seed 2,16821,8457,0.1358625101606797
+irradiation,myeloid,neutrophil,all,UMAP distance,41252,11327,0.6175906130838132
+irradiation,myeloid,neutrophil,all,PCA30 distance,41252,11327,0.6284860864951695
+irradiation,myeloid,neutrophil,all,scRL seed 0,41252,11327,0.45889232847604006
+irradiation,myeloid,neutrophil,all,scRL seed 1,41252,11327,0.5912391532113547
+irradiation,myeloid,neutrophil,all,scRL seed 2,41252,11327,0.4243346707135382
+irradiation,myeloid,neutrophil,nonterminal,UMAP distance,29925,11327,0.40679456265041064
+irradiation,myeloid,neutrophil,nonterminal,PCA30 distance,29925,11327,0.3980180851796291
+irradiation,myeloid,neutrophil,nonterminal,scRL seed 0,29925,11327,0.21367448571405864
+irradiation,myeloid,neutrophil,nonterminal,scRL seed 1,29925,11327,0.26376311152850174
+irradiation,myeloid,neutrophil,nonterminal,scRL seed 2,29925,11327,0.06927037168771781
+irradiation,myeloid,neutrophil,starting,UMAP distance,16821,11327,0.4769149117211923
+irradiation,myeloid,neutrophil,starting,PCA30 distance,16821,11327,0.5974273819222438
+irradiation,myeloid,neutrophil,starting,scRL seed 0,16821,11327,0.49801419615041004
+irradiation,myeloid,neutrophil,starting,scRL seed 1,16821,11327,0.49598896994016156
+irradiation,myeloid,neutrophil,starting,scRL seed 2,16821,11327,0.5166230842197956
 ucb,megakaryocyte,megakaryocyte,all,UMAP distance,39911,17108,0.8460165112537746
 ucb,megakaryocyte,megakaryocyte,all,PCA30 distance,39911,17108,0.758664386196986
 ucb,megakaryocyte,megakaryocyte,all,scRL seed 0,39911,17108,0.5939560313109373

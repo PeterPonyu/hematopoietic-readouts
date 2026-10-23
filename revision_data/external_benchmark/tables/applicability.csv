@@ -1,0 +1,17 @@
+cohort,n_cells,method,applicable,planned_runs,valid_runs,reason
+dapp1,10224,palantir,True,3,3,competing configured broad fates
+dapp1,10224,cellrank,True,3,3,competing configured broad fates
+dapp1,10224,fateid,True,3,3,competing configured broad fates
+dapp1,10224,slingshot,True,1,1,lineage ordering and coverage
+irradiation,41252,palantir,True,3,0,competing configured broad fates
+irradiation,41252,cellrank,True,3,3,competing configured broad fates
+irradiation,41252,fateid,True,3,3,competing configured broad fates
+irradiation,41252,slingshot,True,1,0,lineage ordering and coverage
+ucb,39911,palantir,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+ucb,39911,cellrank,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+ucb,39911,fateid,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+ucb,39911,slingshot,True,1,1,lineage ordering and coverage
+sleep,29127,palantir,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+sleep,29127,cellrank,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+sleep,29127,fateid,False,0,0,No informative broad-target probability comparison without separately validated competing fates.
+sleep,29127,slingshot,True,1,1,lineage ordering and coverage

@@ -112,6 +112,10 @@ def analyze(cohort, folder, dest, require_complete):
     stability_df.to_csv(dest / "seed_stability.csv", index=False)
     pd.DataFrame(associations).to_csv(dest / "value_program_associations.csv", index=False)
     summary = {"cohort": cohort, "accession": protocol["accession"], "n_cells": len(cells), "n_genes": protocol["n_genes"], "n_completed_runs": len(receipts), "expected_runs": expected, "complete": complete, "conditions": protocol["conditions"], "effects": effects, "focus_branches": {str(k): v["normalized_weights"].shape[1] for k, v in foci.items()}, "seed_stability": stability, "no_biological_replication_inference": True}
+    if cohort == "irradiation":
+        summary["accession"] = None
+        summary["historical_protocol_accession"] = protocol["accession"]
+        summary["source_identity"] = "author-owned historical local irradiation series; historical protocol accession is not a full-series public identity claim"
     save_json(dest / "summary.json", summary)
     return summary
 

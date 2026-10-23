@@ -27,7 +27,8 @@ SOURCES, LEDGER, QA = {}, [], []
 WIDTH = 6.35
 MIN_FONT = 10
 BLUE, ORANGE, GRAY, INK = '#17689A', '#C6602A', '#707070', '#000000'
-TASKS = [('ucb', 'megakaryocyte', 'TPO Mk'), ('dapp1', 'erythroid', 'Dapp1 Ery'),
+TASKS = [('irradiation', 'erythroid', 'IR Ery'), ('irradiation', 'myeloid', 'IR My'),
+         ('ucb', 'megakaryocyte', 'TPO Mk'), ('dapp1', 'erythroid', 'Dapp1 Ery'),
          ('dapp1', 'myeloid', 'Dapp1 My'), ('sleep', 'myeloid', 'Sleep My')]
 
 
@@ -193,8 +194,9 @@ def task_table():
     for cohort, lineage, label in TASKS:
         den = denominators[(denominators.cohort == cohort) & (denominators.lineage == lineage)]
         n_end = value('s13_task_denominators', den, 'n_endpoint', f'S18:{label}:endpoint_n')
-        note = ('Cluster 5 is granulocytic-max at D0 and dendritic-max at D14; D0 n=17' if cohort == 'ucb' else
-                'Endpoint cluster 8: WT mast-max, pooled erythroid-max; all labels program-derived' if lineage == 'erythroid' else
+        note = ('HSC, MPP2/3 and MPP4 starting labels; day 5 starting n=66; mixed public and author-supplied sources' if cohort == 'irradiation' else
+                'Cluster 5 is granulocytic-max at D0 and dendritic-max at D14; D0 n=17' if cohort == 'ucb' else
+                'Endpoint cluster 8: WT mast-max, pooled erythroid-max; all labels program-derived' if cohort == 'dapp1' and lineage == 'erythroid' else
                 'Endpoints selected by frozen program maxima; no independent fate validation')
         ranges = {}
         for arm in ['PCA', 'LiVAE']:
@@ -240,7 +242,7 @@ Task & Population & $n$ & $\rho_{\rm PCA}$ & $\rho_{\rm LiVAE}$ & $\Delta_{\rm P
 \par\smallskip\footnotesize
 '''+ '\n'.join(seed_notes)+r'''
 \par\smallskip
-The task labels identify frozen program-defined endpoint sets. Dapp1 Ery has 87 endpoint cells (33 WT and 54 KO); its WT mast score exceeds its erythroid score. TPO's day-specific start is the intersection of frozen cluster 5 with that day's captured cells, with only 17 cells at D0; the pooled primitive-max label is granulocytic-max at D0 and dendritic-max at D14. No task has independent observed-fate validation. A gain in association, a gain over proximity, and seed consistency are distinct diagnostics. The companion CSV includes all same-interface proximity correlations and annotation notes. Sources: Tables S6, S10, S13 and S17.
+IR denotes irradiation and uses frozen HSC, MPP2/3 and MPP4 starting labels; its day-5 starting subset contains 66 cells (Table S22). Other task labels identify frozen program-defined endpoint sets. Dapp1 Ery has 87 endpoint cells (33 WT and 54 KO); its WT mast score exceeds its erythroid score. TPO's day-specific start is the intersection of frozen cluster 5 with that day's captured cells, with only 17 cells at D0; the pooled primitive-max label is granulocytic-max at D0 and dendritic-max at D14. No task has independent observed-fate validation. A gain in association, a gain over proximity, and seed consistency are distinct diagnostics. The companion CSV includes all same-interface proximity correlations and annotation notes. Sources: Tables S6, S10, S13, S17 and S22.
 \end{table}
 '''
     (T/'s18_task_evidence.tex').write_text(text)
@@ -248,8 +250,8 @@ The task labels identify frozen program-defined endpoint sets. Dapp1 Ery has 87 
 
 def reward_comparison():
     saved = load('s08_all_reward_associations')
-    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 3.45))
-    fig.subplots_adjust(left=.155, right=.98, top=.86, bottom=.275, wspace=.22)
+    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 4.8))
+    fig.subplots_adjust(left=.155, right=.98, top=.90, bottom=.26, wspace=.22)
     records, tex_rows = [], []
     colors = {'PCA': BLUE, 'LiVAE': '#8856A7'}
     rewards = [('decision', 'Decision'), ('neutral', 'No-time'), ('contribution', 'Contribution')]
@@ -285,8 +287,8 @@ def reward_comparison():
                 tex_rows.append(' & '.join([label, reward_label, arm, *[f'{x:.3f}' for x in correlations],
                                             f'{geometry:.3f}'])+r' \\')
             tex_rows.append(r'\addlinespace[.25em]')
-        ax.set_yticks(range(4), [x[2] for x in TASKS] if k == 0 else ['']*4)
-        ax.set_ylim(3.55, -.55); ax.set_xlim(-1.03, 1.03); ax.set_xticks([-1, 0, 1])
+        ax.set_yticks(range(len(TASKS)), [x[2] for x in TASKS] if k == 0 else ['']*len(TASKS))
+        ax.set_ylim(len(TASKS)-.45, -.55); ax.set_xlim(-1.03, 1.03); ax.set_xticks([-1, 0, 1])
         ax.axvline(0, color=GRAY, ls='--', lw=.7); ax.set_xlabel('Spearman ρ', fontsize=MIN_FONT)
         ax.grid(axis='x', color='#E8E8E8', lw=.6); ax.set_axisbelow(True)
         panel(ax, 'ABC'[k], reward_label)
@@ -314,7 +316,7 @@ Task & Reward & Interface & Seed 0 & Seed 1 & Seed 2 & Proximity \\
 \bottomrule
 \end{tabular*}
 \par\smallskip\footnotesize
-Every four-task, three-reward and two-interface combination is shown. The three seeds share cells, programs, endpoint sets and fixed upstream fits. No-time removes temporal reward terms but retains the task environment. The TPO Contribution sign disagreement in the revised LiVAE interface is conditional on this task and training configuration; it is not evidence of a general failure of the method. Dapp1 Ery uses the annotation-ambiguous 87-cell endpoint. Companion CSVs provide medians, ranges, denominators and increments over proximity; the complete population-specific saved correlations remain in Table S8. Source: Table S8.
+Every six-task, three-reward and two-interface combination is shown. IR denotes irradiation. The three seeds share cells, programs, endpoint sets and fixed upstream fits. No-time removes temporal reward terms but retains the task environment. The TPO Contribution sign disagreement in the revised LiVAE interface is conditional on this task and training configuration; it is not evidence of a general failure of the method. Dapp1 Ery uses the annotation-ambiguous 87-cell endpoint. Companion CSVs provide medians, ranges, denominators and increments over proximity; the complete population-specific saved correlations remain in Table S8. Source: Table S8.
 \end{table}
 ''')
 
@@ -356,7 +358,7 @@ def main():
                 
                 'ledger_values': len(LEDGER), 'figure_checks': QA, 'minimum_native_text_pt':MIN_FONT, 'intended_print_width_inches':WIDTH}
     (E/'interpretation_assets.json').write_text(json.dumps(manifest, indent=2)+'\n')
-    print(json.dumps({'status': 'pass', 'display_values': len(LEDGER), 'task_evidence_rows': 24}))
+    print(json.dumps({'status': 'pass', 'display_values': len(LEDGER), 'task_evidence_rows': 36}))
 
 
 if __name__ == '__main__':

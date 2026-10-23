@@ -1,4 +1,6 @@
 cohort,lineage,root,start_labels,endpoint_labels,n_all,n_nonterminal,n_starting,n_endpoint,program
+irradiation,erythroid,HSC,HSC;MPP2/3;MPP4,Ery,41252,32795,16821,8457,erythroid
+irradiation,myeloid,HSC,HSC;MPP2/3;MPP4,Gra;Mo;DC,41252,29925,16821,11327,neutrophil
 ucb,megakaryocyte,primitive,primitive,megakaryocyte,39911,22803,2688,17108,megakaryocyte
 dapp1,erythroid,primitive,primitive,erythroid,10224,10137,3143,87,erythroid
 dapp1,myeloid,primitive,primitive,neutrophil;monocyte,10224,8385,3143,1839,neutrophil

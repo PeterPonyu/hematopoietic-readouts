@@ -1,0 +1,13 @@
+args <- commandArgs(trailingOnly=TRUE)
+stopifnot(length(args)==2L)
+.libPaths(c(args[[2L]],.libPaths()))
+suppressPackageStartupMessages(library(slingshot))
+folder <- args[[1L]]
+fit <- readRDS(file.path(folder,'fit.rds'))
+pt <- slingPseudotime(fit,na=FALSE)
+weights <- slingCurveWeights(fit,as.probs=FALSE)
+stopifnot(identical(dim(pt),dim(weights)),identical(rownames(pt),rownames(weights)))
+writeBin(as.double(t(pt)),file.path(folder,'native_pseudotime.f64'),size=8,endian='little')
+writeBin(as.double(t(weights)),file.path(folder,'native_weights.f64'),size=8,endian='little')
+writeLines(rownames(pt),file.path(folder,'native_cell_ids.txt'))
+writeLines(paste(dim(pt),collapse=','),file.path(folder,'native_shape.txt'))

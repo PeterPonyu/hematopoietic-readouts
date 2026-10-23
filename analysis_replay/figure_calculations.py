@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Redraw six article figures exclusively from frozen, saved summary tables.
+"""Redraw seven article figures exclusively from frozen, saved summary tables.
 
 This script does not load raw cells, fit models, compute correlations, or rerun
 the scientific pipeline. Only display operations (percent conversion, sums,
@@ -29,11 +29,12 @@ OUT = PROJECT / "figures"
 EVIDENCE = PROJECT / "evidence"
 FROZEN = Path("results/application_reanalysis_20260921")
 MATCHED = Path("results/recovered_integration_20261001/native_analysis")
-COHORTS = ["ucb", "dapp1", "sleep"]
-TASKS = [("ucb", "megakaryocyte"), ("dapp1", "erythroid"),
+COHORTS = ["irradiation", "ucb", "dapp1", "sleep"]
+TASKS = [("irradiation", "erythroid"), ("irradiation", "myeloid"),
+         ("ucb", "megakaryocyte"), ("dapp1", "erythroid"),
          ("dapp1", "myeloid"), ("sleep", "myeloid")]
-TASK_LABELS = ["TPO Mk", "Dapp1 Ery", "Dapp1 My", "Sleep My"]
-COHORT_LABELS = {"ucb": "TPO culture", "dapp1": "Dapp1", "sleep": "Sleep"}
+TASK_LABELS = ["IR Ery", "IR My", "TPO Mk", "Dapp1 Ery", "Dapp1 My", "Sleep My"]
+COHORT_LABELS = {"irradiation": "Irradiation", "ucb": "TPO culture", "dapp1": "Dapp1", "sleep": "Sleep"}
 ARMS = ["PCA", "LiVAE"]
 ARM_COLORS = {"PCA": "#17689A", "LiVAE": "#8856A7"}
 BLUE, ORANGE, GREEN = "#17689A", "#C6602A", "#168775"
@@ -180,8 +181,8 @@ def save(fig, name):
 
 
 def fig1():
-    fig = plt.figure(figsize=(WIDTH, 4.55))
-    ax = fig.add_axes([.075, .39, .90, .52]); ax.axis("off")
+    fig = plt.figure(figsize=(WIDTH, 5.2))
+    ax = fig.add_axes([.075, .43, .90, .49]); ax.axis("off")
     title(ax, "a", "Analysis workflow")
 
     # Original line icons remain vector paths in PDF and editable SVG output.
@@ -212,11 +213,11 @@ def fig1():
     ax.add_patch(FancyBboxPatch((.13,.805),.74,.15,
                  boxstyle="round,pad=0.006,rounding_size=0.009",
                  facecolor="white",edgecolor="black",lw=.8))
-    ax.text(.5,.906,"79,262 retained cells · three public cohorts",ha="center",va="center",fontsize=10.5)
-    ax.text(.5,.846,"9 sampled times / conditions · 4 lineage tasks",ha="center",va="center")
-    boxes=[(.005,"Observed readouts","Captured composition\nFixed programs\nCommon-group contrasts\nActual culture days","observations"),
-           (.35,"Frozen application","PCA30 states\nFrozen UMAP actions\nReward interventions\nGeometry references","frozen"),
-           (.695,"Paired interfaces","PCA30 / LiVAE10\nEach to UMAP2\n2D states and actions\n90 downstream runs","paired")]
+    ax.text(.5,.906,"120,514 retained cells · four application cohorts",ha="center",va="center",fontsize=10.5)
+    ax.text(.5,.846,"17 sampled times / conditions · 6 lineage tasks",ha="center",va="center")
+    boxes=[(.005,"What is captured?","Composition / programs\nCommon-group contrasts\nRecorded sampling /\nculture days","observations"),
+           (.35,"What do values add?","Frozen application\nPCA30 states\nFixed UMAP actions\nRewards / proximity","frozen"),
+           (.695,"What varies by fit?","Paired interfaces / seeds\nPCA30 / LiVAE10\nEach to UMAP2\n132 downstream runs","paired")]
     for x, heading, body, kind in boxes:
         ax.add_patch(FancyBboxPatch((x,.08),.30,.595,
                      boxstyle="round,pad=0.005,rounding_size=0.009",
@@ -230,7 +231,7 @@ def fig1():
     ax.text(.5,.018,"Separate technical reference: normal marrow · 6,011 cells",ha="center",va="center")
     ax.set_xlim(-.01,1.01);ax.set_ylim(-.015,1.0)
 
-    a = fig.add_axes([.235, .10, .70, .20])
+    a = fig.add_axes([.235, .10, .70, .24])
     title(a, "b", "Retained application cohorts")
     for item in a.texts:
         if getattr(item,"_panel_letter",False): item.set_position((-95,13))
@@ -239,30 +240,30 @@ def fig1():
     for c in COHORTS:
         lineage = next(l for cohort, l in TASKS if cohort == c)
         counts.append(one(1, "b", c, p, "n_cells", cohort=c, lineage=lineage, population="all"))
-    a.barh([2,1,0],counts,height=.60,color=[BLUE,ORANGE,GREEN],zorder=3)
-    a.set_yticks([2,1,0],["TPO: 5 times","Dapp1: WT / KO","Sleep: CT / SD"])
+    a.barh([3,2,1,0],counts,height=.60,color=["#8856A7",BLUE,ORANGE,GREEN],zorder=3)
+    a.set_yticks([3,2,1,0],["IR: 8 times","TPO: 5 times","Dapp1: WT / KO","Sleep: CT / SD"])
     a.set_xlim(0,47000);a.set_xticks([0,20000,40000],["0","20,000","40,000"])
     a.set_xlabel("Retained cells",labelpad=3)
-    for y,count in zip([2,1,0],counts):
+    for y,count in zip([3,2,1,0],counts):
         a.text(count+650,y,f"{int(count):,}",va="center",fontsize=10)
     clean(a,"x")
     selected=rows(p,population="all")
     selected=selected.loc[[rows(p,cohort=c,lineage=next(l for cc,l in TASKS if cc==c),population="all").index[0] for c in COHORTS]]
-    record(1,"a","total cells",p,selected,"n_cells",sum(counts),"sum across three distinct cohorts","cells")
-    assert sum(counts)==79262
+    record(1,"a","total cells",p,selected,"n_cells",sum(counts),"sum across four distinct cohorts","cells")
+    assert sum(counts)==120514
     retained_tasks=rows(p,population="all");retained_tasks=retained_tasks[retained_tasks.cohort.isin(COHORTS)]
     record(1,"a","lineage tasks",p,retained_tasks,"lineage",len(retained_tasks),"count unique cohort-lineage pairs","tasks")
-    assert len(retained_tasks)==4
+    assert len(retained_tasks)==6
     condition_total=0
     for c in COHORTS:
         cp=FROZEN/c/"composition_counts.csv";d=table(cp)
         condition_total+=record(1,"a",f"{c} conditions",cp,d,"condition",len(d),"count condition rows","conditions")
-    assert condition_total==9
+    assert condition_total==17
     runs=0
     for filename,selector in [("associations_all_rewards.csv",{"population":"all"}),("focus_summary.csv",{})]:
         path=MATCHED/filename;d=rows(path,**selector);d=d[d.cohort.isin(COHORTS)]
         runs+=record(1,"a",filename,path,d,"seed",len(d),"count rows: one row per retained downstream run","runs")
-    assert runs==90
+    assert runs==132
     one(1,"a","marrow reference",p,"n_cells",cohort="marrow",lineage="erythroid",population="all")
     save(fig,"figure1_design")
 
@@ -281,7 +282,8 @@ def fig2():
         for x,v in enumerate(values):ax.text(x,v+(.5 if j==0 else 1.3),f"{v:.2f}%",ha="center",fontsize=10,fontweight="bold")
         # Reuses the three cohort denominators already traced in Figure 1b.
         n=next(r['value'] for r in LEDGER if r['figure']==1 and r['panel']=='b' and r['mark']==c)
-        title(ax,chr(97+j),f"{COHORT_LABELS[c]}: n = {int(n):,}");clean(ax)
+        numerator = "Dapp1 cluster 6" if c == "dapp1" else "Sleep granulocytic labels"
+        title(ax,chr(97+j),f"{numerator}\nCohort n = {int(n):,}");clean(ax)
 
     programs=["neutrophil","cycling","interferon","inflammatory"]
     labels=["Granulocytic","Cell cycle","Interferon","Inflammatory"]
@@ -369,7 +371,7 @@ def fig3():
         values=[one(3,"c",f"{gene}:{c}",p,gene,condition=c) for c in conditions]
         ax.plot(days,values,marker=marker,color=color,label=gene)
     ax.set_ylabel("Mean log1p(CP10k)");ax.set_ylim(-.1,3.65);ax.legend(frameon=False,loc="upper left")
-    title(ax,"c","Program component genes")
+    title(ax,"c","All-cell component genes")
     ax=axes[1,1];p=FROZEN/"ucb/state_values_by_condition.csv"
     for pop,label,color,marker in [("all","All cells",BLUE,"o"),("starting_population","Start-label subset",ORANGE,"s")]:
         for seed in range(3):
@@ -391,7 +393,7 @@ def fig3():
     for ax in axes.flat:
         ax.set_xticks(days);ax.set_xlim(-.5,14.5);ax.set_xlabel("Culture day");clean(ax)
 
-    fig.text(.55,.12,"Selected cluster 5: retained cells",ha="center",fontsize=MIN_FONT)
+    fig.text(.55,.12,"Panels b,d: each day's intersection with frozen cluster 5",ha="center",fontsize=MIN_FONT)
     for x,day,n in zip(np.linspace(.16,.94,5),days,denominators):
         fig.text(x,.067,f"D{day}: {int(n):,}",ha="center",fontsize=MIN_FONT)
     save(fig,"figure3_tpo")
@@ -399,7 +401,7 @@ def fig3():
 
 def correlation_panel(ax, fig_no, panel, population, matched=False, show_y=True, details=False):
     p=MATCHED/"neutral_summary.csv" if matched else FROZEN/"geometry_reference/summary.csv"
-    row_bands(ax,4)
+    row_bands(ax,len(TASKS))
     annotations=[]
     for y,(cohort,lineage) in enumerate(TASKS):
         selector={"cohort":cohort,"lineage":lineage,"population":population}
@@ -421,12 +423,14 @@ def correlation_panel(ax, fig_no, panel, population, matched=False, show_y=True,
             ax.scatter(v["pca"],y+.16,color=GREEN,marker="^",s=31,edgecolor="white",lw=.4,zorder=4)
         n=one(fig_no,panel,f"{cohort}:{lineage}:denominator",p,"n_cells",**dict(selector,**({"arm":"PCA"} if matched else {})))
         annotations.append((n,medians))
-    ax.set_ylim(3.55,-.55)
+    ax.set_ylim(len(TASKS)-.45,-.55)
     labels=[f"{label} · {int(n):,}" for label,(n,_) in zip(TASK_LABELS,annotations)] if details else TASK_LABELS
-    ax.set_yticks(range(4),labels if show_y else [""]*4)
+    ax.set_yticks(range(len(TASKS)),labels if show_y else [""]*len(TASKS))
     if details:
+        ax.text(1.315,1.14,"3-seed scRL median ρ",transform=ax.transAxes,
+                ha="center",fontsize=MIN_FONT)
         for x,arm in [(1.18,"PCA"),(1.45,"LiVAE")]:
-            ax.text(x,1.14,arm+" ρ",transform=ax.transAxes,ha="center",fontsize=MIN_FONT,fontweight="bold",color=ARM_COLORS[arm])
+            ax.text(x,1.015,arm,transform=ax.transAxes,ha="center",fontsize=MIN_FONT)
             for y,(_,medians) in enumerate(annotations):
                 ax.text(x,y,f"{medians[arm]:+.3f}",transform=ax.get_yaxis_transform(),ha="center",va="center",fontsize=MIN_FONT,color=ARM_COLORS[arm])
     ax.set_xlim(-.30,1.0);ax.set_xticks([0,.5,1]);ax.axvline(0,color="#9DA5AC",ls="--",lw=.7)
@@ -434,7 +438,7 @@ def correlation_panel(ax, fig_no, panel, population, matched=False, show_y=True,
 
 
 def fig4():
-    fig=plt.figure(figsize=(WIDTH,5.25));gs=fig.add_gridspec(2,6,left=.15,right=.98,bottom=.15,top=.86,hspace=.62,wspace=.64,height_ratios=[.85,1.15])
+    fig=plt.figure(figsize=(WIDTH,6.3));gs=fig.add_gridspec(2,6,left=.15,right=.98,bottom=.13,top=.85,hspace=.58,wspace=.64,height_ratios=[.85,1.4])
     p=FROZEN/"marrow/reward_timing.csv"
     for j,lineage in enumerate(["erythroid","myeloid"]):
         ax=fig.add_subplot(gs[0,j*3:(j+1)*3])
@@ -445,18 +449,20 @@ def fig4():
         ax.set_xticks(range(3),["Decision","Contribution","No-time"]);ax.set_ylim(0,.85);ax.set_xlim(-.35,2.35)
         if j==0: ax.set_ylabel("High-value mean pseudotime")
         clean(ax)
-        title(ax,chr(97+j),f"Marrow {lineage}")
+        title(ax,chr(97+j),lineage.capitalize())
     for i,pop in enumerate(["all","nonterminal","starting"]):
         ax=fig.add_subplot(gs[1,i*2:(i+1)*2])
         correlation_panel(ax,4,chr(99+i),pop,show_y=i==0)
         title(ax,chr(99+i),["All cells","Nonterminal","Selected start"][i])
-    handles=[Line2D([],[],color=BLUE,marker="o",label="scRL value"),
+    handles=[Line2D([],[],color=BLUE,marker="o",label="scRL median / seed range"),
              Line2D([],[],ls="",marker="s",color=ORANGE,label="UMAP proximity"),
              Line2D([],[],ls="",marker="^",color=GREEN,label="PCA30 proximity")]
     fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.014),columnspacing=1.0,handlelength=1.4,fontsize=MIN_FONT)
 
+    fig.text(.565,.987,"Normal-marrow reward control",ha="center",va="top",fontsize=MIN_FONT)
     fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Seed {i}") for i,m in enumerate(["o","s","^"])],
-               loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.60,.997),fontsize=MIN_FONT,columnspacing=1.4,handletextpad=.4)
+               loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.60,.955),fontsize=MIN_FONT,columnspacing=1.4,handletextpad=.4)
+    fig.text(.565,.558,"Application cohorts: no-time reward",ha="center",va="center",fontsize=MIN_FONT)
 
 
 
@@ -464,28 +470,29 @@ def fig4():
 
 
 def fig5():
-    fig=plt.figure(figsize=(WIDTH,5.55))
+    fig=plt.figure(figsize=(WIDTH,8.1))
     for i,pop in enumerate(["all","nonterminal","starting"]):
-        ax=fig.add_axes([.245,.72-i*.275,.46,.20])
+        ax=fig.add_axes([.245,.73-i*.29,.46,.215])
         correlation_panel(ax,5,chr(97+i),pop,matched=True,show_y=True,details=True)
         title(ax,chr(97+i),["All cells","Nonterminal","Selected start"][i])
         ax.set_xticks([-.25,0,.25,.5,.75,1],["−0.25","0","0.25","0.50","0.75","1.00"])
         ax.set_xlabel("Spearman ρ" if i==2 else "")
         if i < 2: ax.tick_params(labelbottom=False)
     handles=[Line2D([],[],color=BLUE,marker="s",label="PCA"),Line2D([],[],color=ARM_COLORS["LiVAE"],marker="o",label="Revised LiVAE"),
-             Line2D([],[],color=GRAY,marker="D",markerfacecolor="white",ls="",label="Proximity")]
+             Line2D([],[],color=GRAY,marker="D",markerfacecolor="white",ls="",label="Same-interface proximity")]
     fig.legend(handles=handles,loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.015),columnspacing=1.1,handlelength=1.4)
+    fig.text(.55,.069,"Filled marks: scRL medians; segments: seed ranges",ha="center",fontsize=MIN_FONT)
 
 
     save(fig,"figure5_interfaces")
 
 
 def fig6():
-    fig=plt.figure(figsize=(WIDTH,5.4));gs=fig.add_gridspec(2,2,left=.16,right=.95,bottom=.23,top=.90,hspace=.68,wspace=.28,height_ratios=[1,1.08])
+    fig=plt.figure(figsize=(WIDTH,6.7));gs=fig.add_gridspec(2,2,left=.16,right=.95,bottom=.19,top=.90,hspace=.62,wspace=.28,height_ratios=[1,1.4])
     a=fig.add_subplot(gs[0,0]);b=fig.add_subplot(gs[0,1]);c=fig.add_subplot(gs[1,:])
     p=MATCHED/"seed_stability.csv"
     markers=["o","s","^"]
-    row_bands(a,3);row_bands(b,3);row_bands(c,4)
+    row_bands(a,len(COHORTS));row_bands(b,len(COHORTS));row_bands(c,len(TASKS))
     for y,cohort in enumerate(COHORTS):
         for arm,off in [("PCA",-.23),("LiVAE",.23)]:
             vals=series(6,"a",f"{cohort}:{arm}",p,"value",cohort=cohort,arm=arm,method="scFocus")
@@ -495,10 +502,14 @@ def fig6():
             values=series(6,"b",f"{cohort}:{arm}",q,"median_entropy",cohort=cohort,arm=arm)
             for k,v in enumerate(values): b.scatter(v,y+off+(k-1)*.12,color=ARM_COLORS[arm],marker=markers[k],s=30,edgecolor="white",lw=.4,zorder=4)
     for ax in [a,b]:
-        ax.set_yticks(range(3),[COHORT_LABELS[x] for x in COHORTS]);ax.set_ylim(2.5,-.5);clean(ax,"x")
+        ax.set_yticks(range(len(COHORTS)),[COHORT_LABELS[x] for x in COHORTS]);ax.set_ylim(len(COHORTS)-.5,-.5);clean(ax,"x")
     a.set_xlim(0,1);a.set_xticks([0,.5,1]);a.set_xlabel("Assignment ARI");title(a,"a","scFocus seed agreement")
-    b.set_xlim(.95,1);b.set_xticks([.95,.975,1],["0.950","0.975","1.000"]);b.set_xlabel("Median normalized entropy");title(b,"b","scFocus weight dispersion")
+    b.set_xlim(.95,1);b.set_xticks([.95,.975,1],["0.950","0.975","1.000"]);b.set_xlabel("Median normalized entropy");title(b,"b","scFocus weight dispersion\nEntropy zoom: 0.95–1.00")
     b.set_yticklabels([])
+    b.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Seed {i}")
+                      for i,m in enumerate(markers)],loc="upper center",ncol=3,
+             frameon=False,bbox_to_anchor=(.5,-.37),borderaxespad=0,
+             handletextpad=.35,columnspacing=.6,handlelength=.8,fontsize=MIN_FONT)
     for y,(cohort,lineage) in enumerate(TASKS):
         for arm,off in [("PCA",-.23),("LiVAE",.23)]:
             values=series(6,"c",f"{cohort}:{lineage}:{arm}",p,"value",cohort=cohort,lineage=lineage,arm=arm,method="scRL",reward="neutral")
@@ -506,54 +517,125 @@ def fig6():
             if arm=="LiVAE":
                 c.text(.025,y,f"{min(values):.2f}–{max(values):.2f}",va="center",fontsize=MIN_FONT,color=ARM_COLORS[arm])
             for k,v in enumerate(values): c.scatter(v,y+off+(k-1)*.12,color=ARM_COLORS[arm],marker=markers[k],s=30,edgecolor="white",lw=.4,zorder=4)
-    c.set_yticks(range(4),TASK_LABELS);c.set_ylim(3.5,-.5);c.set_xlim(0,1)
+    c.set_yticks(range(len(TASKS)),TASK_LABELS);c.set_ylim(len(TASKS)-.5,-.5);c.set_xlim(0,1)
     c.axvline(0,color="#9DA5AC",ls="--",lw=.7);c.set_xlabel("Between-seed value Spearman ρ");clean(c,"x")
     title(c,"c","No-time scRL seed agreement")
     c.text(.025,1.015,"LiVAE range",transform=c.transAxes,fontsize=MIN_FONT,color=ARM_COLORS["LiVAE"])
     fig.legend(handles=[Line2D([],[],color=ARM_COLORS[x],marker="o",ls="",label="Revised LiVAE" if x=="LiVAE" else x) for x in ARMS],
                loc="lower center",ncol=2,frameon=False,bbox_to_anchor=(.55,.077),fontsize=MIN_FONT)
-    fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Pair {pair} / seed {seed}")
-                        for m,pair,seed in zip(markers,["0–1","0–2","1–2"],["0","1","2"])],
-               loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.015),fontsize=MIN_FONT,columnspacing=1.1,handletextpad=.45)
+    fig.legend(handles=[Line2D([],[],color=GRAY,marker=m,ls="",label=f"Pair {pair}")
+                        for m,pair in zip(markers,["0–1","0–2","1–2"])],
+               title="Seed pairs in a,c",title_fontsize=MIN_FONT,
+               loc="lower center",ncol=3,frameon=False,bbox_to_anchor=(.55,.004),fontsize=MIN_FONT,columnspacing=1.1,handletextpad=.45)
 
 
     save(fig,"figure6_stability")
 
 
-CAPTIONS = """# Figure captions
+def fig7():
+    """Irradiation displays saved aggregates, with denominators kept explicit."""
+    fig, axes = plt.subplots(2, 2, figsize=(WIDTH, 7.25))
+    fig.subplots_adjust(left=.14, right=.98, bottom=.32, top=.92,
+                        hspace=.72, wspace=.45)
+    days = [0, 2, 5, 8, 11, 14, 21, 30]
+    conditions = [f"d{day}" for day in days]
+    composition = FROZEN / "irradiation/thesis_composition.csv"
+    counts_path = FROZEN / "irradiation/composition_counts.csv"
+    captured, hspc, erythroid = [], [], []
+    for condition in conditions:
+        d = rows(counts_path, condition=condition)
+        assert len(d) == 1
+        cell_columns = [x for x in d.columns if x != "condition"]
+        captured.append(record(7, "ab", f"{condition}:captured n", counts_path, d,
+                               ";".join(cell_columns), d[cell_columns].sum(axis=1).iloc[0],
+                               "sum saved label counts within condition", "cells"))
+        hspc.append(record(7, "ac", f"{condition}:HSPC n", counts_path, d,
+                           "HSC;MPP2/3;MPP4", d[["HSC", "MPP2/3", "MPP4"]].sum(axis=1).iloc[0],
+                           "sum saved HSC, MPP2/3 and MPP4 counts", "cells"))
+        erythroid.append(one(7, "b", f"{condition}:Ery n", counts_path, "Ery",
+                             condition=condition, unit="cells"))
+    assert captured == [10386, 1297, 1344, 7984, 4129, 4235, 6682, 5195]
+    assert hspc[2] == 66
+    for ax, letter, column, heading, color, marker in [
+            (axes[0, 0], "a", "HSPC", "Captured HSPC labels", BLUE, "o"),
+            (axes[0, 1], "b", "Ery", "Captured erythroid label", ORANGE, "s")]:
+        fractions = [one(7, letter, f"{column}:{condition}", composition, column,
+                         scale=100, unit="percent", **{"Unnamed: 0": condition})
+                     for condition in conditions]
+        ax.plot(days, fractions, color=color, marker=marker)
+        ax.set_ylabel("Captured fraction (%)")
+        ax.set_ylim(0, 90 if column == "HSPC" else 75)
+        title(ax, letter, heading)
+    ax = axes[1, 0]
+    programs = FROZEN / "irradiation/starting_population_programs.csv"
+    for program, label, color, marker in [("program_neutrophil", "Granulocytic", BLUE, "o"),
+                                          ("program_interferon", "Interferon", ORANGE, "s")]:
+        values = [one(7, "c", f"{program}:{condition}", programs, program,
+                      condition=condition) for condition in conditions]
+        ax.plot(days, values, color=color, marker=marker, label=label)
+        if program == "program_neutrophil":
+            ax.annotate("Day 5: 66 HSPC", xy=(5, values[2]), xytext=(12, .47),
+                        arrowprops={"arrowstyle": "-", "color": GRAY, "lw": .75},
+                        fontsize=MIN_FONT, ha="left")
+    ax.axhline(0, color=LIGHT, lw=.8)
+    ax.set_ylabel("Mean program score")
+    ax.legend(frameon=False, loc="upper right", handlelength=1.15,
+              handletextpad=.4, borderaxespad=.2)
+    title(ax, "c", "Programs within HSPC labels")
+    ax = axes[1, 1]
+    values_path = FROZEN / "irradiation/state_values_by_condition.csv"
+    for lineage, label, color, marker in [("erythroid", "Erythroid", BLUE, "o"),
+                                          ("myeloid", "Myeloid", ORANGE, "s")]:
+        values = {name: [] for name in ["min", "median", "max"]}
+        for condition in conditions:
+            d = rows(values_path, condition=condition, lineage=lineage,
+                     reward="neutral", population="starting_population")
+            assert len(d) == 3 and sorted(d.seed.tolist()) == [0, 1, 2]
+            for name in values:
+                result = getattr(d.median_value_percentile, name)()
+                values[name].append(record(7, "d", f"{lineage}:{condition}:{name}", values_path,
+                                           d, "median_value_percentile", result,
+                                           f"{name} of three saved condition-level medians"))
+        ax.fill_between(days, values["min"], values["max"], color=color, alpha=.15, linewidth=0)
+        ax.plot(days, values["median"], color=color, marker=marker, label=label)
+    ax.set_ylabel("Median value percentile")
+    ax.set_ylim(0, 1)
+    ax.legend(frameon=False, loc="upper right", handlelength=1.15,
+              handletextpad=.4, borderaxespad=.2)
+    title(ax, "d", "No-time HSPC scRL value")
+    for ax in axes.flat:
+        ax.set_xticks(days)
+        ax.set_xlim(-1, 31)
+        ax.set_xlabel("Day after irradiation")
+        clean(ax)
+    labels = fig.add_axes([.04, .025, .94, .19])
+    labels.axis("off")
+    count_rows = [["Day"] + [str(x) for x in days],
+                  ["Captured n"] + [f"{int(x):,}" for x in captured],
+                  ["HSPC n"] + [f"{int(x):,}" for x in hspc],
+                  ["Ery n"] + [f"{int(x):,}" for x in erythroid]]
+    count_table = labels.table(cellText=count_rows, cellLoc="center",
+                              colWidths=[.18]+[.1025]*8, bbox=[0, 0, 1, 1])
+    count_table.auto_set_font_size(False)
+    count_table.set_fontsize(MIN_FONT)
+    for (row, col), cell in count_table.get_celld().items():
+        cell.set_linewidth(0)
+        cell.set_facecolor(PALE if row % 2 else "white")
+        if col == 0:
+            cell.get_text().set_ha("left")
+    save(fig, "figure7_irradiation")
 
-## Figure 1. Three public cohorts connect observational and model-derived readouts.
 
-(a) Analysis design for 79,262 retained cells across nine sampled times or conditions and four lineage tasks. Observational comparisons use captured population fractions, fixed transcriptional programs, common-group standardization and actual TPO culture days. PCA denotes principal component analysis, UMAP denotes uniform manifold approximation and projection, and LiVAE denotes the Lorentz-regularized interpretable variational autoencoder. The frozen application protocol uses PCA30 state features with frozen UMAP actions; the separate matched comparison uses PCA30→UMAP2 and LiVAE10→UMAP2 with two-dimensional state and action interfaces. Its 90 completed downstream runs comprise 72 scRL runs (four tasks × three rewards × three seeds × two interfaces) and 18 scFocus runs (three cohorts × three seeds × two interfaces). The 6,011-cell normal-marrow dataset is a separate technical reference. (b) Retained cells per application cohort. TPO: thrombopoietin culture of human cord-blood cells; Dapp1: wild type (WT) and knockout (KO); sleep: control (CT) and sleep deprivation (SD). Counts describe retained cells and sampled conditions, not independent biological replicates.
-
-## Figure 2. Fixed composition changes the interpretation of aggregate program contrasts.
-
-(a,b) Selected captured granulocytic fractions for Dapp1 wild type (WT) and knockout (KO), and sleep control (CT) and sleep deprivation (SD). Dapp1 shows the saved granulocytic cluster 6; sleep shows the saved provisional granulocytic-like group aggregate. These annotation definitions are cohort-specific and the y-axis ranges differ. (c,d) Saved unadjusted differences (open grey circles) and composition-standardized differences (filled blue circles), for KO−WT and SD−CT, respectively. Connecting segments pair two summaries of the same contrast, not uncertainty intervals. Fixed-composition estimates use pooled weights over groups containing at least 20 cells in each condition: 11 common Dapp1 groups and 19 common sleep groups, covering all retained cells in each cohort. The granulocytic difference changes from −0.413 to −0.198 in Dapp1 and from +0.079 to +0.019 in sleep. Program scores average gene-wise standardized log1p-normalized expression within each cohort; values are not cross-cohort effect-size estimates. With one library per condition in the analyzed matrices, these are descriptive library-level contrasts, not animal-level effects or a causal partition of composition and state.
-
-## Figure 3. Actual TPO culture days separate composition, molecular state and model values.
-
-Thrombopoietin (TPO) culture of human cord-blood cells. (a) Captured fractions of provisional primitive-like, megakaryocyte-like and erythroid-like populations. (b) Mean megakaryocyte program score in all cells and the intersection of frozen computational starting cluster 5 with each day's captured cells. (c) All-cell mean expression of PF4, PPBP and ITGA2B after normalization to 10,000 counts per cell and log1p transformation. (d) Median no-time scRL value percentile in all cells and starting cells, under the frozen application protocol. Thin lines show the three saved seed-specific condition medians; thick lines show their median, a display aggregation that differs from a cell-level pooled estimate. Value percentiles are ranked within the full cohort, separately per run, and are not fate probabilities. Days are plotted at their actual spacing (0, 4, 7, 11 and 14); connecting lines guide the eye and do not trace individual cells. Selected-cluster denominators, shown beneath the panels, are 17, 1,187, 227, 221 and 1,036 cells, respectively. The small day-0 subset, competing program labels and changing membership limit interpretation; this is not a fixed set of progenitors followed through culture. Full day-0 composition and annotation diagnostics are in Supplementary Tables S15--S17. The marker panel shows component genes of the program rather than independent validation. Molecular, population and value profiles are descriptive observations and do not establish functional maturation or lineage output.
-
-## Figure 4. Reward controls and endpoint geometry bound frozen-protocol value interpretation.
-
-(a,b) Normal human marrow reference: mean grid pseudotime among cells in the highest value decile for erythroid and myeloid tasks. Each point is one seed (three seeds per reward); circles, squares and triangles identify seeds 0, 1 and 2. Decision, Contribution and no-time rewards use the same input, endpoints and training budget. No-time removes lineage time weighting and the boundary pseudotime bonus while retaining other environment rules. Reward-dependent shifts describe model sensitivity, not independently measured timing of fate decisions. (c–e) Frozen application protocol: no-time value–program Spearman correlations in all cells, nonterminal cells and starting cells. Blue circles and lines show the saved three-seed median and minimum–maximum range; orange squares and green triangles show UMAP and PCA30 endpoint geometry references. Geometry is the negative mean distance to the 15 nearest endpoint cells; endpoint queries exclude themselves. TPO Mk: thrombopoietin-culture megakaryocyte task; Dapp1 Ery: erythroid task; My: myeloid task, evaluated against the granulocytic program. PCA denotes principal component analysis and UMAP denotes uniform manifold approximation and projection. The four application tasks are distinct from the normal-marrow reference. The all-cell scRL median does not exceed the better geometry reference in any retained task. Same-data associations use partially shared programs and endpoint definitions and are not independent fate accuracy; seed ranges are not biological confidence intervals.
-
-## Figure 5. Paired PCA and revised LiVAE pipelines produce task-dependent associations.
-
-(a–c) No-time scRL value–program Spearman correlations in all cells, nonterminal cells and starting cells for the four retained lineage tasks. Blue squares denote the PCA30→UMAP2 interface; purple circles denote LiVAE10→UMAP2. Points and lines show saved medians and minimum–maximum ranges across three downstream seeds. Open diamonds show the corresponding same-interface, 15-nearest-endpoint negative-distance reference, with endpoint self-distances excluded. Both interfaces use matched cell identities, programs, endpoint definitions and two-dimensional state/action widths. They differ in upstream preprocessing, dimensionality and training objective; this comparison cannot assign a change specifically to Lorentz geometry. Negative and weak associations remain visible. This is the revised LiVAE-derived implementation; conclusions are conditional on the tested budgets and single upstream fits. The paired protocol differs from the frozen application in its state features and rebuilt environments. PCA: principal component analysis; UMAP: uniform manifold approximation and projection; LiVAE: Lorentz-regularized interpretable variational autoencoder. TPO Mk denotes the thrombopoietin-culture megakaryocyte task; Ery denotes erythroid and My denotes myeloid (granulocytic program reference). Correlations are same-data descriptive relationships; ranges quantify initialization sensitivity conditional on the fixed upstream and projection seed.
-
-## Figure 6. Initialization sensitivity persists in matched-interface readouts.
-
-(a) scFocus hard-assignment adjusted Rand index (ARI) for the three pairs among downstream seeds 0, 1 and 2, separately by cohort and interface. (b) Saved cell-median normalized scFocus weight entropy for each seed. Entropy is computed from row-normalized branch weights and divided by the logarithm of the run-specific branch count; its full theoretical range is 0–1, whereas the displayed axis is restricted to 0.95–1.00 to resolve these high values. High entropy describes dispersed weights and does not establish calibrated fate probabilities or a number of biological fates. (c) No-time scRL between-seed cell-value Spearman correlations for the four retained tasks. Blue and purple denote PCA and LiVAE interfaces. In (a,c), circles, squares and triangles identify seed pairs 0–1, 0–2 and 1–2; in (b), they identify seeds 0, 1 and 2. Faint segments in (a,c) span the saved pairwise values. Shape keys identify each seed pair or individual seed directly in the figure. Pairs share the same three seeds and are not independent biological replicates. PCA: principal component analysis; LiVAE: Lorentz-regularized interpretable variational autoencoder. TPO Mk denotes the thrombopoietin-culture megakaryocyte task; Ery denotes erythroid and My denotes myeloid. All panels use only the matched two-dimensional protocol.
-"""
+# Figure captions are maintained with the manuscript and evidence, not duplicated here.
 
 
 def main():
     arial=setup()
-    for function in [fig1,fig2,fig3,fig4,fig5,fig6]:
+    for function in [fig1,fig2,fig3,fig4,fig5,fig6,fig7]:
         function()
     pd.DataFrame(LEDGER).to_csv(EVIDENCE/"figure_values.csv",index=False)
-    manifest={"scope":{"cohorts":COHORTS,"tasks":TASKS,"cells":79262,"conditions":9,"matched_runs":90},
+    manifest={"scope":{"cohorts":COHORTS,"tasks":TASKS,"cells":120514,"conditions":17,"matched_runs":132,
+                       "matched_scRL_runs":108,"matched_scFocus_runs":24,"upstream_fits":4},
               "row_convention":"CSV data records numbered from 1; header excluded; source line is record + 1",
               "sources":SOURCES,"figure_checks":QA,"font":arial,
               "analysis_policy":"Saved summary tables only. No experimental reruns, new cell-level calculations, statistical tests, or new correlations.",
@@ -561,16 +643,18 @@ def main():
               "display_aggregations":["Figure 1 sum of distinct cohort counts and row counts of retained conditions/runs.",
                   "Composition fractions multiplied by 100. Figure 3a Other frozen labels is the exact 100% complement of the original three labels, traced in a separate five-row display ledger.",
                   "Figure 3d median of three already saved condition-level value-percentile medians.",
+                  "Irradiation: sum saved label counts for denominators; min, median and max of three saved condition-level value-percentile medians.",
                   "Figure 6 segments span existing three pairwise values; endpoints use min/max for display."],
               
               
               "derived_display_context":{"figure3_composition_context.csv":{"rows":5,"sha256":hashlib.sha256((EVIDENCE/"figure3_composition_context.csv").read_bytes()).hexdigest()},
                   "figure3_composition_context.json":{"sha256":hashlib.sha256((EVIDENCE/"figure3_composition_context.json").read_bytes()).hexdigest()},
-                  "note":"Original figure_values.csv has 378 unchanged rows; it is not exhaustive of the new five-point complement line."},
-              "outputs":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.glob("figure[1-6]*"))}}
+                  "note":"The separate five-point TPO complement line is not duplicated in figure_values.csv."},
+              "outputs":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.glob("figure[1-7]*"))}}
     (EVIDENCE/"figure_sources.json").write_text(json.dumps(manifest,indent=2)+"\n")
+    (EVIDENCE/"figure_qa.json").write_text(json.dumps({"figures":QA,"status":"pass"},indent=2)+"\n")
     # Captions are maintained with the manuscript; rendering does not overwrite them.
-    print(json.dumps({"figures":6,"source_tables":len(SOURCES),"ledger_entries":len(LEDGER),"checks":QA},indent=2))
+    print(json.dumps({"figures":7,"source_tables":len(SOURCES),"ledger_entries":len(LEDGER),"checks":QA},indent=2))
 
 
 if __name__=="__main__":

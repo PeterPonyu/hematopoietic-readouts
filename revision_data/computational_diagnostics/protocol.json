@@ -1,0 +1,153 @@
+{
+  "status": "fixed_before_execution",
+  "registered_utc": "2026-10-22T03:05:02.628280+00:00",
+  "author_local_date": "2026-10-21",
+  "scope": "Post-hoc technical diagnostics on saved scores. No original point estimate, fit, label or paper result is replaced.",
+  "n_resamples": 4000,
+  "rng_seed": 20261021,
+  "rng_algorithm": "NumPy default_rng / PCG64",
+  "interval": "central 95% percentile resampling range; NumPy linear quantiles; not population biological confidence intervals",
+  "composition": {
+    "cohorts": [
+      "dapp1",
+      "sleep"
+    ],
+    "programs": {
+      "dapp1": [
+        "neutrophil",
+        "cycling"
+      ],
+      "sleep": [
+        "neutrophil"
+      ]
+    },
+    "score_definitions": [
+      "full program",
+      "six individual markers",
+      "six single-marker omissions"
+    ],
+    "strata": "original Leiden cluster crossed with observed condition; preserve every stratum size",
+    "weights": "original pooled eligible-cluster weights held fixed",
+    "standardization": "original cohort gene standardization held fixed",
+    "paired": "same within-stratum cell indices for all score definitions",
+    "reported_points": "copy existing full-program and marker-sensitivity tables; unresampled reconstruction used only as a conformance check"
+  },
+  "correlation": {
+    "tasks": [
+      "TPO megakaryocyte starting cells",
+      "sleep myeloid starting cells"
+    ],
+    "references": [
+      "UMAP distance",
+      "PCA30 distance"
+    ],
+    "resampling": "resample starting-cell rows together, preserving condition counts; joint indices for program, all three seeds and both references",
+    "ranks": "recalculate average-tie Spearman ranks inside every replicate",
+    "aggregate": "median of three seed-specific Spearman correlations minus reference Spearman; median recalculated per replicate; also report each seed",
+    "fixed": "fits, programs, labels, starting membership, references and seed identities remain fixed"
+  },
+  "TPO_masks": [
+    "all D0",
+    "D0 cluster 5",
+    "D0 clusters 0 and 1",
+    "D0 CD34 count > 0",
+    "original cluster 5 across all days"
+  ],
+  "TPO_outputs": "frozen-protocol no-time projected values at seeds 0, 1 and 2; megakaryocytic program; SD ddof=0 and linear IQR",
+  "TPO_mask_limits": "CD34 detection is a count threshold, not an independent HSPC identity; masks may overlap; no new root fit or root validation",
+  "not_performed": [
+    "model fitting",
+    "reannotation",
+    "endpoint permutation",
+    "biological significance testing",
+    "history-aware-state ablation",
+    "manuscript integration of new estimates"
+  ],
+  "inputs": {
+    "ucb_megakaryocyte_cells.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/results/application_reanalysis_20260921/geometry_reference/ucb_megakaryocyte_cells.csv.gz",
+      "sha256": "71cf8379477a4d51c56c7fce4253717b1dfa6dc773e3275ecdec932f22ada05d",
+      "bytes": 2325463
+    },
+    "sleep_myeloid_cells.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/results/application_reanalysis_20260921/geometry_reference/sleep_myeloid_cells.csv.gz",
+      "sha256": "9c301c2811072a8a25afae82c9cc846d25679330c62cd9b9241ad7b3afa97c40",
+      "bytes": 1697895
+    },
+    "ucb_cells.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/ucb/cells.csv.gz",
+      "sha256": "9897c87bfde7b973cd845009017433fc268183c0ee3a45b922b6f7d8cd9a228e",
+      "bytes": 2776507
+    },
+    "dapp1_cells.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/dapp1/cells.csv.gz",
+      "sha256": "a7057e5a3447a67889f39d7d0decff2c8ad02172ef310adb43c337b93bd34a18",
+      "bytes": 870728
+    },
+    "dapp1_marker_log1p.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/dapp1/marker_log1p.csv.gz",
+      "sha256": "0592f354b23276189595ba83bdf6831603383ef638f0229c1c061ed4358909e3",
+      "bytes": 878142
+    },
+    "dapp1_protocol.json": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/dapp1/protocol.json",
+      "sha256": "24a23c4e667ad71b396962f5dbf77ab941f967f04f1958dab33c5f934ed5115b",
+      "bytes": 3867
+    },
+    "sleep_cells.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/sleep/cells.csv.gz",
+      "sha256": "7890ca9c673a3847e80234ca702c625942f0220192b0a2cad2dcb926f5e11908",
+      "bytes": 1817774
+    },
+    "sleep_marker_log1p.csv.gz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/sleep/marker_log1p.csv.gz",
+      "sha256": "66097d01971a1f52e3aea73590182489611134cb206c959b2989f15d51c63363",
+      "bytes": 2078087
+    },
+    "sleep_protocol.json": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/sleep/protocol.json",
+      "sha256": "cec0074ce082b399ed5220551874d06ef58389879711793528a71fc1c1dfe7d7",
+      "bytes": 2819
+    },
+    "ucb_expression_support.npz": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/inputs/frozen/ucb/expression_support.npz",
+      "sha256": "265b223f41567e0f23797eaea012e91a39f15422a64397ac62a95273682e0d1e",
+      "bytes": 1787783
+    },
+    "marker_sensitivity.csv": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/sensitivity_data/marker_sensitivity_full_precision.csv",
+      "sha256": "dbe23962c27bfb5989f6a39e25a5c92fd4ed5d120157951091900101e8603624",
+      "bytes": 10328
+    },
+    "program_contrasts.csv": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/supplement_tables/s02_program_contrasts.csv",
+      "sha256": "ca96e11de5e2a273b3005af61b4622e00dd108bb6ab6dde6df15ec7049791249",
+      "bytes": 3989
+    },
+    "geometry_summary.csv": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/source_data/results/application_reanalysis_20260921/geometry_reference/summary.csv",
+      "sha256": "dcfcc0503c939cbb4ee270f5143847206af8df09fbbe264a5698751cf55e4927",
+      "bytes": 3185
+    },
+    "geometry_associations.csv": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/source_data/results/application_reanalysis_20260921/geometry_reference/associations.csv",
+      "sha256": "d890966ef8ca9d998fd8c685066bf37642efd254030bbd0ddd7818f814915425",
+      "bytes": 9640
+    },
+    "tolerances.json": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/paper/scientific-reports-hematopoietic-readouts/analysis_replay/tolerances.json",
+      "sha256": "65b0a74b1dcede7e6d1f5db35a4e03bee03e23ce41aebc17d534b4196a587a0b",
+      "bytes": 953
+    },
+    "historical_geometry_receipt.json": {
+      "source": "/home/zeyufu/Desktop/graduation-thesis/results/application_reanalysis_20260921/geometry_reference/receipt.json",
+      "sha256": "6e5f72a6765296d4eb8e138305c6825f0e42502d332f5c14d4365404c3755568",
+      "bytes": 12116
+    }
+  },
+  "primary_sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+    "https://www.nature.com/articles/s41467-021-21038-1",
+    "https://academic.oup.com/biostatistics/article/25/1/270/6893953"
+  ]
+}

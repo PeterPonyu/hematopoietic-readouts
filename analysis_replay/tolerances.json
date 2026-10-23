@@ -1,8 +1,0 @@
-{
-  "policy_version": "2026-10-16-v1-before-execution",
-  "identifiers_integers": "exact equality, including row order after explicit key alignment; NaN locations exact",
-  "saved_summary": {"rtol": 1e-10, "atol": 1e-10, "justification": "same algorithms operating on byte-preserved per-cell arrays in float64; accommodates CSV round-trip and deterministic distance roundoff"},
-  "expression_float32": {"rtol": 2e-6, "atol": 2e-6, "justification": "float32 library normalization, log1p and gene-wise reductions; several float32 ulps including reduction-order differences"},
-  "encoder_float32": {"rtol": 2e-5, "atol": 2e-5, "justification": "float32 linear algebra across CPU BLAS implementations, fixed original 1024-row export batches; small multiples of accumulation roundoff"},
-  "failure_policy": "Record and investigate every failure. Never broaden this policy to make an observed discrepancy pass. No replacement of frozen scientific results."
-}

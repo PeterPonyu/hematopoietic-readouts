@@ -1,43 +1,57 @@
-# Hematopoietic readouts: scientific code (v1.0.2)
+# Hematopoietic readouts: code and summary data
 
-Code and aggregate source tables for **Cell composition and endpoint proximity constrain model-derived fate interpretations in three hematopoietic single-cell datasets**, by Zeyu Fu ([ORCID 0009-0001-8329-0108](https://orcid.org/0009-0001-8329-0108)). Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.
+Scientific code and full-precision aggregate results for **Cell composition, endpoint geometry and policy learning in single-cell fate analysis**, by Zeyu Fu
+([ORCID 0009-0001-8329-0108](https://orcid.org/0009-0001-8329-0108)).
+Correspondence: fuzeyu99@tmmu.edu.cn; fuzeyu99@126.com.
 
-Software edition **1.0.2** corrects Figure 3 and Figure 4 legend placement and clarifies the portable reproduction instructions. All eight figures retain vector PDF, editable SVG and 600 dpi PNG output, black regular text, bold 13 pt panel letters, centered regular titles and a minimum native text size of 10 pt. Scientific inputs, aggregate numerical results and the original 378-value, supplementary 376-value and five-value Figure 3 context ledgers are unchanged. See [CHANGELOG.md](CHANGELOG.md). No Zenodo DOI has been assigned to v1.0.2.
+This release supports the current four-cohort analysis: irradiation, TPO
+culture, Dapp1 and sleep. The normal-marrow analysis is a separate technical
+control. It contains the small source tables used by the seven main and nine
+supplementary figure plates, the aggregate comparisons underlying the printed
+supplementary tables, and the analysis implementations.
 
-The study compares captured composition, fixed transcriptional programs and conditional model readouts in TPO culture, Dapp1 and sleep cohorts. Normal marrow is a separate technical control. Program-based cell labels are provisional; computational seeds are not biological replicates.
+## Use the release
 
-Three reproducibility tiers have different inputs and claims:
+Run `python run.py verify` to check every released file against its recorded
+SHA-256 digest. This standard-library operation does not fit or rerun a model.
 
-| Tier | Inputs and command | What it establishes |
-| --- | --- | --- |
-| Aggregate displays | This repository; `python run.py tables --output-root ../readout-tables` or `python run.py display --output-root ../readout-displays` | Formats saved summary tables and redraws six main and two supplementary figures. Checks the original 378 main-figure values, five complementary Figure 3a values and 376 supplementary display values. It does not recompute cell-level science. |
-| Retained-artifact scientific replay | Separately supplied Supplementary Code 1 and Supplementary Data 1–8; commands below | Recalculates 28 scientific summary tables from retained cell-level outputs; checks expression/program reconstruction. Optional `--checkpoints` exports deterministic posterior means and bottlenecks for three retained encoders. The additional sensitivity command recomputes single-marker and leave-one-marker-out summaries under frozen groups. |
-| Raw preparation and model retraining | Original public matrices, source preparation choices and complete training environment | Documented limits and source accessions are provided. This release does not establish raw preparation, model retraining, downstream model-checkpoint inference, historical in-memory code identity, independent annotation or biological validation. |
+Run `python run.py display --output-root /path/to/new-output` with an existing
+compatible environment to regenerate all 16 figure plates from the included
+aggregate inputs. The output folder must be new. The scientific estimates are
+read from the saved tables; the display command does not recalculate them from
+cells. Exact publication typography requires installed Arial. Font files are
+not redistributed. Observed display dependencies are listed in
+`requirements-display.txt`; they are not a transitive environment lock.
 
-Tables **S1–S21** are included as aggregate CSV/TeX references. The `tables` command regenerates S1–S13 and S20–S21 from aggregate inputs while carrying S14–S19 as references; `display` also regenerates S18–S19. Recomputing S14–S17 from frozen cell identities requires the separately supplied scientific supplements. The 28-table scientific replay does **not** recompute S20; use the separate `sensitivity` command below for its marker calculations.
+`source_data/` and `supplement_tables/` contain aggregate source tables.
+`revision_data/` contains the external-method, endpoint, partition, training
+and bounded diagnostic results and their analysis code. `analysis_replay/`
+and `analysis_support/code/` contain retained analysis implementations.
+Internal path names are retained so scientific input references stay traceable.
 
-Start with `python run.py verify`. This standard-library check validates the repository file inventory and SHA-256 checksums; it does not execute an analysis. All output paths must be new and outside this repository.
+## Data access and limits
 
-For scientific replay, separately obtain **Supplementary Code 1 and Supplementary Data 1–8**, the nine numbered scientific-supplement ZIP archives. The public source ZIP contains no cell-level data and does not replace those supplements. Extract all nine into one parent directory, preserving their common `scientific-reports-hematopoietic-readouts` folder, and use that extracted folder as `BUNDLE`:
+Source GEO accessions and the irradiation provenance gap are described in
+[DATA_SOURCES.md](DATA_SOURCES.md). This is a deliberately small code-and-summary
+release. Count matrices, cell identities, per-cell model outputs, subset masks,
+resampling arrays and fitted checkpoints are not included. Summary tables
+support inspection and aggregate display reproduction; they do not replace
+those inputs for a cell-level reanalysis or refitting. The analysis implementations
+that require those inputs are supplied for inspection and future use, with no
+claim that this release alone executes the complete cell-level workflow.
 
-```bash
-python run.py verify-supplements --bundle /path/to/BUNDLE
-python run.py replay --bundle /path/to/BUNDLE --output-root ../readout-replay \
-  --cohorts ucb dapp1 sleep marrow dapp1_spliced --checkpoints --figures
-python run.py sensitivity --bundle /path/to/BUNDLE --output-root ../readout-sensitivity
-```
+The current manuscript and supplementary PDF are submitted separately to the
+journal. They are not published by this software release. The earlier
+[DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592) identifies
+the preceding three-cohort software edition, not the current release. No new
+Zenodo DOI is claimed. The versioned current release is [https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.0](https://github.com/PeterPonyu/hematopoietic-readouts/releases/tag/v2.0.0).
 
-The replay wrapper verifies the supplied scientific edition, binds this repository's replay code to the separately supplied inputs in a temporary workspace, and records the actually executed checks. It downloads nothing. Missing supplements are reported as missing inputs. The repository contains no per-cell identifiers, count matrices, retained model outputs or checkpoints. These separate supplements must be distributed through the article's approved data-access route; obtaining the GitHub source alone does not provide tier 2 inputs.
+## Attribution
 
-Use an existing compatible Python environment. `requirements-display.txt` and `analysis_replay/requirements-replay.txt` record observed versions, rather than a complete transitive installation lock. Integrity and basic table formatting use the standard library; figures need NumPy, pandas, Matplotlib and the article's Arial font. Scientific replay also needs SciPy and scikit-learn; encoder export needs PyTorch. Marker sensitivity uses NumPy and pandas. Arial is not redistributed. No clean-install or full historical training-environment claim is made.
-
-`source_data/` holds aggregate scientific inputs; `supplement_tables/` holds full-precision CSVs and formatted TeX; `sensitivity_data/` holds aggregate sensitivity outputs. `reference_data/` contains display-value references. See [PROVENANCE.md](PROVENANCE.md), [NOTICE.md](NOTICE.md) and [DATA_SOURCES.md](DATA_SOURCES.md) for source bindings and terms. The scoped [MIT license](LICENSE) covers original software and its documentation; aggregate data, source datasets and upstream code retain their separate terms and attribution.
-
-Maintainers can refresh the allowlisted release from the final article folder with:
-
-```bash
-python tools/refresh_from_article.py --source /path/to/scientific-reports-hematopoietic-readouts
-python run.py verify
-```
-
-The refresh records source and released checksums, updates the associated manuscript title, and removes superseded generated copies. It does not copy the manuscript, author forms, review records or general project history. `CITATION.cff` and `.zenodo.json` describe software edition 1.0.2 without assigning it a DOI. The **previous version 1.0.0** is frozen at [Zenodo DOI 10.5281/zenodo.23435592](https://doi.org/10.5281/zenodo.23435592); that identifier belongs to v1.0.0. Software archiving does not assert journal publication. The dedicated source repository is [PeterPonyu/hematopoietic-readouts](https://github.com/PeterPonyu/hematopoietic-readouts).
+The scoped MIT license covers original software and documentation. Upstream
+notices remain in `LICENSES/` and the included source folders. The Python FateID
+port and the original R FateID are different implementations; the supplied
+GPL-3 notice is preserved. Source datasets, aggregate scientific data, figures
+and fonts retain their applicable terms. Biological replication, independent
+fate validation and model retraining are not established by a packaging or
+aggregate display check.

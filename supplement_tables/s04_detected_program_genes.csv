@@ -1,4 +1,13 @@
 cohort,program,genes,n_genes
+irradiation,primitive,Hlf;Mecom;Mllt3;Procr;Hoxa9;Gata2,6
+irradiation,erythroid,Klf1;Gata1;Alas2;Gypa;Slc4a1;Tfrc,6
+irradiation,megakaryocyte,Pf4;Ppbp;Itga2b;Gp9;Gp1bb;Fli1,6
+irradiation,neutrophil,Mpo;Elane;Ctsg;Cebpe;S100a8;S100a9,6
+irradiation,monocyte,Lyz2;Csf1r;Fcgr3;Ctss;Tyrobp;Irf8,6
+irradiation,lymphoid,Dntt;Il7r;Ebf1;Cd79a;Vpreb1,5
+irradiation,interferon,Isg15;Ifit1;Ifit3;Irf7;Stat1,5
+irradiation,inflammatory,Il1b;Tnf;Nfkbia;Cxcl2;S100a8;S100a9,6
+irradiation,cycling,Mki67;Top2a;Pcna;Cdk1;Ccnb1;Ube2c,6
 ucb,primitive,HLF;MECOM;MLLT3;PROCR;HOXA9;GATA2,6
 ucb,erythroid,KLF1;GATA1;ALAS2;GYPA;SLC4A1;TFRC,6
 ucb,megakaryocyte,PF4;PPBP;ITGA2B;GP9;GP1BB;FLI1,6

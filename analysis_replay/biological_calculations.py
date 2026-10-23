@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Link measured marker expression to newly trained outputs without cell p-values."""
+"""Replay measured marker summaries from saved outputs without cell p-values."""
 import argparse
 import json
 
@@ -68,7 +68,7 @@ def analyze(cohort, folder, dest):
     genes = [lookup[g.upper()] for g in marker_sets[cohort] if g.upper() in lookup]
     avg = exp[genes].assign(condition=cells.condition).groupby("condition").mean().reindex(conditions)
     detect = (exp[genes] > 0).astype(float).assign(condition=cells.condition).groupby("condition").mean().reindex(conditions)
-    key_programs = {"dapp1": ["primitive", "neutrophil", "inflammatory"], "sleep": ["interferon", "inflammatory", "neutrophil"], "ucb": ["primitive", "megakaryocyte", "cycling"]}[cohort]
+    key_programs = {"irradiation": ["erythroid", "neutrophil", "interferon"], "dapp1": ["primitive", "neutrophil", "inflammatory"], "sleep": ["interferon", "inflammatory", "neutrophil"], "ucb": ["primitive", "megakaryocyte", "cycling"]}[cohort]
     # Fixed starting population is a descriptive subset, not a held-out test.
     start_mask = cells.cell_type.isin(protocol["starts"])
     within_start = cells[start_mask].groupby("condition")[[f"program_{p}" for p in key_programs]].mean().reindex(conditions)

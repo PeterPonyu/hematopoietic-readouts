@@ -1,0 +1,6 @@
+cohort,program,gene,detected_cells,detected_fraction,requested,missing
+irradiation,dendritic,Flt3,18674,0.4526810821293513,Flt3;Clec9a;Siglech;Tcf4;Itgax,
+irradiation,dendritic,Clec9a,1463,0.03546494715407738,Flt3;Clec9a;Siglech;Tcf4;Itgax,
+irradiation,dendritic,Siglech,163,0.00395132357219044,Flt3;Clec9a;Siglech;Tcf4;Itgax,
+irradiation,dendritic,Tcf4,23338,0.565742267041598,Flt3;Clec9a;Siglech;Tcf4;Itgax,
+irradiation,dendritic,Itgax,289,0.007005720934742558,Flt3;Clec9a;Siglech;Tcf4;Itgax,

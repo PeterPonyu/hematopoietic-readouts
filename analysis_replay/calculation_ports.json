@@ -1,42 +1,37 @@
 [
   {
     "portable_file": "frozen_calculations.py",
-    "portable_sha256": "e1cf632d0878618aaf41d2143dc066f7b0e6278753fbb23db1d5b28f6de1e6ff",
+    "portable_sha256": "f96fb503eaea2b524f3c25313c2718549de2934fb7004e472d6025cabecb14ff",
     "historical_source": "scripts/applications/analyze_results.py",
     "historical_sha256": "df2b0660cb869b537095698d62f73e16298ecf82fb9a455daef8f642ad4d343a",
-    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
-    "article_portable_sha256": "e1cf632d0878618aaf41d2143dc066f7b0e6278753fbb23db1d5b28f6de1e6ff"
+    "changes": "Portable adaptation with explicit roots and cohorts; legacy plotting and redundant per-cell CSV exports removed; historical scientific formulas preserved; irradiation restored with its original cohort-specific key lists and labels."
   },
   {
     "portable_file": "matched_calculations.py",
     "portable_sha256": "a7b864f42d926ae3c14a1bd377f964c9ef5823747113eb79bb4c6b6d66422c34",
     "historical_source": "scripts/applications/recovered_native_analysis.py",
     "historical_sha256": "d22efbd35a510078e8d6d2688b9b10a6526f446c0329aafa24b838d9a4fd75d9",
-    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
-    "article_portable_sha256": "a7b864f42d926ae3c14a1bd377f964c9ef5823747113eb79bb4c6b6d66422c34"
+    "changes": "Portable adaptation with explicit roots and cohorts; legacy plotting and redundant per-cell CSV exports removed; historical scientific formulas preserved; irradiation restored with its original cohort-specific key lists and labels."
   },
   {
     "portable_file": "geometry_calculations.py",
     "portable_sha256": "dd39bf26a41ec3584389d47b5e16ceba7d7069361ed97fbb7f38f45ad8dfe53c",
     "historical_source": "scripts/applications/geometry_reference.py",
     "historical_sha256": "5f937cd133cc8b262b35e3fd97ed6ad4e061114974a8d535528c04db93d7748f",
-    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
-    "article_portable_sha256": "dd39bf26a41ec3584389d47b5e16ceba7d7069361ed97fbb7f38f45ad8dfe53c"
+    "changes": "Portable adaptation with explicit roots and cohorts; legacy plotting and redundant per-cell CSV exports removed; historical scientific formulas preserved; irradiation restored with its original cohort-specific key lists and labels."
   },
   {
     "portable_file": "biological_calculations.py",
-    "portable_sha256": "553c25db93ee2d5e623e041e05c6c1584acb8832dbedf8912534f15c013d4429",
+    "portable_sha256": "2f3d036891911218d9389af7ae661610175a5050af4e5ad79927eadded6df42b",
     "historical_source": "scripts/applications/biological_readouts.py",
     "historical_sha256": "8d824c795ceb8b1150d4379df928003956eb606d22f315d2285590485075326e",
-    "changes": "separate portable adaptation: explicit roots/cohorts, remove legacy plotting and redundant per-cell CSV exports; retain scientific formulas; exclude irradiation",
-    "article_portable_sha256": "553c25db93ee2d5e623e041e05c6c1584acb8832dbedf8912534f15c013d4429"
+    "changes": "Portable adaptation with explicit roots and cohorts; legacy plotting and redundant per-cell CSV exports removed; historical scientific formulas preserved; irradiation restored with its original cohort-specific key lists and labels."
   },
   {
     "portable_file": "figure_calculations.py",
-    "portable_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f",
+    "portable_sha256": "cb74e567d1ca004a4dca00848f46ad927980e926c3aa187d990464404c6bb6ef",
     "historical_source": "paper/scientific-reports-hematopoietic-readouts/scripts/build_figures.py",
-    "historical_sha256": "107f79ebcaafca4e30f7ca3aceb343377ff9037e2a74db39154d70c18f0bc3c0",
-    "changes": "Display adaptation of current renderer: explicit roots; black text and panel letters; centered titles; editable SVG; shortened Cluster 5 legend labels and manual Figure 3b/Figure 4 legend positions. Numerical operations unchanged.",
-    "article_portable_sha256": "ede12a5a761642ca1c220ff857f4136c01dea5f8ed5be67f8370379a0d8ce00f"
+    "historical_sha256": "ba7acb13789c3b6cfb3e63d9afd040df044fdd14220b196428133b45c98d34bd",
+    "changes": "Exact copy of the finalized seven-figure four-cohort article renderer, with only the established portable PROJECT/ROOT initialization adjustment. The replay wrapper reads regenerated CSVs with no original-summary fallback."
   }
 ]

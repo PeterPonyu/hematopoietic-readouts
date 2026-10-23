@@ -1,0 +1,3 @@
+destination_history,observation,action,reward,terminated,truncated
+unvisited_destination,"[1, 2]",0,0.5,False,False
+previously_visited_destination,"[1, 2]",0,-1,True,False

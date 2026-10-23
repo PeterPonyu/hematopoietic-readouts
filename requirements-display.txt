@@ -1,7 +1,6 @@
-# Observed compatible aggregate-display environment; not a full installation lock.
-# Python 3.13.7; Arial required separately for the article's figure renderer.
 numpy==2.2.6
 pandas==2.3.3
-matplotlib==3.10.7
-# A separately recorded existing replay environment also used Matplotlib 3.10.8.
-# No font or dependency installation is performed by the entry wrappers.
+matplotlib==3.10.8
+PyMuPDF==1.27.1
+# Observed display environment; use an existing compatible runtime.
+# Arial is installed separately and is not redistributed.

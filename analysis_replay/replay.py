@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Portable saved-analysis replay. Explicit cohort selection; never fits models."""
-import argparse, importlib.metadata, itertools, json, os, platform, sys, traceback
+import argparse, importlib.metadata, itertools, json, os, platform, shutil, sys, traceback
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
@@ -9,7 +9,7 @@ import pandas as pd
 from scipy import sparse
 from replay_common import save_json, sha256
 
-APPLICATIONS=['ucb','dapp1','sleep']
+APPLICATIONS=['irradiation','ucb','dapp1','sleep']
 ALLOWED=APPLICATIONS+['marrow','dapp1_spliced']
 def installed_version(name):
     try:return importlib.metadata.version(name)
@@ -75,7 +75,7 @@ def observational_extras(c,folder,dest):
     order=json.loads((folder/'expression_support.json').read_text())['frozen_leiden_category_order']
     cells.groupby('leiden',observed=True)[lineage].mean().reindex(order).to_csv(dest/'cluster_programs.csv')
     if c not in APPLICATIONS:return
-    groups={'ucb':{'Prim-like':['primitive'],'Mk-like':['megakaryocyte'],'Ery-like':['erythroid']},'dapp1':{'cluster 6 (granulocytic)':['6']},'sleep':{'Prim-like':['primitive'],'Neu-like':['neutrophil'],'Mono-like':['monocyte']}}[c]
+    groups={'irradiation':{'HSPC':['HSC','MPP2/3','MPP4'],'Ery':['Ery'],'Gra/Mo/DC':['Gra','Mo','DC']},'ucb':{'Prim-like':['primitive'],'Mk-like':['megakaryocyte'],'Ery-like':['erythroid']},'dapp1':{'cluster 6 (granulocytic)':['6']},'sleep':{'Prim-like':['primitive'],'Neu-like':['neutrophil'],'Mono-like':['monocyte']}}[c]
     col='leiden' if c=='dapp1' else 'cell_type'
     frame=pd.DataFrame(index=conditions)
     for name,labels in groups.items():frame[name]=[cells.loc[cells.condition==cond,col].astype(str).isin(labels).mean() for cond in conditions]
@@ -118,8 +118,9 @@ def main():
     if root!=HERE:raise ValueError('Input root must be the directory containing this replay.py; code and inputs are a single bound bundle')
     if out.exists():raise FileExistsError('Use a new output directory; historical or previous replay outputs are never overwritten')
     if len(set(args.cohorts))!=len(args.cohorts):raise ValueError('Duplicate cohort')
+    selected=[c for c in ALLOWED if c in args.cohorts]
     out.mkdir(parents=True)
-    receipt={'status':'in_progress','cohorts':args.cohorts}
+    receipt={'status':'in_progress','cohorts':selected,'requested_cohorts':args.cohorts}
     try:
         policy=json.loads((root/'tolerances.json').read_text());summary_policy={k:policy['saved_summary'][k] for k in ['rtol','atol']};expression_policy={k:policy['expression_float32'][k] for k in ['rtol','atol']};checkpoint_policy={k:policy['encoder_float32'][k] for k in ['rtol','atol']}
         denied=[str(p.resolve()) for p in args.deny_read_root]
@@ -128,14 +129,14 @@ def main():
                 path=os.path.abspath(os.fsdecode(values[0]))
                 if any(path==base or path.startswith(base+os.sep) for base in denied):raise PermissionError('Isolation audit denied source access: '+path)
         if denied:sys.addaudithook(audit)
-        receipt={'status':'running','cohorts':args.cohorts,'policies':policy,'policy_sha256':sha256(root/'tolerances.json'),'runtime':{'python':platform.python_version(),'platform':platform.platform(),'packages':{name:installed_version(name) for name in ['numpy','pandas','scipy','scikit-learn','matplotlib','torch']}},'isolation':{'cwd':str(Path.cwd()),'input_root':str(root),'denied_read_roots':denied,'guard':'Python audit hook on file opens; not an OS namespace; no repository/home-data dependency used'},'no_training':True,'raw_preparation_reproduced':False,'new_biological_validation':False}
+        receipt={'status':'running','cohorts':selected,'requested_cohorts':args.cohorts,'policies':policy,'policy_sha256':sha256(root/'tolerances.json'),'runtime':{'python':platform.python_version(),'platform':platform.platform(),'packages':{name:installed_version(name) for name in ['numpy','pandas','scipy','scikit-learn','matplotlib','torch']}},'isolation':{'cwd':str(Path.cwd()),'input_root':str(root),'denied_read_roots':denied,'guard':'Python audit hook on file opens; not an OS namespace; original data, results and method-source access denied for the explicitly listed roots'},'no_training':True,'raw_preparation_reproduced':False,'new_biological_validation':False}
         manifest=json.loads((root/'support_manifest.json').read_text());verified=0
         for entry in manifest['files']:
             f=root/entry['path'];assert f.is_file() and sha256(f)==entry['sha256'],entry['path'];verified+=1
         receipt['manifest_files_verified']=verified;receipt['support_manifest_sha256']=sha256(root/'support_manifest.json');receipt['code_sha256']={str(f.relative_to(root)):sha256(f) for f in sorted(root.rglob('*.py'))};receipt['expression']=[]
         from frozen_calculations import analyze as frozen
         from biological_calculations import analyze as biological
-        for c in args.cohorts:
+        for c in selected:
             folder=root/'inputs/frozen'/c;dest=out/'source_data'/FROZEN/c;dest.mkdir(parents=True)
             receipt['expression'].append(expression(folder,expression_policy))
             if c=='dapp1_spliced':sensitivity(folder,dest)
@@ -144,7 +145,7 @@ def main():
                 if c!='marrow':biological(c,folder,dest)
             observational_extras(c,folder,dest)
             print('replayed frozen',c,flush=True)
-        apps=[c for c in args.cohorts if c in APPLICATIONS]
+        apps=[c for c in selected if c in APPLICATIONS]
         if apps:
             for c in apps:
                 original=pd.read_csv(root/'inputs/frozen'/c/'cells.csv.gz')
@@ -156,20 +157,41 @@ def main():
                         check_arrays(f'{c}/{arm}: matched frozen {column}',paired[column],original[column],summary_policy)
             from matched_calculations import analyze as matched
             matched(root/'inputs/matched',root/'inputs/encoders',out/'source_data'/MATCHED,apps)
-        geom=[c for c in args.cohorts if c!='dapp1_spliced']
+        geom=[c for c in selected if c!='dapp1_spliced']
         if geom:
             from geometry_calculations import analyze as geometry
             geometry(root/'inputs/frozen',out/'source_data'/FROZEN/'geometry_reference',geom)
+        # Training histories are retained observations. Copy them unchanged for
+        # the display tier; this does not repeat optimization or its losses.
+        retained=[]
+        for c in apps:
+            source=root/'inputs/encoders'/c/'training_history.csv'
+            relative=Path('results/recovered_integration_20261001/native_representation')/c/'training_history.csv'
+            if not (root/'expected'/relative).is_file():continue
+            target=out/'source_data'/relative;target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(source,target)
+            check_arrays(f'{c}: retained training-history bytes',[sha256(target)],[sha256(source)],summary_policy,True)
+            retained.append(str(relative))
+        receipt['retained_training_history_tables']=retained
         compared=[]
         for expected in sorted((root/'expected').rglob('*.csv')):
             relative=expected.relative_to(root/'expected');actual=out/'source_data'/relative
-            needed=(relative.parts[1]=='recovered_integration_20261001' and bool(apps)) or relative.parts[2] in args.cohorts or (relative.parts[2]=='geometry_reference' and bool(geom))
+            needed=(relative.parts[1]=='recovered_integration_20261001' and relative.parts[2]=='native_analysis' and bool(apps)) or (relative.parts[1]=='recovered_integration_20261001' and relative.parts[2]=='native_representation' and relative.parts[3] in apps) or (relative.parts[1]=='application_reanalysis_20260921' and relative.parts[2] in selected) or (relative.parts[2]=='geometry_reference' and bool(geom))
             if needed:
                 if not actual.is_file():raise AssertionError('Missing required regenerated table: '+str(relative))
-                compare_csv(actual,expected,summary_policy,args.cohorts);compared.append(str(relative))
-        receipt['summary_tables_compared']=compared
+                compare_csv(actual,expected,summary_policy,selected);compared.append(str(relative))
+        receipt['summary_tables_compared']=[name for name in compared if name not in retained]
+        receipt['retained_training_history_tables_compared']=[name for name in compared if name in retained]
+        receipt['all_reference_tables_compared']=compared
+        receipt['application_cohorts']=apps
+        receipt['tasks']=sum(len(json.loads((root/'inputs/frozen'/c/'protocol.json').read_text())['ends']) for c in apps)
+        if apps:
+            matched_receipt=json.loads((out/'source_data'/MATCHED/'receipt.json').read_text())
+            receipt['matched_downstream_runs']=matched_receipt['complete_downstream_runs']
+            receipt['matched_method_counts']={method:sum(r['method']==method for r in matched_receipt['downstream_receipts']) for method in ['scRL','scfocus']}
+        receipt['irradiation_identity_scope']='Author-owned historical local irradiation series; historical protocol accession is not a full-series identity claim. Computational reuse of retained artifacts only; dose, animal count, collection protocol and ethics identifiers are not inferred.' if 'irradiation' in selected else None
         if args.checkpoints:receipt['checkpoints']=checkpoint(root,out,apps,checkpoint_policy)
-        receipt['status']='passed';receipt['tiers']={'saved_per_cell_to_summaries':'passed','expression_count_support_to_programs':'passed','encoder_checkpoint_export':'passed' if args.checkpoints and apps else 'not_executed','raw_count_to_model_retraining':'not_executed','downstream_checkpoint_inference':'not_executed','public_download_access':'not_executed','figure_generation':'separate article build step'}
+        receipt['status']='passed';receipt['tiers']={'saved_per_cell_to_summaries':'passed','expression_count_support_to_programs':'passed','encoder_checkpoint_export':'passed' if args.checkpoints and apps else 'not_executed','retained_training_history_copy':'byte_verified' if retained else 'not_requested','raw_count_to_model_retraining':'not_executed','downstream_checkpoint_inference':'not_executed','public_download_access':'not_executed','figure_generation':'separate article build step'}
     except Exception as exc:
         receipt['status']='failed';receipt['failure']={'type':type(exc).__name__,'message':str(exc),'traceback':traceback.format_exc()};raise
     finally:

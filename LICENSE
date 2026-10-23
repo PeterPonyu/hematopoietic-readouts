@@ -4,7 +4,7 @@ Copyright (c) 2026 Zeyu Fu
 
 This grant applies to the original utilities in run.py, tools/, scripts/ and
 analysis_replay/*.py, and their software documentation. The source adaptations
-are identified in provenance/source_copies.json and
+are identified in SOURCE_BINDINGS.json and
 analysis_replay/calculation_ports.json. Preserve those attributions.
 
 This grant does not relicense aggregate tables, source datasets, manuscript

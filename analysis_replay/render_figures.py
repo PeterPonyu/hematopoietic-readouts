@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the six article figures from regenerated replay tables, never originals."""
+"""Render the seven article figures from regenerated replay tables, never originals."""
 import argparse,json,sys,traceback
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
@@ -9,7 +9,7 @@ from replay_common import sha256,save_json
 def render(out):
     import pandas as pd
     receipt=json.loads((out/'replay_receipt.json').read_text())
-    assert receipt['status']=='passed' and set(['ucb','dapp1','sleep','marrow']).issubset(receipt['cohorts'])
+    assert receipt['status']=='passed' and set(['irradiation','ucb','dapp1','sleep','marrow']).issubset(receipt['cohorts'])
     # Every scientific summary must still match the successful replay receipt.
     for row in receipt['output_files']:
         assert sha256(out/row['path'])==row['sha256'],row['path']
@@ -23,14 +23,14 @@ def render(out):
         return f.CACHE[name]
     f.table=strict_table
     font=f.setup()
-    for draw in [f.fig1,f.fig2,f.fig3,f.fig4,f.fig5,f.fig6]:draw()
+    for draw in [f.fig1,f.fig2,f.fig3,f.fig4,f.fig5,f.fig6,f.fig7]:draw()
     ledger=pd.DataFrame(f.LEDGER);ledger.to_csv(out/'evidence/figure_values.csv',index=False)
     expected=pd.read_csv(HERE/'expected_figure_values.csv');assert list(ledger.columns)==list(expected.columns)
     import numpy as np
-    for c in ['figure','panel','mark','metric','unit','source_file','source_rows_1based_excluding_header','source_columns','display_transform']:
+    for c in ['figure','panel','mark','metric','unit','source_file','source_rows_1based_excluding_header','source_columns','source_selector','display_transform']:
         assert ledger[c].fillna('').astype(str).tolist()==expected[c].fillna('').astype(str).tolist(),c
     np.testing.assert_allclose(ledger.value,expected.value,rtol=1e-10,atol=1e-10)
-    return {'status':'passed','scope':'six figures rendered only from regenerated scientific CSVs; every plotted ledger value matched frozen reference','source_replay_receipt_sha256':sha256(out/'replay_receipt.json'),'renderer_sha256':sha256(HERE/'figure_calculations.py'),'wrapper_sha256':sha256(__file__),'expected_ledger_sha256':sha256(HERE/'expected_figure_values.csv'),'font':font,'figure_count':6,'ledger_rows':len(ledger),'maximum_ledger_value_error':float(np.max(np.abs(ledger.value-expected.value))),'sources':f.SOURCES,'figures':[{'path':str(p.relative_to(out)),'sha256':sha256(p),'bytes':p.stat().st_size} for p in sorted((out/'figures').glob('figure*'))]}
+    return {'status':'passed','scope':'seven figures rendered only from regenerated scientific CSVs; every plotted ledger value matched frozen reference','source_replay_receipt_sha256':sha256(out/'replay_receipt.json'),'renderer_sha256':sha256(HERE/'figure_calculations.py'),'wrapper_sha256':sha256(__file__),'expected_ledger_sha256':sha256(HERE/'expected_figure_values.csv'),'font':font,'figure_count':7,'ledger_rows':len(ledger),'maximum_ledger_value_error':float(np.max(np.abs(ledger.value-expected.value))),'sources':f.SOURCES,'figures':[{'path':str(p.relative_to(out)),'sha256':sha256(p),'bytes':p.stat().st_size} for p in sorted((out/'figures').glob('figure*'))]}
 def main():
     p=argparse.ArgumentParser();p.add_argument('--replay-output',type=Path,required=True);a=p.parse_args();out=a.replay_output.resolve()
     if not out.is_dir():raise FileNotFoundError(out)

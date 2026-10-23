@@ -1,0 +1,163 @@
+cohort,task,population,method,reference,n_cells,delta_rho
+dapp1,erythroid,all,scRL value,PCA30 proximity,10224,-0.014991910670479426
+dapp1,erythroid,all,scRL value,UMAP proximity,10224,-0.09447917893438482
+dapp1,erythroid,all,scRL value,Diffusion proximity,10224,0.066614748398107
+dapp1,erythroid,all,Palantir,PCA30 proximity,10224,0.0165191941509998
+dapp1,erythroid,all,Palantir,UMAP proximity,10224,-0.06296807411290559
+dapp1,erythroid,all,Palantir,Diffusion proximity,10224,0.09812585321958622
+dapp1,erythroid,all,CellRank 2,PCA30 proximity,10224,-0.1003729310187706
+dapp1,erythroid,all,CellRank 2,UMAP proximity,10224,-0.179860199282676
+dapp1,erythroid,all,CellRank 2,Diffusion proximity,10224,-0.01876627195018417
+dapp1,erythroid,all,FateID Python,PCA30 proximity,10224,-0.05508043628335771
+dapp1,erythroid,all,FateID Python,UMAP proximity,10224,-0.1345677045472631
+dapp1,erythroid,all,FateID Python,Diffusion proximity,10224,0.026526222785228717
+dapp1,erythroid,shared_nonterminal,scRL value,PCA30 proximity,8298,-0.10291247328729664
+dapp1,erythroid,shared_nonterminal,scRL value,UMAP proximity,8298,-0.17219826460289248
+dapp1,erythroid,shared_nonterminal,scRL value,Diffusion proximity,8298,-0.043009209049351106
+dapp1,erythroid,shared_nonterminal,Palantir,PCA30 proximity,8298,0.10477316376898292
+dapp1,erythroid,shared_nonterminal,Palantir,UMAP proximity,8298,0.03548737245338707
+dapp1,erythroid,shared_nonterminal,Palantir,Diffusion proximity,8298,0.16467642800692844
+dapp1,erythroid,shared_nonterminal,CellRank 2,PCA30 proximity,8298,-0.08228514790602484
+dapp1,erythroid,shared_nonterminal,CellRank 2,UMAP proximity,8298,-0.1515709392216207
+dapp1,erythroid,shared_nonterminal,CellRank 2,Diffusion proximity,8298,-0.022381883668079323
+dapp1,erythroid,shared_nonterminal,FateID Python,PCA30 proximity,8298,-0.00025584221395542894
+dapp1,erythroid,shared_nonterminal,FateID Python,UMAP proximity,8298,-0.06954163352955128
+dapp1,erythroid,shared_nonterminal,FateID Python,Diffusion proximity,8298,0.05964742202399009
+dapp1,erythroid,starting,scRL value,PCA30 proximity,3143,0.01378883343105168
+dapp1,erythroid,starting,scRL value,UMAP proximity,3143,0.008718895968221535
+dapp1,erythroid,starting,scRL value,Diffusion proximity,3143,0.03279643350931517
+dapp1,erythroid,starting,Palantir,PCA30 proximity,3143,0.02016019930685693
+dapp1,erythroid,starting,Palantir,UMAP proximity,3143,0.01509026184402678
+dapp1,erythroid,starting,Palantir,Diffusion proximity,3143,0.039167799385120425
+dapp1,erythroid,starting,CellRank 2,PCA30 proximity,3143,-0.0292249819348089
+dapp1,erythroid,starting,CellRank 2,UMAP proximity,3143,-0.03429491939763905
+dapp1,erythroid,starting,CellRank 2,Diffusion proximity,3143,-0.010217381856545409
+dapp1,erythroid,starting,FateID Python,PCA30 proximity,3143,-0.035200054897394556
+dapp1,erythroid,starting,FateID Python,UMAP proximity,3143,-0.0402699923602247
+dapp1,erythroid,starting,FateID Python,Diffusion proximity,3143,-0.016192454819131064
+dapp1,myeloid,all,scRL value,PCA30 proximity,10224,-0.17904073716037483
+dapp1,myeloid,all,scRL value,UMAP proximity,10224,-0.14327567136356045
+dapp1,myeloid,all,scRL value,Diffusion proximity,10224,0.08735054411796578
+dapp1,myeloid,all,Palantir,PCA30 proximity,10224,-0.3684060931647412
+dapp1,myeloid,all,Palantir,UMAP proximity,10224,-0.33264102736792683
+dapp1,myeloid,all,Palantir,Diffusion proximity,10224,-0.1020148118864006
+dapp1,myeloid,all,CellRank 2,PCA30 proximity,10224,-0.05831088825523445
+dapp1,myeloid,all,CellRank 2,UMAP proximity,10224,-0.022545822458420073
+dapp1,myeloid,all,CellRank 2,Diffusion proximity,10224,0.20808039302310616
+dapp1,myeloid,all,FateID Python,PCA30 proximity,10224,-0.17391357216581121
+dapp1,myeloid,all,FateID Python,UMAP proximity,10224,-0.13814850636899684
+dapp1,myeloid,all,FateID Python,Diffusion proximity,10224,0.0924777091125294
+dapp1,myeloid,shared_nonterminal,scRL value,PCA30 proximity,8298,-0.10072084279461352
+dapp1,myeloid,shared_nonterminal,scRL value,UMAP proximity,8298,-0.07114814030661298
+dapp1,myeloid,shared_nonterminal,scRL value,Diffusion proximity,8298,0.202072165923109
+dapp1,myeloid,shared_nonterminal,Palantir,PCA30 proximity,8298,-0.402970827144514
+dapp1,myeloid,shared_nonterminal,Palantir,UMAP proximity,8298,-0.37339812465651345
+dapp1,myeloid,shared_nonterminal,Palantir,Diffusion proximity,8298,-0.10017781842679149
+dapp1,myeloid,shared_nonterminal,CellRank 2,PCA30 proximity,8298,-0.07368665951745462
+dapp1,myeloid,shared_nonterminal,CellRank 2,UMAP proximity,8298,-0.04411395702945409
+dapp1,myeloid,shared_nonterminal,CellRank 2,Diffusion proximity,8298,0.2291063492002679
+dapp1,myeloid,shared_nonterminal,FateID Python,PCA30 proximity,8298,-0.26530332591752354
+dapp1,myeloid,shared_nonterminal,FateID Python,UMAP proximity,8298,-0.235730623429523
+dapp1,myeloid,shared_nonterminal,FateID Python,Diffusion proximity,8298,0.03748968280019896
+dapp1,myeloid,starting,scRL value,PCA30 proximity,3143,0.023897361591683042
+dapp1,myeloid,starting,scRL value,UMAP proximity,3143,-0.013004877707908313
+dapp1,myeloid,starting,scRL value,Diffusion proximity,3143,0.07404291813311836
+dapp1,myeloid,starting,Palantir,PCA30 proximity,3143,-0.16580545372549896
+dapp1,myeloid,starting,Palantir,UMAP proximity,3143,-0.2027076930250903
+dapp1,myeloid,starting,Palantir,Diffusion proximity,3143,-0.11565989718406364
+dapp1,myeloid,starting,CellRank 2,PCA30 proximity,3143,-0.10456115551782419
+dapp1,myeloid,starting,CellRank 2,UMAP proximity,3143,-0.14146339481741554
+dapp1,myeloid,starting,CellRank 2,Diffusion proximity,3143,-0.05441559897638887
+dapp1,myeloid,starting,FateID Python,PCA30 proximity,3143,-0.06290101210295262
+dapp1,myeloid,starting,FateID Python,UMAP proximity,3143,-0.09980325140254398
+dapp1,myeloid,starting,FateID Python,Diffusion proximity,3143,-0.012755455561517304
+irradiation,erythroid,all,scRL value,PCA30 proximity,41252,-0.03365850706538631
+irradiation,erythroid,all,scRL value,UMAP proximity,41252,-0.011875939048505146
+irradiation,erythroid,all,scRL value,Diffusion proximity,41252,-0.0892700923524179
+irradiation,erythroid,all,Palantir,PCA30 proximity,41252,
+irradiation,erythroid,all,Palantir,UMAP proximity,41252,
+irradiation,erythroid,all,Palantir,Diffusion proximity,41252,
+irradiation,erythroid,all,CellRank 2,PCA30 proximity,41252,-0.1034105181774937
+irradiation,erythroid,all,CellRank 2,UMAP proximity,41252,-0.08162795016061253
+irradiation,erythroid,all,CellRank 2,Diffusion proximity,41252,-0.15902210346452528
+irradiation,erythroid,all,FateID Python,PCA30 proximity,41252,-0.08839693220725253
+irradiation,erythroid,all,FateID Python,UMAP proximity,41252,-0.06661436419037137
+irradiation,erythroid,all,FateID Python,Diffusion proximity,41252,-0.14400851749428412
+irradiation,erythroid,shared_nonterminal,scRL value,PCA30 proximity,21468,-0.06672881598236663
+irradiation,erythroid,shared_nonterminal,scRL value,UMAP proximity,21468,-0.022083702187794152
+irradiation,erythroid,shared_nonterminal,scRL value,Diffusion proximity,21468,-0.11648178157724381
+irradiation,erythroid,shared_nonterminal,Palantir,PCA30 proximity,21468,
+irradiation,erythroid,shared_nonterminal,Palantir,UMAP proximity,21468,
+irradiation,erythroid,shared_nonterminal,Palantir,Diffusion proximity,21468,
+irradiation,erythroid,shared_nonterminal,CellRank 2,PCA30 proximity,21468,-0.12847820657563908
+irradiation,erythroid,shared_nonterminal,CellRank 2,UMAP proximity,21468,-0.0838330927810666
+irradiation,erythroid,shared_nonterminal,CellRank 2,Diffusion proximity,21468,-0.17823117217051626
+irradiation,erythroid,shared_nonterminal,FateID Python,PCA30 proximity,21468,-0.052579408011134254
+irradiation,erythroid,shared_nonterminal,FateID Python,UMAP proximity,21468,-0.007934294216561777
+irradiation,erythroid,shared_nonterminal,FateID Python,Diffusion proximity,21468,-0.10233237360601144
+irradiation,erythroid,starting,scRL value,PCA30 proximity,16821,-0.14247668937205837
+irradiation,erythroid,starting,scRL value,UMAP proximity,16821,-0.0097494580209639
+irradiation,erythroid,starting,scRL value,Diffusion proximity,16821,-0.1328030125555439
+irradiation,erythroid,starting,Palantir,PCA30 proximity,16821,
+irradiation,erythroid,starting,Palantir,UMAP proximity,16821,
+irradiation,erythroid,starting,Palantir,Diffusion proximity,16821,
+irradiation,erythroid,starting,CellRank 2,PCA30 proximity,16821,-0.335881212133526
+irradiation,erythroid,starting,CellRank 2,UMAP proximity,16821,-0.20315398078243152
+irradiation,erythroid,starting,CellRank 2,Diffusion proximity,16821,-0.3262075353170115
+irradiation,erythroid,starting,FateID Python,PCA30 proximity,16821,-0.10208177164224669
+irradiation,erythroid,starting,FateID Python,UMAP proximity,16821,0.030645459708847786
+irradiation,erythroid,starting,FateID Python,Diffusion proximity,16821,-0.0924080948257322
+irradiation,myeloid,all,scRL value,PCA30 proximity,41252,-0.1695937580191294
+irradiation,myeloid,all,scRL value,UMAP proximity,41252,-0.1586982846077732
+irradiation,myeloid,all,scRL value,Diffusion proximity,41252,-0.21124556929596977
+irradiation,myeloid,all,Palantir,PCA30 proximity,41252,
+irradiation,myeloid,all,Palantir,UMAP proximity,41252,
+irradiation,myeloid,all,Palantir,Diffusion proximity,41252,
+irradiation,myeloid,all,CellRank 2,PCA30 proximity,41252,0.07564166315670562
+irradiation,myeloid,all,CellRank 2,UMAP proximity,41252,0.08653713656806183
+irradiation,myeloid,all,CellRank 2,Diffusion proximity,41252,0.03398985187986525
+irradiation,myeloid,all,FateID Python,PCA30 proximity,41252,0.014182742418223149
+irradiation,myeloid,all,FateID Python,UMAP proximity,41252,0.025078215829579364
+irradiation,myeloid,all,FateID Python,Diffusion proximity,41252,-0.027469068858617218
+irradiation,myeloid,shared_nonterminal,scRL value,PCA30 proximity,21468,-0.051752537874248605
+irradiation,myeloid,shared_nonterminal,scRL value,UMAP proximity,21468,0.006300144625965121
+irradiation,myeloid,shared_nonterminal,scRL value,Diffusion proximity,21468,0.025991444463616287
+irradiation,myeloid,shared_nonterminal,Palantir,PCA30 proximity,21468,
+irradiation,myeloid,shared_nonterminal,Palantir,UMAP proximity,21468,
+irradiation,myeloid,shared_nonterminal,Palantir,Diffusion proximity,21468,
+irradiation,myeloid,shared_nonterminal,CellRank 2,PCA30 proximity,21468,-0.008992636902015128
+irradiation,myeloid,shared_nonterminal,CellRank 2,UMAP proximity,21468,0.0490600455981986
+irradiation,myeloid,shared_nonterminal,CellRank 2,Diffusion proximity,21468,0.06875134543584976
+irradiation,myeloid,shared_nonterminal,FateID Python,PCA30 proximity,21468,-0.3050001110963926
+irradiation,myeloid,shared_nonterminal,FateID Python,UMAP proximity,21468,-0.24694742859617888
+irradiation,myeloid,shared_nonterminal,FateID Python,Diffusion proximity,21468,-0.22725612875852771
+irradiation,myeloid,starting,scRL value,PCA30 proximity,16821,-0.09941318577183372
+irradiation,myeloid,starting,scRL value,UMAP proximity,16821,0.021099284429217713
+irradiation,myeloid,starting,scRL value,Diffusion proximity,16821,0.04594037847914795
+irradiation,myeloid,starting,Palantir,PCA30 proximity,16821,
+irradiation,myeloid,starting,Palantir,UMAP proximity,16821,
+irradiation,myeloid,starting,Palantir,Diffusion proximity,16821,
+irradiation,myeloid,starting,CellRank 2,PCA30 proximity,16821,-0.07594852963133192
+irradiation,myeloid,starting,CellRank 2,UMAP proximity,16821,0.04456394056971952
+irradiation,myeloid,starting,CellRank 2,Diffusion proximity,16821,0.06940503461964975
+irradiation,myeloid,starting,FateID Python,PCA30 proximity,16821,-0.5408219729584405
+irradiation,myeloid,starting,FateID Python,UMAP proximity,16821,-0.420309502757389
+irradiation,myeloid,starting,FateID Python,Diffusion proximity,16821,-0.39546840870745875
+ucb,megakaryocyte,all,scRL value,PCA30 proximity,39911,-0.16470835488604862
+ucb,megakaryocyte,all,scRL value,UMAP proximity,39911,-0.2520604799428373
+ucb,megakaryocyte,all,scRL value,Diffusion proximity,39911,-0.2997919057721765
+ucb,megakaryocyte,shared_nonterminal,scRL value,PCA30 proximity,22803,0.00217970891577024
+ucb,megakaryocyte,shared_nonterminal,scRL value,UMAP proximity,22803,-0.07926492020782927
+ucb,megakaryocyte,shared_nonterminal,scRL value,Diffusion proximity,22803,-0.14057609194355225
+ucb,megakaryocyte,starting,scRL value,PCA30 proximity,2688,0.13162837919261358
+ucb,megakaryocyte,starting,scRL value,UMAP proximity,2688,0.009789751739852581
+ucb,megakaryocyte,starting,scRL value,Diffusion proximity,2688,-0.030905869923367635
+sleep,myeloid,all,scRL value,PCA30 proximity,29127,-0.24543512457644978
+sleep,myeloid,all,scRL value,UMAP proximity,29127,-0.035598029061256975
+sleep,myeloid,all,scRL value,Diffusion proximity,29127,0.04922714752057317
+sleep,myeloid,shared_nonterminal,scRL value,PCA30 proximity,10732,0.0017230951782284398
+sleep,myeloid,shared_nonterminal,scRL value,UMAP proximity,10732,-0.05436066382591892
+sleep,myeloid,shared_nonterminal,scRL value,Diffusion proximity,10732,0.03322631948232968
+sleep,myeloid,starting,scRL value,PCA30 proximity,3044,0.04290659570606503
+sleep,myeloid,starting,scRL value,UMAP proximity,3044,0.017407877080558243
+sleep,myeloid,starting,scRL value,Diffusion proximity,3044,0.009570366711157408

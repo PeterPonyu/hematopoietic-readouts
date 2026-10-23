@@ -1,0 +1,3 @@
+cellrank==2.3.3
+Jinja2==3.0.3
+pygpcca==1.0.4
